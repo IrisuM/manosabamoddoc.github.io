@@ -1,1 +1,112 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>进阶文档 on 雪莉的剧本编辑器</title><link>http://manosabamoddoc.fuyumi.xyz/docs/Advanced/</link><description>Recent content in 进阶文档 on 雪莉的剧本编辑器</description><generator>Hugo</generator><language>zh</language><atom:link href="http://manosabamoddoc.fuyumi.xyz/docs/Advanced/index.xml" rel="self" type="application/rss+xml"/></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>进阶文档 on 雪莉的剧本编辑器</title><link>http://manosabamoddoc.fuyumi.xyz/docs/Advanced/</link><description>Recent content in 进阶文档 on 雪莉的剧本编辑器</description><generator>Hugo</generator><language>zh</language><atom:link href="http://manosabamoddoc.fuyumi.xyz/docs/Advanced/index.xml" rel="self" type="application/rss+xml"/><item><title>指令介绍</title><link>http://manosabamoddoc.fuyumi.xyz/docs/Advanced/Command/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://manosabamoddoc.fuyumi.xyz/docs/Advanced/Command/</guid><description>&lt;h1 id="指令介绍">
+ 指令介绍
+ 
+ &lt;a class="anchor" href="#%e6%8c%87%e4%bb%a4%e4%bb%8b%e7%bb%8d">#&lt;/a>
+ 
+&lt;/h1>
+&lt;details >&lt;summary>back&lt;/summary>
+ &lt;div class="markdown-inner">
+&lt;h2 id="back">
+ back
+ 
+ &lt;a class="anchor" href="#back">#&lt;/a>
+ 
+&lt;/h2>
+&lt;p>&lt;a href="https://naninovel.com/api/#back">&lt;span class="book-badge info">&lt;span class="book-badge-title">官方指令&lt;/span>&lt;span class="book-badge-value">gosub&lt;/span>&lt;/span>&lt;/a>&lt;/p>
+&lt;p>设置背景元素&lt;/p>
+ &lt;/div>
+&lt;/details>
+&lt;details >&lt;summary>char&lt;/summary>
+ &lt;div class="markdown-inner">
+&lt;h2 id="char">
+ char
+ 
+ &lt;a class="anchor" href="#char">#&lt;/a>
+ 
+&lt;/h2>
+&lt;p>&lt;a href="https://naninovel.com/api/#char">&lt;span class="book-badge info">&lt;span class="book-badge-title">官方指令&lt;/span>&lt;span class="book-badge-value">wait&lt;/span>&lt;/span>&lt;/a>&lt;/p>
+&lt;p>修改人物立绘&lt;/p>
+ &lt;/div>
+&lt;/details>
+&lt;details >&lt;summary>gosub&lt;/summary>
+ &lt;div class="markdown-inner">
+&lt;h2 id="gosub">
+ gosub
+ 
+ &lt;a class="anchor" href="#gosub">#&lt;/a>
+ 
+&lt;/h2>
+&lt;p>&lt;a href="https://naninovel.com/api/#gosub">&lt;span class="book-badge info">&lt;span class="book-badge-title">官方指令&lt;/span>&lt;span class="book-badge-value">gosub&lt;/span>&lt;/span>&lt;/a>&lt;/p>
+&lt;p>跳转到指定路径，并在遇到 &lt;a href="#return">&lt;strong>return&lt;/strong>&lt;/a> 指令后返回&lt;/p>
+ &lt;/div>
+&lt;/details>
+&lt;details >&lt;summary>goto&lt;/summary>
+ &lt;div class="markdown-inner">
+&lt;h2 id="goto">
+ goto
+ 
+ &lt;a class="anchor" href="#goto">#&lt;/a>
+ 
+&lt;/h2>
+&lt;p>&lt;a href="https://naninovel.com/api/#goto">&lt;span class="book-badge info">&lt;span class="book-badge-title">官方指令&lt;/span>&lt;span class="book-badge-value">goto&lt;/span>&lt;/span>&lt;/a>&lt;/p>
+&lt;p>跳转到指定路径&lt;/p>
+ &lt;/div>
+&lt;/details>
+&lt;details >&lt;summary>hide&lt;/summary>
+ &lt;div class="markdown-inner">
+&lt;h2 id="hide">
+ hide
+ 
+ &lt;a class="anchor" href="#hide">#&lt;/a>
+ 
+&lt;/h2>
+&lt;p>&lt;a href="https://naninovel.com/api/#hide">&lt;span class="book-badge info">&lt;span class="book-badge-title">官方指令&lt;/span>&lt;span class="book-badge-value">hide&lt;/span>&lt;/span>&lt;/a>&lt;/p>
+&lt;p>隐藏指定的actor(角色, 背景, 文字框, 选择框)&lt;/p>
+ &lt;/div>
+&lt;/details>
+&lt;details >&lt;summary>hidechars&lt;/summary>
+ &lt;div class="markdown-inner">
+&lt;h2 id="hidechars">
+ hidechars
+ 
+ &lt;a class="anchor" href="#hidechars">#&lt;/a>
+ 
+&lt;/h2>
+&lt;p>&lt;a href="https://naninovel.com/api/#hidechars">&lt;span class="book-badge info">&lt;span class="book-badge-title">官方指令&lt;/span>&lt;span class="book-badge-value">hidechars&lt;/span>&lt;/span>&lt;/a>&lt;/p>
+&lt;p>隐藏所有可见的角色&lt;/p>
+ &lt;/div>
+&lt;/details>
+&lt;details >&lt;summary>print&lt;/summary>
+ &lt;div class="markdown-inner">
+&lt;h2 id="print">
+ print
+ 
+ &lt;a class="anchor" href="#print">#&lt;/a>
+ 
+&lt;/h2>
+&lt;p>&lt;a href="https://naninovel.com/api/#print">&lt;span class="book-badge info">&lt;span class="book-badge-title">官方指令&lt;/span>&lt;span class="book-badge-value">print&lt;/span>&lt;/span>&lt;/a>&lt;/p>
+&lt;p>打印文本&lt;/p>
+ &lt;/div>
+&lt;/details>
+&lt;details >&lt;summary>return&lt;/summary>
+ &lt;div class="markdown-inner">
+&lt;h2 id="return">
+ return
+ 
+ &lt;a class="anchor" href="#return">#&lt;/a>
+ 
+&lt;/h2>
+&lt;p>&lt;a href="https://naninovel.com/api/#return">&lt;span class="book-badge info">&lt;span class="book-badge-title">官方指令&lt;/span>&lt;span class="book-badge-value">return&lt;/span>&lt;/span>&lt;/a>&lt;/p>
+&lt;p>返回到&lt;a href="#gosub">&lt;strong>gosub&lt;/strong>&lt;/a>指令的调用处&lt;/p>
+ &lt;/div>
+&lt;/details>
+&lt;details >&lt;summary>returntotitle&lt;/summary>
+ &lt;div class="markdown-inner">
+&lt;h2 id="returntotitle">
+ returntotitle
+ 
+ &lt;a class="anchor" href="#returntotitle">#&lt;/a>
+ 
+&lt;/h2>
+&lt;p>&lt;span class="book-badge warning">&lt;span class="book-badge-title">游戏指令&lt;/span>&lt;span class="book-badge-value">returntotitle&lt;/span>&lt;/span>&lt;/p>
+&lt;p>返回标题页&lt;/p></description></item></channel></rss>

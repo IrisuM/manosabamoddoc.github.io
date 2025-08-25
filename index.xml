@@ -147,101 +147,187 @@
  &lt;a class="anchor" href="#%e5%bc%80%e5%a7%8b%e4%b8%80%e4%b8%aa%e7%ae%80%e5%8d%95%e7%9a%84%e5%af%b9%e8%af%9d">#&lt;/a>
  
 &lt;/h1>
-&lt;h2 id="熟悉一些简单的剧本指令">
- 熟悉一些简单的剧本指令
+&lt;h2 id="让我们来写一个简短的对话剧本">
+ 让我们来写一个简短的对话剧本
  
- &lt;a class="anchor" href="#%e7%86%9f%e6%82%89%e4%b8%80%e4%ba%9b%e7%ae%80%e5%8d%95%e7%9a%84%e5%89%a7%e6%9c%ac%e6%8c%87%e4%bb%a4">#&lt;/a>
- 
-&lt;/h2>
-&lt;details >&lt;summary>gosub&lt;/summary>
- &lt;div class="markdown-inner">
-&lt;h2 id="markdown-content">
- Markdown content
- 
- &lt;a class="anchor" href="#markdown-content">#&lt;/a>
+ &lt;a class="anchor" href="#%e8%ae%a9%e6%88%91%e4%bb%ac%e6%9d%a5%e5%86%99%e4%b8%80%e4%b8%aa%e7%ae%80%e7%9f%ad%e7%9a%84%e5%af%b9%e8%af%9d%e5%89%a7%e6%9c%ac">#&lt;/a>
  
 &lt;/h2>
-&lt;table>
- &lt;thead>
- &lt;tr>
- &lt;th>指令参数&lt;/th>
- &lt;th>说明&lt;/th>
- &lt;/tr>
- &lt;/thead>
- &lt;tbody>
- &lt;tr>
- &lt;td>单元格&lt;/td>
- &lt;td>单元格&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>单元格&lt;/td>
- &lt;td>单元格&lt;/td>
- &lt;/tr>
- &lt;/tbody>
-&lt;/table>
- &lt;/div>
-&lt;/details>
 &lt;div class="book-steps ">
 &lt;ol>
 &lt;li>
-&lt;h3 id="suspendisse-sed-congue-orci">
- Suspendisse sed congue orci.
+&lt;h3 id="调用游戏自身的初始化剧本">
+ 调用游戏自身的初始化剧本
  
- &lt;a class="anchor" href="#suspendisse-sed-congue-orci">#&lt;/a>
+ &lt;a class="anchor" href="#%e8%b0%83%e7%94%a8%e6%b8%b8%e6%88%8f%e8%87%aa%e8%ba%ab%e7%9a%84%e5%88%9d%e5%a7%8b%e5%8c%96%e5%89%a7%e6%9c%ac">#&lt;/a>
  
 &lt;/h3>
-&lt;pre tabindex="0">&lt;code>
-;初始化日常活动状态
+&lt;p>游戏自身准备了很多用于初始化的剧本，比如样例中的&lt;strong>System/System_Subroutine.BeginAdv&lt;/strong>和&lt;strong>System/System_Subroutine.EndAdv&lt;/strong>。&lt;/p>
+&lt;p>在对话剧本的首尾通过&lt;a href="http://manosabamoddoc.fuyumi.xyz/docs/Advanced/Command/#gosub">gosub&lt;/a>分别执行这两个初始化剧本，让游戏进入对话的模式&lt;/p>
+&lt;p>当然，有对话模式，自然就有裁判模式，后续也会有用于初始化裁判模式的剧本&lt;/p>
+&lt;pre tabindex="0">&lt;code>;初始化日常活动状态
 @Gosub System/System_Subroutine.BeginAdv
-
-;显示背景
+&lt;/code>&lt;/pre>&lt;pre tabindex="0">&lt;code>;结束化日常活动状态
+@Gosub System/System_Subroutine.EndAdv
+&lt;/code>&lt;/pre>&lt;/li>
+&lt;li>
+&lt;h3 id="展示背景">
+ 展示背景
+ 
+ &lt;a class="anchor" href="#%e5%b1%95%e7%a4%ba%e8%83%8c%e6%99%af">#&lt;/a>
+ 
+&lt;/h3>
+&lt;p>通过&lt;a href="http://manosabamoddoc.fuyumi.xyz/docs/Advanced/Command/#back">back&lt;/a>指令可以修改游戏的背景&lt;/p>
+&lt;p>可以通过解包工具&lt;a href="http://manosabamoddoc.fuyumi.xyz/docs/Others/UsefulTools/#Assetripper">Assetripper&lt;/a>解包背景图资源查看对应的编号，也可以直接查看游戏自带的剧本寻找自己需要的背景的编号&lt;/p>
+&lt;p>先指定 5_1 为背景图，大小为默认大小，再指定黑色的遮罩层图层通过VerticalBlindGradually特效消失，实现栅格效果，最后使用&lt;a href="http://manosabamoddoc.fuyumi.xyz/docs/Advanced/Command/#wait">wait&lt;/a>指令等待效果完成&lt;/p>
+&lt;p>当然，如果觉得特效比较麻烦，只通过第一条指令指定背景就行&lt;/p>
+&lt;pre tabindex="0">&lt;code>;显示背景
 @back 5_1 Scale:{g_backgroundDefaultScale} Lazy:false
-;最上面的黑色遮罩层VerticalBlindGradually特效消失
+;最上面的Overlay遮罩层VerticalBlindGradually特效消失，同时还指定了整体颜色和时间
 @back SubId:&amp;#34;Overlay&amp;#34; Transparent.Custom dissolve:&amp;#34;VerticalBlindGradually&amp;#34; tint:&amp;#34;#000000&amp;#34; time:0.99 Lazy:false
 ;等待一小会到特效演完
 @Wait &amp;#34;0.9&amp;#34;
-
-;显示艾玛，表情是Default，双手是状态1
-@char Ema.Default,ArmR1,ArmL1 pos:50,50 Scale:1.25 Lazy:false
-;艾玛说话
-Ema: 这是一个测试用例，我来客串一下。
-Ema: 再说一句就下线了。
-;隐藏艾玛
-@hide Ema Lazy:false
-
-这里是一段空白。
-
-;显示雪莉，表情是Smile1，双手是状态1
-@char Sherry.Smile1,ArmR1,ArmL1 pos:30,50 Scale:1.25 Lazy:false
-;雪莉说话
-Sherry: 这是一个测试用例，我也来客串一下。
-Sherry: 接下来请汉娜出场。
-;显示雪莉，表情是Smile1，双手是状态2
-@char Hanna.Angry1,ArmR2,ArmL2 pos:70,50 Lazy:false
-;雪莉说话
-Hanna: 没事不要随便叫我出来啦。
-;隐藏全部角色
-@hideChars Lazy:false
-
-;结束化日常活动状态
-@Gosub System/System_Subroutine.EndAdv
-
-;跳转到结束
-@goto SherryAppleJuice_ExampleMod/Tools.EndToTitle
 &lt;/code>&lt;/pre>&lt;/li>
 &lt;li>
-&lt;h3 id="maecenas-scelerisque-sem">
- Maecenas scelerisque sem.
+&lt;h3 id="显示人物">
+ 显示人物
  
- &lt;a class="anchor" href="#maecenas-scelerisque-sem">#&lt;/a>
+ &lt;a class="anchor" href="#%e6%98%be%e7%a4%ba%e4%ba%ba%e7%89%a9">#&lt;/a>
  
 &lt;/h3>
-&lt;p>&amp;hellip;&lt;/p></description></item><item><title>碎碎念</title><link>http://manosabamoddoc.fuyumi.xyz/docs/Others/AQ/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://manosabamoddoc.fuyumi.xyz/docs/Others/AQ/</guid><description>&lt;h1 id="施工中">
+&lt;p>通过&lt;a href="http://manosabamoddoc.fuyumi.xyz/docs/Advanced/Command/#char">char&lt;/a>指令显示人物，显示的方式一般是{人物ID}.{表情,左手,右手}&lt;/p>
+&lt;p>人物ID和表情相关可以通过解包工具&lt;a href="http://manosabamoddoc.fuyumi.xyz/docs/Others/UsefulTools/#Assetripper">Assetripper&lt;/a>解包人物立绘查看，也可以直接查看游戏自带的剧本寻找自己需要的编号&lt;/p>
+&lt;pre tabindex="0">&lt;code>;显示艾玛，表情是Default，双手是状态1
+@char Ema.Default,ArmR1,ArmL1 pos:50,50 Scale:1.25 Lazy:false
+&lt;/code>&lt;/pre>&lt;pre tabindex="0">&lt;code>;显示雪莉，表情是Smile1，双手是状态1
+@char Sherry.Smile1,ArmR1,ArmL1 pos:30,50 Scale:1.25 Lazy:false
+&lt;/code>&lt;/pre>&lt;pre tabindex="0">&lt;code>;显示汉娜，表情是Angry1，双手是状态2
+@char Hanna.Angry1,ArmR2,ArmL2 pos:70,50 Lazy:false
+&lt;/code>&lt;/pre>&lt;/li>
+&lt;li>
+&lt;h3 id="隐藏人物">
+ 隐藏人物
+ 
+ &lt;a class="anchor" href="#%e9%9a%90%e8%97%8f%e4%ba%ba%e7%89%a9">#&lt;/a>
+ 
+&lt;/h3>
+&lt;p>隐藏角色立绘可以通过&lt;a href="http://manosabamoddoc.fuyumi.xyz/docs/Advanced/Command/#hide">hide&lt;/a>指令隐藏指定立绘，也可以通过&lt;a href="http://manosabamoddoc.fuyumi.xyz/docs/Advanced/Command/#hidechars">hidechars&lt;/a>指令隐藏所有角色立绘&lt;/p></description></item><item><title>碎碎念</title><link>http://manosabamoddoc.fuyumi.xyz/docs/Others/AQ/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://manosabamoddoc.fuyumi.xyz/docs/Others/AQ/</guid><description>&lt;h1 id="施工中">
  施工中
  
  &lt;a class="anchor" href="#%e6%96%bd%e5%b7%a5%e4%b8%ad">#&lt;/a>
  
-&lt;/h1></description></item><item><title>试试写一个魔女裁判</title><link>http://manosabamoddoc.fuyumi.xyz/docs/QuickStart/BeginTrial/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://manosabamoddoc.fuyumi.xyz/docs/QuickStart/BeginTrial/</guid><description>&lt;h1 id="施工中">
+&lt;/h1></description></item><item><title>指令介绍</title><link>http://manosabamoddoc.fuyumi.xyz/docs/Advanced/Command/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://manosabamoddoc.fuyumi.xyz/docs/Advanced/Command/</guid><description>&lt;h1 id="指令介绍">
+ 指令介绍
+ 
+ &lt;a class="anchor" href="#%e6%8c%87%e4%bb%a4%e4%bb%8b%e7%bb%8d">#&lt;/a>
+ 
+&lt;/h1>
+&lt;details >&lt;summary>back&lt;/summary>
+ &lt;div class="markdown-inner">
+&lt;h2 id="back">
+ back
+ 
+ &lt;a class="anchor" href="#back">#&lt;/a>
+ 
+&lt;/h2>
+&lt;p>&lt;a href="https://naninovel.com/api/#back">&lt;span class="book-badge info">&lt;span class="book-badge-title">官方指令&lt;/span>&lt;span class="book-badge-value">gosub&lt;/span>&lt;/span>&lt;/a>&lt;/p>
+&lt;p>设置背景元素&lt;/p>
+ &lt;/div>
+&lt;/details>
+&lt;details >&lt;summary>char&lt;/summary>
+ &lt;div class="markdown-inner">
+&lt;h2 id="char">
+ char
+ 
+ &lt;a class="anchor" href="#char">#&lt;/a>
+ 
+&lt;/h2>
+&lt;p>&lt;a href="https://naninovel.com/api/#char">&lt;span class="book-badge info">&lt;span class="book-badge-title">官方指令&lt;/span>&lt;span class="book-badge-value">wait&lt;/span>&lt;/span>&lt;/a>&lt;/p>
+&lt;p>修改人物立绘&lt;/p>
+ &lt;/div>
+&lt;/details>
+&lt;details >&lt;summary>gosub&lt;/summary>
+ &lt;div class="markdown-inner">
+&lt;h2 id="gosub">
+ gosub
+ 
+ &lt;a class="anchor" href="#gosub">#&lt;/a>
+ 
+&lt;/h2>
+&lt;p>&lt;a href="https://naninovel.com/api/#gosub">&lt;span class="book-badge info">&lt;span class="book-badge-title">官方指令&lt;/span>&lt;span class="book-badge-value">gosub&lt;/span>&lt;/span>&lt;/a>&lt;/p>
+&lt;p>跳转到指定路径，并在遇到 &lt;a href="#return">&lt;strong>return&lt;/strong>&lt;/a> 指令后返回&lt;/p>
+ &lt;/div>
+&lt;/details>
+&lt;details >&lt;summary>goto&lt;/summary>
+ &lt;div class="markdown-inner">
+&lt;h2 id="goto">
+ goto
+ 
+ &lt;a class="anchor" href="#goto">#&lt;/a>
+ 
+&lt;/h2>
+&lt;p>&lt;a href="https://naninovel.com/api/#goto">&lt;span class="book-badge info">&lt;span class="book-badge-title">官方指令&lt;/span>&lt;span class="book-badge-value">goto&lt;/span>&lt;/span>&lt;/a>&lt;/p>
+&lt;p>跳转到指定路径&lt;/p>
+ &lt;/div>
+&lt;/details>
+&lt;details >&lt;summary>hide&lt;/summary>
+ &lt;div class="markdown-inner">
+&lt;h2 id="hide">
+ hide
+ 
+ &lt;a class="anchor" href="#hide">#&lt;/a>
+ 
+&lt;/h2>
+&lt;p>&lt;a href="https://naninovel.com/api/#hide">&lt;span class="book-badge info">&lt;span class="book-badge-title">官方指令&lt;/span>&lt;span class="book-badge-value">hide&lt;/span>&lt;/span>&lt;/a>&lt;/p>
+&lt;p>隐藏指定的actor(角色, 背景, 文字框, 选择框)&lt;/p>
+ &lt;/div>
+&lt;/details>
+&lt;details >&lt;summary>hidechars&lt;/summary>
+ &lt;div class="markdown-inner">
+&lt;h2 id="hidechars">
+ hidechars
+ 
+ &lt;a class="anchor" href="#hidechars">#&lt;/a>
+ 
+&lt;/h2>
+&lt;p>&lt;a href="https://naninovel.com/api/#hidechars">&lt;span class="book-badge info">&lt;span class="book-badge-title">官方指令&lt;/span>&lt;span class="book-badge-value">hidechars&lt;/span>&lt;/span>&lt;/a>&lt;/p>
+&lt;p>隐藏所有可见的角色&lt;/p>
+ &lt;/div>
+&lt;/details>
+&lt;details >&lt;summary>print&lt;/summary>
+ &lt;div class="markdown-inner">
+&lt;h2 id="print">
+ print
+ 
+ &lt;a class="anchor" href="#print">#&lt;/a>
+ 
+&lt;/h2>
+&lt;p>&lt;a href="https://naninovel.com/api/#print">&lt;span class="book-badge info">&lt;span class="book-badge-title">官方指令&lt;/span>&lt;span class="book-badge-value">print&lt;/span>&lt;/span>&lt;/a>&lt;/p>
+&lt;p>打印文本&lt;/p>
+ &lt;/div>
+&lt;/details>
+&lt;details >&lt;summary>return&lt;/summary>
+ &lt;div class="markdown-inner">
+&lt;h2 id="return">
+ return
+ 
+ &lt;a class="anchor" href="#return">#&lt;/a>
+ 
+&lt;/h2>
+&lt;p>&lt;a href="https://naninovel.com/api/#return">&lt;span class="book-badge info">&lt;span class="book-badge-title">官方指令&lt;/span>&lt;span class="book-badge-value">return&lt;/span>&lt;/span>&lt;/a>&lt;/p>
+&lt;p>返回到&lt;a href="#gosub">&lt;strong>gosub&lt;/strong>&lt;/a>指令的调用处&lt;/p>
+ &lt;/div>
+&lt;/details>
+&lt;details >&lt;summary>returntotitle&lt;/summary>
+ &lt;div class="markdown-inner">
+&lt;h2 id="returntotitle">
+ returntotitle
+ 
+ &lt;a class="anchor" href="#returntotitle">#&lt;/a>
+ 
+&lt;/h2>
+&lt;p>&lt;span class="book-badge warning">&lt;span class="book-badge-title">游戏指令&lt;/span>&lt;span class="book-badge-value">returntotitle&lt;/span>&lt;/span>&lt;/p>
+&lt;p>返回标题页&lt;/p></description></item><item><title>试试写一个魔女裁判</title><link>http://manosabamoddoc.fuyumi.xyz/docs/QuickStart/BeginTrial/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://manosabamoddoc.fuyumi.xyz/docs/QuickStart/BeginTrial/</guid><description>&lt;h1 id="施工中">
  施工中
  
  &lt;a class="anchor" href="#%e6%96%bd%e5%b7%a5%e4%b8%ad">#&lt;/a>
