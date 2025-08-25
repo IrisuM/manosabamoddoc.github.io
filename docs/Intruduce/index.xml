@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>介绍 on 雪莉的剧本编辑器</title><link>http://manosabamoddoc.fuyumi.xyz/docs/Intruduce/</link><description>Recent content in 介绍 on 雪莉的剧本编辑器</description><generator>Hugo</generator><language>zh</language><atom:link href="http://manosabamoddoc.fuyumi.xyz/docs/Intruduce/index.xml" rel="self" type="application/rss+xml"/><item><title>给使用的人</title><link>http://manosabamoddoc.fuyumi.xyz/docs/Intruduce/ForUser/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://manosabamoddoc.fuyumi.xyz/docs/Intruduce/ForUser/</guid><description>&lt;h1 id="给使用的人">
+ 给使用的人
+ 
+ &lt;a class="anchor" href="#%e7%bb%99%e4%bd%bf%e7%94%a8%e7%9a%84%e4%ba%ba">#&lt;/a>
+ 
+&lt;/h1>
+&lt;h2 id="我该从哪里获取到mod框架">
+ 我该从哪里获取到Mod框架？
+ 
+ &lt;a class="anchor" href="#%e6%88%91%e8%af%a5%e4%bb%8e%e5%93%aa%e9%87%8c%e8%8e%b7%e5%8f%96%e5%88%b0mod%e6%a1%86%e6%9e%b6">#&lt;/a>
+ 
+&lt;/h2>
+&lt;p>可以在&lt;a href="http://manosabamoddoc.fuyumi.xyz/docs/Install">安装说明&lt;/a>里找到下载地址，如果访问Github存在困难的话，也可以加入我们的群聊&lt;a href="https://qm.qq.com/q/V5vZB2xvSY">我们的群聊&lt;/a>从群文件下载&lt;/p>
+&lt;hr>
+&lt;h2 id="我该从哪里获取到可以玩的剧本">
+ 我该从哪里获取到可以玩的剧本？
+ 
+ &lt;a class="anchor" href="#%e6%88%91%e8%af%a5%e4%bb%8e%e5%93%aa%e9%87%8c%e8%8e%b7%e5%8f%96%e5%88%b0%e5%8f%af%e4%bb%a5%e7%8e%a9%e7%9a%84%e5%89%a7%e6%9c%ac">#&lt;/a>
+ 
+&lt;/h2>
+&lt;p>Mod框架内自带我写的一些渣作，如果你想游玩更好的内容，可以将这个Mod框架推荐给你喜欢的二创作者，来创作更多有趣的内容哦&lt;/p>
+&lt;hr></description></item><item><title>给想写剧本的人</title><link>http://manosabamoddoc.fuyumi.xyz/docs/Intruduce/ForDeveloper/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://manosabamoddoc.fuyumi.xyz/docs/Intruduce/ForDeveloper/</guid><description>&lt;h1 id="给想写剧本的人">
+ 给想写剧本的人
+ 
+ &lt;a class="anchor" href="#%e7%bb%99%e6%83%b3%e5%86%99%e5%89%a7%e6%9c%ac%e7%9a%84%e4%ba%ba">#&lt;/a>
+ 
+&lt;/h1>
+&lt;hr>
+&lt;h2 id="关于这个mod框架">
+ 关于这个Mod框架
+ 
+ &lt;a class="anchor" href="#%e5%85%b3%e4%ba%8e%e8%bf%99%e4%b8%aamod%e6%a1%86%e6%9e%b6">#&lt;/a>
+ 
+&lt;/h2>
+&lt;p>《魔法少女的魔女裁判》是一款 Unity+NaniNovel 引擎开发的AVG游戏，而这个Mod框架则是基于BepInex实现对Unity引擎注入代码，将.nani剧本文件加载到NaniNovel引擎。&lt;/p>
+&lt;p>因此本Mod框架加载的.nani脚本完全符合&lt;a href="https://naninovel.com/guide/">NaniNovel的官方标准&lt;/a>，所使用的指令为&lt;a href="https://naninovel.com/api/">官方支持的指令&lt;/a>与游戏开发商自行开发的指令的合集。&lt;/p>
+&lt;p>如果有一定的英语阅读能力，可以通过阅读NaniNovel的官方指引来快速掌握官方提供的基础引擎能力，而游戏开发商自行开发的指令，需要通过游戏内已有脚本反向推测功能。&lt;/p>
+&lt;p>本文档也会继续完善部分指令的说明。&lt;/p>
+&lt;hr>
+&lt;h2 id="想写剧本需要编程基础吗会不会很难">
+ 想写剧本需要编程基础吗？会不会很难？
+ 
+ &lt;a class="anchor" href="#%e6%83%b3%e5%86%99%e5%89%a7%e6%9c%ac%e9%9c%80%e8%a6%81%e7%bc%96%e7%a8%8b%e5%9f%ba%e7%a1%80%e5%90%97%e4%bc%9a%e4%b8%8d%e4%bc%9a%e5%be%88%e9%9a%be">#&lt;/a>
+ 
+&lt;/h2>
+&lt;p>完全不需要编程基础，NaniNovel官方在剧本编写上做了非常友好的用户体验设计，基本不会出现代码逻辑相关的操作，只需要记住一些用于操作对话框，人物表情，背景变化的指令即可&lt;/p></description></item></channel></rss>

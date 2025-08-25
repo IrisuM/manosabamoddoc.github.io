@@ -1,5 +1,48 @@
 <!doctype html><html lang=zh dir=ltr><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content='
-  施工中
+  开始一个简单的对话
+  
+  #
+  
+
+
+  熟悉一些简单的剧本指令
+  
+  #
+  
+
+gosub
+  
+
+  Markdown content
+  
+  #
+  
+
+
+  
+      
+          指令参数
+          说明
+      
+  
+  
+      
+          单元格
+          单元格
+      
+      
+          单元格
+          单元格
+      
+  
+
+  
+
+
+
+
+
+  Suspendisse sed congue orci.
   
   #
   
@@ -41,11 +84,24 @@ Hanna: 没事不要随便叫我出来啦。
 @Gosub System/System_Subroutine.EndAdv
 
 ;跳转到结束
-@goto SherryAppleJuice_TaffyStory000/Tools.EndToTitle
-'><meta name=theme-color media="(prefers-color-scheme: light)" content="#ffffff"><meta name=theme-color media="(prefers-color-scheme: dark)" content="#343a40"><meta name=color-scheme content="light dark"><meta property="og:url" content="http://manosabamoddoc.fuyumi.xyz/docs/QuickStart/BeginAdv/"><meta property="og:site_name" content="雪莉的剧本编辑器"><meta property="og:title" content="开始一个简单的对话"><meta property="og:description" content='施工中 # ;初始化日常活动状态 @Gosub System/System_Subroutine.BeginAdv ;显示背景 @back 5_1 Scale:{g_backgroundDefaultScale} Lazy:false ;最上面的黑色遮罩层VerticalBlindGradually特效消失 @back SubId:"Overlay" Transparent.Custom dissolve:"VerticalBlindGradually" tint:"#000000" time:0.99 Lazy:false ;等待一小会到特效演完 @Wait "0.9" ;显示艾玛，表情是Default，双手是状态1 @char Ema.Default,ArmR1,ArmL1 pos:50,50 Scale:1.25 Lazy:false ;艾玛说话 Ema: 这是一个测试用例，我来客串一下。 Ema: 再说一句就下线了。 ;隐藏艾玛 @hide Ema Lazy:false 这里是一段空白。 ;显示雪莉，表情是Smile1，双手是状态1 @char Sherry.Smile1,ArmR1,ArmL1 pos:30,50 Scale:1.25 Lazy:false ;雪莉说话 Sherry: 这是一个测试用例，我也来客串一下。 Sherry: 接下来请汉娜出场。 ;显示雪莉，表情是Smile1，双手是状态2 @char Hanna.Angry1,ArmR2,ArmL2 pos:70,50 Lazy:false ;雪莉说话 Hanna: 没事不要随便叫我出来啦。 ;隐藏全部角色 @hideChars Lazy:false ;结束化日常活动状态 @Gosub System/System_Subroutine.EndAdv ;跳转到结束 @goto SherryAppleJuice_TaffyStory000/Tools.EndToTitle'><meta property="og:locale" content="zh"><meta property="og:type" content="article"><meta property="article:section" content="docs"><meta property="article:modified_time" content="2025-08-25T20:04:03+08:00"><title>开始一个简单的对话 | 雪莉的剧本编辑器</title><link rel=icon href=/favicon.png><link rel=manifest href=/manifest.json><link rel=canonical href=http://manosabamoddoc.fuyumi.xyz/docs/QuickStart/BeginAdv/><link rel=stylesheet href=/book.min.ce742184041b67827be505801d71b6b40c09608dfb292033ea54dbbc1d71a174.css integrity="sha256-znQhhAQbZ4J75QWAHXG2tAwJYI37KSAz6lTbvB1xoXQ=" crossorigin=anonymous><script defer src=/fuse.min.js></script><script defer src=/zh.search.min.c33617731df72e49c69121b77837d1083b3059765d529fa7c0d4d0e3b96ada1c.js integrity="sha256-wzYXcx33LknGkSG3eDfRCDswWXZdUp+nwNTQ47lq2hw=" crossorigin=anonymous></script></head><body dir=ltr class="book-kind-page book-type-docs"><input type=checkbox class="hidden toggle" id=menu-control>
-<input type=checkbox class="hidden toggle" id=toc-control><main class="container flex"><aside class=book-menu><div class=book-menu-content><nav><h2 class=book-brand><a class="flex align-center" href=/><img src=/logo.png alt=Logo><span>雪莉的剧本编辑器</span></a></h2><div class="book-search hidden"><input type=text id=book-search-input placeholder=搜索 aria-label=搜索 maxlength=64 data-hotkeys=s/><div class="book-search-spinner hidden"></div><ul id=book-search-results></ul></div><script>document.querySelector(".book-search").classList.remove("hidden")</script><ul><li class=book-section-flat><a href=/docs/Install/>安装与卸载</a><ul></ul></li><li class=book-section-flat><input type=checkbox id=section-096e5f72c7ef5d62a972e4a2046cf5fb class=toggle checked>
-<label for=section-096e5f72c7ef5d62a972e4a2046cf5fb class=flex><a role=button class=flex-auto>快速开始一段创作</a></label><ul><li><a href=/docs/QuickStart/CreateMod/>创建新的剧本</a></li><li><a href=/docs/QuickStart/BeginAdv/ class=active>开始一个简单的对话</a></li><li><a href=/docs/QuickStart/BeginTrial/>试试写一个魔女裁判</a></li></ul></li><li class=book-section-flat><a href=/docs/ModConfig/>Mod配置</a><ul></ul></li><li class=book-section-flat><a href=/docs/Advanced/>进阶文档</a><ul></ul></li><li class=book-section-flat><a href=/docs/Others/>其它说明</a><ul></ul></li></ul><ul><li><a href=https://github.com/IrisuM/ManosabaMod/ target=_blank rel=noopener>Github</a></li><li><a href=https://space.bilibili.com/1265680561/ target=_blank rel=noopener>永雏塔菲</a></li></ul></nav><script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script></div></aside><div class=book-page><header class=book-header><div class="flex align-center justify-between"><label for=menu-control><img src=/svg/menu.svg class=book-icon alt=Menu></label><h3>开始一个简单的对话</h3><label for=toc-control><img src=/svg/toc.svg class=book-icon alt="Table of Contents"></label></div><aside class="hidden clearfix"><nav id=TableOfContents><ul><li><a href=#施工中>施工中</a></li></ul></nav></aside></header><article class="markdown book-article"><h1 id=施工中>施工中
-<a class=anchor href=#%e6%96%bd%e5%b7%a5%e4%b8%ad>#</a></h1><pre tabindex=0><code>
+@goto SherryAppleJuice_ExampleMod/Tools.EndToTitle
+
+
+
+  Maecenas scelerisque sem.
+  
+  #
+  
+
+&mldr;'><meta name=theme-color media="(prefers-color-scheme: light)" content="#ffffff"><meta name=theme-color media="(prefers-color-scheme: dark)" content="#343a40"><meta name=color-scheme content="light dark"><meta property="og:url" content="http://manosabamoddoc.fuyumi.xyz/docs/QuickStart/BeginAdv/"><meta property="og:site_name" content="雪莉的剧本编辑器"><meta property="og:title" content="开始一个简单的对话"><meta property="og:description" content='开始一个简单的对话 # 熟悉一些简单的剧本指令 # gosub Markdown content # 指令参数 说明 单元格 单元格 单元格 单元格 Suspendisse sed congue orci. # ;初始化日常活动状态 @Gosub System/System_Subroutine.BeginAdv ;显示背景 @back 5_1 Scale:{g_backgroundDefaultScale} Lazy:false ;最上面的黑色遮罩层VerticalBlindGradually特效消失 @back SubId:"Overlay" Transparent.Custom dissolve:"VerticalBlindGradually" tint:"#000000" time:0.99 Lazy:false ;等待一小会到特效演完 @Wait "0.9" ;显示艾玛，表情是Default，双手是状态1 @char Ema.Default,ArmR1,ArmL1 pos:50,50 Scale:1.25 Lazy:false ;艾玛说话 Ema: 这是一个测试用例，我来客串一下。 Ema: 再说一句就下线了。 ;隐藏艾玛 @hide Ema Lazy:false 这里是一段空白。 ;显示雪莉，表情是Smile1，双手是状态1 @char Sherry.Smile1,ArmR1,ArmL1 pos:30,50 Scale:1.25 Lazy:false ;雪莉说话 Sherry: 这是一个测试用例，我也来客串一下。 Sherry: 接下来请汉娜出场。 ;显示雪莉，表情是Smile1，双手是状态2 @char Hanna.Angry1,ArmR2,ArmL2 pos:70,50 Lazy:false ;雪莉说话 Hanna: 没事不要随便叫我出来啦。 ;隐藏全部角色 @hideChars Lazy:false ;结束化日常活动状态 @Gosub System/System_Subroutine.EndAdv ;跳转到结束 @goto SherryAppleJuice_ExampleMod/Tools.EndToTitle Maecenas scelerisque sem. # …'><meta property="og:locale" content="zh"><meta property="og:type" content="article"><meta property="article:section" content="docs"><meta property="article:modified_time" content="2025-08-25T23:54:23+08:00"><title>开始一个简单的对话 | 雪莉的剧本编辑器</title><link rel=icon href=/favicon.png><link rel=manifest href=/manifest.json><link rel=canonical href=http://manosabamoddoc.fuyumi.xyz/docs/QuickStart/BeginAdv/><link rel=stylesheet href=/book.min.ce742184041b67827be505801d71b6b40c09608dfb292033ea54dbbc1d71a174.css integrity="sha256-znQhhAQbZ4J75QWAHXG2tAwJYI37KSAz6lTbvB1xoXQ=" crossorigin=anonymous><script defer src=/fuse.min.js></script><script defer src=/zh.search.min.a7db3f08049da9787bbd7251b452e2ef32ef32b90e71a99c916c8f034b771aa2.js integrity="sha256-p9s/CASdqXh7vXJRtFLi7zLvMrkOcamckWyPA0t3GqI=" crossorigin=anonymous></script></head><body dir=ltr class="book-kind-page book-type-docs"><input type=checkbox class="hidden toggle" id=menu-control>
+<input type=checkbox class="hidden toggle" id=toc-control><main class="container flex"><aside class=book-menu><div class=book-menu-content><nav><h2 class=book-brand><a class="flex align-center" href=/><img src=/logo.png alt=Logo><span>雪莉的剧本编辑器</span></a></h2><div class="book-search hidden"><input type=text id=book-search-input placeholder=搜索 aria-label=搜索 maxlength=64 data-hotkeys=s/><div class="book-search-spinner hidden"></div><ul id=book-search-results></ul></div><script>document.querySelector(".book-search").classList.remove("hidden")</script><ul><li class=book-section-flat><input type=checkbox id=section-52b5154487ff06b89e9868121921b268 class=toggle>
+<label for=section-52b5154487ff06b89e9868121921b268 class=flex><a role=button class=flex-auto>介绍</a></label><ul><li><a href=/docs/Intruduce/ForUser/>给使用的人</a></li><li><a href=/docs/Intruduce/ForDeveloper/>给想写剧本的人</a></li></ul></li><li class=book-section-flat><a href=/docs/Install/>安装与卸载</a><ul></ul></li><li class=book-section-flat><input type=checkbox id=section-096e5f72c7ef5d62a972e4a2046cf5fb class=toggle checked>
+<label for=section-096e5f72c7ef5d62a972e4a2046cf5fb class=flex><a role=button class=flex-auto>快速开始一段创作</a></label><ul><li><a href=/docs/QuickStart/CreateMod/>创建新的剧本</a></li><li><a href=/docs/QuickStart/BeginAdv/ class=active>开始一个简单的对话</a></li><li><a href=/docs/QuickStart/BeginTrial/>试试写一个魔女裁判</a></li></ul></li><li class=book-section-flat><a href=/docs/ModConfig/>Mod配置</a><ul></ul></li><li class=book-section-flat><a href=/docs/Advanced/>进阶文档</a><ul></ul></li><li class=book-section-flat><input type=checkbox id=section-0179ebec185e705019125ac32129ed53 class=toggle>
+<label for=section-0179ebec185e705019125ac32129ed53 class=flex><a role=button class=flex-auto>其它说明</a></label><ul><li><a href=/docs/Others/AQ/>碎碎念</a></li><li><a href=/docs/Others/UsefulTools/>一些有用的工具</a></li></ul></li></ul><ul><li><a href=https://github.com/IrisuM/ManosabaMod/ target=_blank rel=noopener>Github</a></li><li><a href=https://space.bilibili.com/1265680561/ target=_blank rel=noopener>关注永雏塔菲谢谢喵！</a></li><li><a href=https://space.bilibili.com/3546949672241842/ target=_blank rel=noopener>关注我谢谢喵！</a></li></ul></nav><script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script></div></aside><div class=book-page><header class=book-header><div class="flex align-center justify-between"><label for=menu-control><img src=/svg/menu.svg class=book-icon alt=Menu></label><h3>开始一个简单的对话</h3><label for=toc-control><img src=/svg/toc.svg class=book-icon alt="Table of Contents"></label></div><aside class="hidden clearfix"><nav id=TableOfContents><ul><li><a href=#开始一个简单的对话>开始一个简单的对话</a><ul><li><a href=#熟悉一些简单的剧本指令>熟悉一些简单的剧本指令</a></li><li><a href=#markdown-content>Markdown content</a><ul><li><a href=#suspendisse-sed-congue-orci>Suspendisse sed congue orci.</a></li><li><a href=#maecenas-scelerisque-sem>Maecenas scelerisque sem.</a></li><li><a href=#etiam-risus-purus>Etiam risus purus.</a></li><li><a href=#curabitur-sed-lacinia-velit>Curabitur sed lacinia velit.</a></li></ul></li></ul></li></ul></nav></aside></header><article class="markdown book-article"><h1 id=开始一个简单的对话>开始一个简单的对话
+<a class=anchor href=#%e5%bc%80%e5%a7%8b%e4%b8%80%e4%b8%aa%e7%ae%80%e5%8d%95%e7%9a%84%e5%af%b9%e8%af%9d>#</a></h1><h2 id=熟悉一些简单的剧本指令>熟悉一些简单的剧本指令
+<a class=anchor href=#%e7%86%9f%e6%82%89%e4%b8%80%e4%ba%9b%e7%ae%80%e5%8d%95%e7%9a%84%e5%89%a7%e6%9c%ac%e6%8c%87%e4%bb%a4>#</a></h2><details><summary>gosub</summary><div class=markdown-inner><h2 id=markdown-content>Markdown content
+<a class=anchor href=#markdown-content>#</a></h2><table><thead><tr><th>指令参数</th><th>说明</th></tr></thead><tbody><tr><td>单元格</td><td>单元格</td></tr><tr><td>单元格</td><td>单元格</td></tr></tbody></table></div></details><div class=book-steps><ol><li><h3 id=suspendisse-sed-congue-orci>Suspendisse sed congue orci.
+<a class=anchor href=#suspendisse-sed-congue-orci>#</a></h3><pre tabindex=0><code>
 ;初始化日常活动状态
 @Gosub System/System_Subroutine.BeginAdv
 
@@ -82,8 +138,11 @@ Hanna: 没事不要随便叫我出来啦。
 @Gosub System/System_Subroutine.EndAdv
 
 ;跳转到结束
-@goto SherryAppleJuice_TaffyStory000/Tools.EndToTitle
-</code></pre></article><footer class=book-footer><div class="flex flex-wrap justify-between"></div><div class="flex flex-wrap justify-between"><span><a href=/docs/QuickStart/CreateMod/ class="flex align-center book-icon"><img src=/svg/backward.svg class=book-icon alt=Previous title=创建新的剧本>
+@goto SherryAppleJuice_ExampleMod/Tools.EndToTitle
+</code></pre></li><li><h3 id=maecenas-scelerisque-sem>Maecenas scelerisque sem.
+<a class=anchor href=#maecenas-scelerisque-sem>#</a></h3><p>&mldr;</p></li><li><h3 id=etiam-risus-purus>Etiam risus purus.
+<a class=anchor href=#etiam-risus-purus>#</a></h3><p>&mldr;</p></li><li><h3 id=curabitur-sed-lacinia-velit>Curabitur sed lacinia velit.
+<a class=anchor href=#curabitur-sed-lacinia-velit>#</a></h3><p>&mldr;</p></li></ol></div></article><footer class=book-footer><div class="flex flex-wrap justify-between"></div><div class="flex flex-wrap justify-between"><span><a href=/docs/QuickStart/CreateMod/ class="flex align-center book-icon"><img src=/svg/backward.svg class=book-icon alt=Previous title=创建新的剧本>
 <span>创建新的剧本</span>
 </a></span><span><a href=/docs/QuickStart/BeginTrial/ class="flex align-center book-icon"><span>试试写一个魔女裁判</span>
-<img src=/svg/forward.svg class=book-icon alt=Next title=试试写一个魔女裁判></a></span></div><script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script><!doctype html><html><head><script src=http://manosabamoddoc.fuyumi.xyz/background/sakura.js></script></head><body></body></html></footer><div class=book-comments></div><label for=menu-control class="hidden book-menu-overlay"></label></div><aside class=book-toc><div class=book-toc-content><nav id=TableOfContents><ul><li><a href=#施工中>施工中</a></li></ul></nav></div></aside></main></body></html>
+<img src=/svg/forward.svg class=book-icon alt=Next title=试试写一个魔女裁判></a></span></div><script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script><!doctype html><html><head><script src=http://manosabamoddoc.fuyumi.xyz/background/sakura.js></script></head><body></body></html></footer><div class=book-comments></div><label for=menu-control class="hidden book-menu-overlay"></label></div><aside class=book-toc><div class=book-toc-content><nav id=TableOfContents><ul><li><a href=#开始一个简单的对话>开始一个简单的对话</a><ul><li><a href=#熟悉一些简单的剧本指令>熟悉一些简单的剧本指令</a></li><li><a href=#markdown-content>Markdown content</a><ul><li><a href=#suspendisse-sed-congue-orci>Suspendisse sed congue orci.</a></li><li><a href=#maecenas-scelerisque-sem>Maecenas scelerisque sem.</a></li><li><a href=#etiam-risus-purus>Etiam risus purus.</a></li><li><a href=#curabitur-sed-lacinia-velit>Curabitur sed lacinia velit.</a></li></ul></li></ul></li></ul></nav></div></aside></main></body></html>
