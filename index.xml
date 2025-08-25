@@ -141,7 +141,16 @@
  &lt;a class="anchor" href="#%e6%83%b3%e5%86%99%e5%89%a7%e6%9c%ac%e9%9c%80%e8%a6%81%e7%bc%96%e7%a8%8b%e5%9f%ba%e7%a1%80%e5%90%97%e4%bc%9a%e4%b8%8d%e4%bc%9a%e5%be%88%e9%9a%be">#&lt;/a>
  
 &lt;/h2>
-&lt;p>完全不需要编程基础，NaniNovel官方在剧本编写上做了非常友好的用户体验设计，基本不会出现代码逻辑相关的操作，只需要记住一些用于操作对话框，人物表情，背景变化的指令即可&lt;/p></description></item><item><title>开始一个简单的对话</title><link>http://manosabamoddoc.fuyumi.xyz/docs/QuickStart/BeginAdv/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://manosabamoddoc.fuyumi.xyz/docs/QuickStart/BeginAdv/</guid><description>&lt;h1 id="开始一个简单的对话">
+&lt;p>完全不需要编程基础，NaniNovel官方在剧本编写上做了非常友好的用户体验设计，基本不会出现代码逻辑相关的操作，只需要记住一些用于操作对话框，人物表情，背景变化的指令即可&lt;/p>
+&lt;hr>
+&lt;h2 id="为什么不能直接提供解包资源和游戏自带剧本">
+ 为什么不能直接提供解包资源和游戏自带剧本？
+ 
+ &lt;a class="anchor" href="#%e4%b8%ba%e4%bb%80%e4%b9%88%e4%b8%8d%e8%83%bd%e7%9b%b4%e6%8e%a5%e6%8f%90%e4%be%9b%e8%a7%a3%e5%8c%85%e8%b5%84%e6%ba%90%e5%92%8c%e6%b8%b8%e6%88%8f%e8%87%aa%e5%b8%a6%e5%89%a7%e6%9c%ac">#&lt;/a>
+ 
+&lt;/h2>
+&lt;p>根据&lt;a href="https://www.bilibili.com/opus/1090128571689599027">《魔法少女的魔女审判》直播・二次创作指南&lt;/a>，不得超出二创范围使用拆包资源或者文字剧情，因此不提供任何现成的资源文件&lt;/p>
+&lt;p>如果有二创需要，欢迎加入&lt;a href="https://qm.qq.com/q/V5vZB2xvSY">我们的群聊&lt;/a>讨论，出于创作目的交流学习用的资源文件~&lt;/p></description></item><item><title>开始一个简单的对话</title><link>http://manosabamoddoc.fuyumi.xyz/docs/QuickStart/BeginAdv/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://manosabamoddoc.fuyumi.xyz/docs/QuickStart/BeginAdv/</guid><description>&lt;h1 id="开始一个简单的对话">
  开始一个简单的对话
  
  &lt;a class="anchor" href="#%e5%bc%80%e5%a7%8b%e4%b8%80%e4%b8%aa%e7%ae%80%e5%8d%95%e7%9a%84%e5%af%b9%e8%af%9d">#&lt;/a>
