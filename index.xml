@@ -4,6 +4,7 @@
  &lt;a class="anchor" href="#%e5%88%9b%e5%bb%ba%e6%96%b0%e7%9a%84%e5%89%a7%e6%9c%ac">#&lt;/a>
  
 &lt;/h1>
+&lt;hr>
 &lt;h2 id="从模板创建">
  从模板创建
  
@@ -96,19 +97,21 @@
 &lt;p>&lt;img src="http://manosabamoddoc.fuyumi.xyz/images/NewSimpleModView.jpg" alt="修改后效果展示" />&lt;/p>
 &lt;/li>
 &lt;/ol>
-&lt;/div></description></item><item><title>给使用的人</title><link>http://manosabamoddoc.fuyumi.xyz/docs/Intruduce/ForUser/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://manosabamoddoc.fuyumi.xyz/docs/Intruduce/ForUser/</guid><description>&lt;h1 id="给使用的人">
+&lt;/div>
+&lt;hr></description></item><item><title>给使用的人</title><link>http://manosabamoddoc.fuyumi.xyz/docs/Intruduce/ForUser/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://manosabamoddoc.fuyumi.xyz/docs/Intruduce/ForUser/</guid><description>&lt;h1 id="给使用的人">
  给使用的人
  
  &lt;a class="anchor" href="#%e7%bb%99%e4%bd%bf%e7%94%a8%e7%9a%84%e4%ba%ba">#&lt;/a>
  
 &lt;/h1>
+&lt;hr>
 &lt;h2 id="我该从哪里获取到mod框架">
  我该从哪里获取到Mod框架？
  
  &lt;a class="anchor" href="#%e6%88%91%e8%af%a5%e4%bb%8e%e5%93%aa%e9%87%8c%e8%8e%b7%e5%8f%96%e5%88%b0mod%e6%a1%86%e6%9e%b6">#&lt;/a>
  
 &lt;/h2>
-&lt;p>可以在&lt;a href="http://manosabamoddoc.fuyumi.xyz/docs/Install">安装说明&lt;/a>里找到下载地址，如果访问Github存在困难的话，也可以加入我们的群聊&lt;a href="https://qm.qq.com/q/V5vZB2xvSY">我们的群聊&lt;/a>从群文件下载&lt;/p>
+&lt;p>可以在&lt;a href="http://manosabamoddoc.fuyumi.xyz/docs/Install">安装说明&lt;/a>里找到下载地址，如果访问Github存在困难的话，也可以加入&lt;a href="https://qm.qq.com/q/V5vZB2xvSY">我们的群聊&lt;/a>从群文件下载&lt;/p>
 &lt;hr>
 &lt;h2 id="我该从哪里获取到可以玩的剧本">
  我该从哪里获取到可以玩的剧本？
@@ -150,18 +153,21 @@
  
 &lt;/h2>
 &lt;p>根据&lt;a href="https://www.bilibili.com/opus/1090128571689599027">《魔法少女的魔女审判》直播・二次创作指南&lt;/a>，不得超出二创范围使用拆包资源或者文字剧情，因此不提供任何现成的资源文件&lt;/p>
-&lt;p>如果有二创需要，欢迎加入&lt;a href="https://qm.qq.com/q/V5vZB2xvSY">我们的群聊&lt;/a>讨论，出于创作目的交流学习用的资源文件~&lt;/p></description></item><item><title>开始一个简单的对话</title><link>http://manosabamoddoc.fuyumi.xyz/docs/QuickStart/BeginAdv/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://manosabamoddoc.fuyumi.xyz/docs/QuickStart/BeginAdv/</guid><description>&lt;h1 id="开始一个简单的对话">
+&lt;p>如果有二创需要，欢迎加入&lt;a href="https://qm.qq.com/q/V5vZB2xvSY">我们的群聊&lt;/a>讨论，出于创作目的交流学习用的资源文件~&lt;/p>
+&lt;hr></description></item><item><title>开始一个简单的对话</title><link>http://manosabamoddoc.fuyumi.xyz/docs/QuickStart/BeginAdv/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://manosabamoddoc.fuyumi.xyz/docs/QuickStart/BeginAdv/</guid><description>&lt;h1 id="开始一个简单的对话">
  开始一个简单的对话
  
  &lt;a class="anchor" href="#%e5%bc%80%e5%a7%8b%e4%b8%80%e4%b8%aa%e7%ae%80%e5%8d%95%e7%9a%84%e5%af%b9%e8%af%9d">#&lt;/a>
  
 &lt;/h1>
+&lt;hr>
 &lt;h2 id="让我们来写一个简短的对话剧本">
  让我们来写一个简短的对话剧本
  
  &lt;a class="anchor" href="#%e8%ae%a9%e6%88%91%e4%bb%ac%e6%9d%a5%e5%86%99%e4%b8%80%e4%b8%aa%e7%ae%80%e7%9f%ad%e7%9a%84%e5%af%b9%e8%af%9d%e5%89%a7%e6%9c%ac">#&lt;/a>
  
 &lt;/h2>
+&lt;hr>
 &lt;div class="book-steps ">
 &lt;ol>
 &lt;li>
@@ -231,6 +237,7 @@
  &lt;a class="anchor" href="#%e6%8c%87%e4%bb%a4%e4%bb%8b%e7%bb%8d">#&lt;/a>
  
 &lt;/h1>
+&lt;hr>
 &lt;details >&lt;summary>back&lt;/summary>
  &lt;div class="markdown-inner">
 &lt;h2 id="back">
@@ -347,6 +354,7 @@
  &lt;a class="anchor" href="#%e4%b8%80%e4%ba%9b%e6%9c%89%e7%94%a8%e7%9a%84%e5%b7%a5%e5%85%b7">#&lt;/a>
  
 &lt;/h1>
+&lt;hr>
 &lt;h2 id="naninovel官方插件">
  &lt;a href="https://naninovel.com/guide/ide-extension/">NaniNovel官方插件&lt;/a>
  
