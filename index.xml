@@ -194,14 +194,11 @@
 &lt;/h3>
 &lt;p>通过&lt;a href="http://manosabamoddoc.fuyumi.xyz/docs/Advanced/Command/#back">back&lt;/a>指令可以修改游戏的背景&lt;/p>
 &lt;p>可以通过解包工具&lt;a href="http://manosabamoddoc.fuyumi.xyz/docs/Others/UsefulTools/#Assetripper">Assetripper&lt;/a>解包背景图资源查看对应的编号，也可以直接查看游戏自带的剧本寻找自己需要的背景的编号&lt;/p>
-&lt;p>先指定 5_1 为背景图，大小为默认大小，再指定黑色的遮罩层图层通过VerticalBlindGradually特效消失，实现栅格效果，最后使用&lt;a href="http://manosabamoddoc.fuyumi.xyz/docs/Advanced/Command/#wait">wait&lt;/a>指令等待效果完成&lt;/p>
-&lt;p>当然，如果觉得特效比较麻烦，只通过第一条指令指定背景就行&lt;/p>
+&lt;p>先指定 5_1 为背景图，再指定黑色的遮罩层图层消失&lt;/p>
 &lt;pre tabindex="0">&lt;code>;显示背景
-@back 5_1 Scale:{g_backgroundDefaultScale} Lazy:false
-;最上面的Overlay遮罩层VerticalBlindGradually特效消失，同时还指定了整体颜色和时间
-@back SubId:&amp;#34;Overlay&amp;#34; Transparent.Custom dissolve:&amp;#34;VerticalBlindGradually&amp;#34; tint:&amp;#34;#000000&amp;#34; time:0.99 Lazy:false
-;等待一小会到特效演完
-@Wait &amp;#34;0.9&amp;#34;
+@back 5_1
+;将最上面原本黑色的Overlay遮罩层变为透明，同时还指定了动画时间
+@back SubId:&amp;#34;Overlay&amp;#34; Transparent tint:&amp;#34;#000000&amp;#34; time:0.99 wait:true
 &lt;/code>&lt;/pre>&lt;/li>
 &lt;li>
 &lt;h3 id="显示人物">
@@ -212,12 +209,12 @@
 &lt;/h3>
 &lt;p>通过&lt;a href="http://manosabamoddoc.fuyumi.xyz/docs/Advanced/Command/#char">char&lt;/a>指令显示人物，显示的方式一般是{人物ID}.{表情,左手,右手}&lt;/p>
 &lt;p>人物ID和表情相关可以通过解包工具&lt;a href="http://manosabamoddoc.fuyumi.xyz/docs/Others/UsefulTools/#Assetripper">Assetripper&lt;/a>解包人物立绘查看，也可以直接查看游戏自带的剧本寻找自己需要的编号&lt;/p>
-&lt;pre tabindex="0">&lt;code>;显示艾玛，表情是Default，双手是状态1
-@char Ema.Default,ArmR1,ArmL1 pos:50,50 Scale:1.25 Lazy:false
-&lt;/code>&lt;/pre>&lt;pre tabindex="0">&lt;code>;显示雪莉，表情是Smile1，双手是状态1
-@char Sherry.Smile1,ArmR1,ArmL1 pos:30,50 Scale:1.25 Lazy:false
+&lt;pre tabindex="0">&lt;code>;显示艾玛
+@char Ema pos:50,50
+&lt;/code>&lt;/pre>&lt;pre tabindex="0">&lt;code>;显示雪莉，表情是Smile1
+@char Sherry.Smile1 pos:30,50
 &lt;/code>&lt;/pre>&lt;pre tabindex="0">&lt;code>;显示汉娜，表情是Angry1，双手是状态2
-@char Hanna.Angry1,ArmR2,ArmL2 pos:70,50 Lazy:false
+@char Hanna.Angry1,ArmR2,ArmL2 pos:70,50
 &lt;/code>&lt;/pre>&lt;/li>
 &lt;li>
 &lt;h3 id="隐藏人物">
@@ -226,7 +223,33 @@
  &lt;a class="anchor" href="#%e9%9a%90%e8%97%8f%e4%ba%ba%e7%89%a9">#&lt;/a>
  
 &lt;/h3>
-&lt;p>隐藏角色立绘可以通过&lt;a href="http://manosabamoddoc.fuyumi.xyz/docs/Advanced/Command/#hide">hide&lt;/a>指令隐藏指定立绘，也可以通过&lt;a href="http://manosabamoddoc.fuyumi.xyz/docs/Advanced/Command/#hidechars">hidechars&lt;/a>指令隐藏所有角色立绘&lt;/p></description></item><item><title>碎碎念</title><link>http://manosabamoddoc.fuyumi.xyz/docs/Others/AQ/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://manosabamoddoc.fuyumi.xyz/docs/Others/AQ/</guid><description>&lt;h1 id="施工中">
+&lt;p>隐藏角色立绘可以通过&lt;a href="http://manosabamoddoc.fuyumi.xyz/docs/Advanced/Command/#hide">hide&lt;/a>指令隐藏指定立绘，也可以通过&lt;a href="http://manosabamoddoc.fuyumi.xyz/docs/Advanced/Command/#hidechars">hidechars&lt;/a>指令隐藏所有角色立绘&lt;/p>
+&lt;pre tabindex="0">&lt;code>;隐藏艾玛
+@hide Ema
+&lt;/code>&lt;/pre>&lt;pre tabindex="0">&lt;code>;隐藏全部角色
+@hideChars
+&lt;/code>&lt;/pre>&lt;/li>
+&lt;li>
+&lt;h3 id="打印文字">
+ 打印文字
+ 
+ &lt;a class="anchor" href="#%e6%89%93%e5%8d%b0%e6%96%87%e5%ad%97">#&lt;/a>
+ 
+&lt;/h3>
+&lt;p>打印文字有多种方法，可以使用&lt;a href="http://manosabamoddoc.fuyumi.xyz/docs/Advanced/Command/#print">print&lt;/a>指令打印文字，也可以直接通过&lt;strong>人物ID: 对话&lt;/strong>或&lt;strong>纯文本&lt;/strong>的格式实现打印文字&lt;/p>
+&lt;pre tabindex="0">&lt;code>@print &amp;#34;完美犯罪？这词真让人热血沸腾呢！&amp;#34; author:&amp;#34;Sherry&amp;#34; speed:1 waitInput:true Wait:true
+&lt;/code>&lt;/pre>&lt;pre tabindex="0">&lt;code>Ema: 这是一个测试用例，我来客串一下。
+Ema: 再说一句就下线了。
+&lt;/code>&lt;/pre>&lt;pre tabindex="0">&lt;code>这里是一段空白。
+&lt;/code>&lt;/pre>&lt;/li>
+&lt;li>
+&lt;h3 id="结束剧本">
+ 结束剧本
+ 
+ &lt;a class="anchor" href="#%e7%bb%93%e6%9d%9f%e5%89%a7%e6%9c%ac">#&lt;/a>
+ 
+&lt;/h3>
+&lt;p>可以通过&lt;a href="http://manosabamoddoc.fuyumi.xyz/docs/Advanced/Command/#goto">goto&lt;/a>指令跳转到Mod安装包内的Tool.nani里的EndToTitle标签实现返回到标题页。&lt;/p></description></item><item><title>碎碎念</title><link>http://manosabamoddoc.fuyumi.xyz/docs/Others/AQ/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://manosabamoddoc.fuyumi.xyz/docs/Others/AQ/</guid><description>&lt;h1 id="施工中">
  施工中
  
  &lt;a class="anchor" href="#%e6%96%bd%e5%b7%a5%e4%b8%ad">#&lt;/a>
