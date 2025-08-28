@@ -15,7 +15,22 @@
 &lt;/h2>
 &lt;p>&lt;a href="https://naninovel.com/api/#back">&lt;span class="book-badge info">&lt;span class="book-badge-title">官方指令&lt;/span>&lt;span class="book-badge-value">gosub&lt;/span>&lt;/span>&lt;/a>&lt;/p>
 &lt;p>设置背景元素&lt;/p>
- &lt;/div>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>参数&lt;/th>
+ &lt;th>说明&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>subid&lt;/td>
+ &lt;td>指定层级，靠前的层级会遮挡靠后的，比如Middle会遮挡不设置时的默认层级&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;pre tabindex="0">&lt;code>@back SubId:&amp;#34;Middle&amp;#34; 1_1 pos:10,30 Scale:1.8
+&lt;/code>&lt;/pre> &lt;/div>
 &lt;/details>
 &lt;details >&lt;summary>char&lt;/summary>
  &lt;div class="markdown-inner">
@@ -27,7 +42,22 @@
 &lt;/h2>
 &lt;p>&lt;a href="https://naninovel.com/api/#char">&lt;span class="book-badge info">&lt;span class="book-badge-title">官方指令&lt;/span>&lt;span class="book-badge-value">wait&lt;/span>&lt;/span>&lt;/a>&lt;/p>
 &lt;p>修改人物立绘&lt;/p>
- &lt;/div>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>参数&lt;/th>
+ &lt;th>说明&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>subid&lt;/td>
+ &lt;td>指定层级，靠前的层级会遮挡靠后的，比如Middle会遮挡不设置时的默认层级&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;pre tabindex="0">&lt;code>@char SubId:&amp;#34;Middle&amp;#34; Warden.1 Scale:1.4
+&lt;/code>&lt;/pre> &lt;/div>
 &lt;/details>
 &lt;details >&lt;summary>gosub&lt;/summary>
  &lt;div class="markdown-inner">
@@ -85,29 +115,4 @@
  &lt;a class="anchor" href="#print">#&lt;/a>
  
 &lt;/h2>
-&lt;p>&lt;a href="https://naninovel.com/api/#print">&lt;span class="book-badge info">&lt;span class="book-badge-title">官方指令&lt;/span>&lt;span class="book-badge-value">print&lt;/span>&lt;/span>&lt;/a>&lt;/p>
-&lt;p>打印文本&lt;/p>
- &lt;/div>
-&lt;/details>
-&lt;details >&lt;summary>return&lt;/summary>
- &lt;div class="markdown-inner">
-&lt;h2 id="return">
- return
- 
- &lt;a class="anchor" href="#return">#&lt;/a>
- 
-&lt;/h2>
-&lt;p>&lt;a href="https://naninovel.com/api/#return">&lt;span class="book-badge info">&lt;span class="book-badge-title">官方指令&lt;/span>&lt;span class="book-badge-value">return&lt;/span>&lt;/span>&lt;/a>&lt;/p>
-&lt;p>返回到&lt;a href="#gosub">&lt;strong>gosub&lt;/strong>&lt;/a>指令的调用处&lt;/p>
- &lt;/div>
-&lt;/details>
-&lt;details >&lt;summary>returntotitle&lt;/summary>
- &lt;div class="markdown-inner">
-&lt;h2 id="returntotitle">
- returntotitle
- 
- &lt;a class="anchor" href="#returntotitle">#&lt;/a>
- 
-&lt;/h2>
-&lt;p>&lt;span class="book-badge warning">&lt;span class="book-badge-title">游戏指令&lt;/span>&lt;span class="book-badge-value">returntotitle&lt;/span>&lt;/span>&lt;/p>
-&lt;p>返回标题页&lt;/p></description></item></channel></rss>
+&lt;p>&lt;a href="https://naninovel.com/api/#print">&lt;span class="book-badge info">&lt;span class="book-badge-title">官方指令&lt;/span>&lt;span class="book-badge-value">print&lt;/span>&lt;/span>&lt;/a>&lt;/p></description></item></channel></rss>

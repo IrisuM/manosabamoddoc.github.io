@@ -154,6 +154,15 @@
 &lt;/h2>
 &lt;p>根据&lt;a href="https://www.bilibili.com/opus/1090128571689599027">《魔法少女的魔女审判》直播・二次创作指南&lt;/a>，不得超出二创范围使用拆包资源或者文字剧情，因此不提供任何现成的资源文件&lt;/p>
 &lt;p>如果有二创需要，欢迎加入&lt;a href="https://qm.qq.com/q/V5vZB2xvSY">我们的群聊&lt;/a>讨论，出于创作目的交流学习用的资源文件~&lt;/p>
+&lt;hr>
+&lt;h2 id="我想发布我创作的剧本有什么注意事项吗">
+ 我想发布我创作的剧本，有什么注意事项吗？
+ 
+ &lt;a class="anchor" href="#%e6%88%91%e6%83%b3%e5%8f%91%e5%b8%83%e6%88%91%e5%88%9b%e4%bd%9c%e7%9a%84%e5%89%a7%e6%9c%ac%e6%9c%89%e4%bb%80%e4%b9%88%e6%b3%a8%e6%84%8f%e4%ba%8b%e9%a1%b9%e5%90%97">#&lt;/a>
+ 
+&lt;/h2>
+&lt;p>本Mod无额外要求，遵守官方&lt;a href="https://www.bilibili.com/opus/1090128571689599027">《魔法少女的魔女审判》直播・二次创作指南&lt;/a>即可&lt;/p>
+&lt;p>如果愿意的话，在简介之类的地方提到我就很感谢了&lt;/p>
 &lt;hr></description></item><item><title>开始一个简单的对话</title><link>http://manosabamoddoc.fuyumi.xyz/docs/QuickStart/BeginAdv/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://manosabamoddoc.fuyumi.xyz/docs/QuickStart/BeginAdv/</guid><description>&lt;h1 id="开始一个简单的对话">
  开始一个简单的对话
  
@@ -271,7 +280,22 @@ Ema: 再说一句就下线了。
 &lt;/h2>
 &lt;p>&lt;a href="https://naninovel.com/api/#back">&lt;span class="book-badge info">&lt;span class="book-badge-title">官方指令&lt;/span>&lt;span class="book-badge-value">gosub&lt;/span>&lt;/span>&lt;/a>&lt;/p>
 &lt;p>设置背景元素&lt;/p>
- &lt;/div>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>参数&lt;/th>
+ &lt;th>说明&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>subid&lt;/td>
+ &lt;td>指定层级，靠前的层级会遮挡靠后的，比如Middle会遮挡不设置时的默认层级&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;pre tabindex="0">&lt;code>@back SubId:&amp;#34;Middle&amp;#34; 1_1 pos:10,30 Scale:1.8
+&lt;/code>&lt;/pre> &lt;/div>
 &lt;/details>
 &lt;details >&lt;summary>char&lt;/summary>
  &lt;div class="markdown-inner">
@@ -283,7 +307,22 @@ Ema: 再说一句就下线了。
 &lt;/h2>
 &lt;p>&lt;a href="https://naninovel.com/api/#char">&lt;span class="book-badge info">&lt;span class="book-badge-title">官方指令&lt;/span>&lt;span class="book-badge-value">wait&lt;/span>&lt;/span>&lt;/a>&lt;/p>
 &lt;p>修改人物立绘&lt;/p>
- &lt;/div>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>参数&lt;/th>
+ &lt;th>说明&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>subid&lt;/td>
+ &lt;td>指定层级，靠前的层级会遮挡靠后的，比如Middle会遮挡不设置时的默认层级&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;pre tabindex="0">&lt;code>@char SubId:&amp;#34;Middle&amp;#34; Warden.1 Scale:1.4
+&lt;/code>&lt;/pre> &lt;/div>
 &lt;/details>
 &lt;details >&lt;summary>gosub&lt;/summary>
  &lt;div class="markdown-inner">
@@ -341,32 +380,7 @@ Ema: 再说一句就下线了。
  &lt;a class="anchor" href="#print">#&lt;/a>
  
 &lt;/h2>
-&lt;p>&lt;a href="https://naninovel.com/api/#print">&lt;span class="book-badge info">&lt;span class="book-badge-title">官方指令&lt;/span>&lt;span class="book-badge-value">print&lt;/span>&lt;/span>&lt;/a>&lt;/p>
-&lt;p>打印文本&lt;/p>
- &lt;/div>
-&lt;/details>
-&lt;details >&lt;summary>return&lt;/summary>
- &lt;div class="markdown-inner">
-&lt;h2 id="return">
- return
- 
- &lt;a class="anchor" href="#return">#&lt;/a>
- 
-&lt;/h2>
-&lt;p>&lt;a href="https://naninovel.com/api/#return">&lt;span class="book-badge info">&lt;span class="book-badge-title">官方指令&lt;/span>&lt;span class="book-badge-value">return&lt;/span>&lt;/span>&lt;/a>&lt;/p>
-&lt;p>返回到&lt;a href="#gosub">&lt;strong>gosub&lt;/strong>&lt;/a>指令的调用处&lt;/p>
- &lt;/div>
-&lt;/details>
-&lt;details >&lt;summary>returntotitle&lt;/summary>
- &lt;div class="markdown-inner">
-&lt;h2 id="returntotitle">
- returntotitle
- 
- &lt;a class="anchor" href="#returntotitle">#&lt;/a>
- 
-&lt;/h2>
-&lt;p>&lt;span class="book-badge warning">&lt;span class="book-badge-title">游戏指令&lt;/span>&lt;span class="book-badge-value">returntotitle&lt;/span>&lt;/span>&lt;/p>
-&lt;p>返回标题页&lt;/p></description></item><item><title>试试写一个魔女裁判</title><link>http://manosabamoddoc.fuyumi.xyz/docs/QuickStart/BeginTrial/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://manosabamoddoc.fuyumi.xyz/docs/QuickStart/BeginTrial/</guid><description>&lt;h1 id="施工中">
+&lt;p>&lt;a href="https://naninovel.com/api/#print">&lt;span class="book-badge info">&lt;span class="book-badge-title">官方指令&lt;/span>&lt;span class="book-badge-value">print&lt;/span>&lt;/span>&lt;/a>&lt;/p></description></item><item><title>试试写一个魔女裁判</title><link>http://manosabamoddoc.fuyumi.xyz/docs/QuickStart/BeginTrial/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://manosabamoddoc.fuyumi.xyz/docs/QuickStart/BeginTrial/</guid><description>&lt;h1 id="施工中">
  施工中
  
  &lt;a class="anchor" href="#%e6%96%bd%e5%b7%a5%e4%b8%ad">#&lt;/a>
@@ -395,4 +409,30 @@ Ema: 再说一句就下线了。
 &lt;/h2>
 &lt;p>Unity资源解包工具，可以用于查看游戏资源
 &lt;img src="http://manosabamoddoc.fuyumi.xyz/images/AssetRipper.png" alt="Assetripper" />&lt;/p>
-&lt;hr></description></item></channel></rss>
+&lt;hr></description></item><item><title>小贴士</title><link>http://manosabamoddoc.fuyumi.xyz/docs/QuickStart/Tips/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://manosabamoddoc.fuyumi.xyz/docs/QuickStart/Tips/</guid><description>&lt;h1 id="小贴士">
+ 小贴士
+ 
+ &lt;a class="anchor" href="#%e5%b0%8f%e8%b4%b4%e5%a3%ab">#&lt;/a>
+ 
+&lt;/h1>
+&lt;hr>
+&lt;p>这里记录一些大家遇到的问题和编写技巧&lt;/p>
+
+&lt;blockquote class='book-hint tip'>
+ &lt;h2 id="希望实时看到指令对应的背景或人物怎么办">
+ &lt;strong>希望实时看到指令对应的背景或人物怎么办？&lt;/strong>
+ 
+ &lt;a class="anchor" href="#%e5%b8%8c%e6%9c%9b%e5%ae%9e%e6%97%b6%e7%9c%8b%e5%88%b0%e6%8c%87%e4%bb%a4%e5%af%b9%e5%ba%94%e7%9a%84%e8%83%8c%e6%99%af%e6%88%96%e4%ba%ba%e7%89%a9%e6%80%8e%e4%b9%88%e5%8a%9e">#&lt;/a>
+ 
+&lt;/h2>
+&lt;p>打开Mod的调试模式，按下ctrl+tk可以开启控制台，在控制台中输入剧本指令执行即可&lt;/p>
+&lt;/blockquote>
+&lt;blockquote class='book-hint warning'>
+ &lt;h2 id="有的时候我设置了背景后人物就不显示了">
+ &lt;strong>有的时候我设置了背景后人物就不显示了&lt;/strong>
+ 
+ &lt;a class="anchor" href="#%e6%9c%89%e7%9a%84%e6%97%b6%e5%80%99%e6%88%91%e8%ae%be%e7%bd%ae%e4%ba%86%e8%83%8c%e6%99%af%e5%90%8e%e4%ba%ba%e7%89%a9%e5%b0%b1%e4%b8%8d%e6%98%be%e7%a4%ba%e4%ba%86">#&lt;/a>
+ 
+&lt;/h2>
+&lt;p>可以关注一下@back和@char指令的SubId属性，如果背景在人物前，就会出现遮挡人物的情况，尽量保证在同一个层级演出，不同层级用于场景过渡~&lt;/p>
+&lt;/blockquote></description></item></channel></rss>
