@@ -13,7 +13,7 @@
  &lt;a class="anchor" href="#back">#&lt;/a>
  
 &lt;/h2>
-&lt;p>&lt;a href="https://naninovel.com/api/#back">&lt;span class="book-badge info">&lt;span class="book-badge-title">官方指令&lt;/span>&lt;span class="book-badge-value">gosub&lt;/span>&lt;/span>&lt;/a>&lt;/p>
+&lt;p>&lt;a href="https://naninovel.com/api/#back">&lt;span class="book-badge info">&lt;span class="book-badge-title">官方指令&lt;/span>&lt;span class="book-badge-value">back&lt;/span>&lt;/span>&lt;/a>&lt;/p>
 &lt;p>设置背景元素&lt;/p>
 &lt;table>
  &lt;thead>
@@ -32,6 +32,19 @@
 &lt;pre tabindex="0">&lt;code>@back SubId:&amp;#34;Middle&amp;#34; 1_1 pos:10,30 Scale:1.8
 &lt;/code>&lt;/pre> &lt;/div>
 &lt;/details>
+&lt;details >&lt;summary>bgm&lt;/summary>
+ &lt;div class="markdown-inner">
+&lt;h2 id="bgm">
+ bgm
+ 
+ &lt;a class="anchor" href="#bgm">#&lt;/a>
+ 
+&lt;/h2>
+&lt;p>&lt;a href="https://naninovel.com/api/#bgm">&lt;span class="book-badge info">&lt;span class="book-badge-title">官方指令&lt;/span>&lt;span class="book-badge-value">bgm&lt;/span>&lt;/span>&lt;/a>&lt;/p>
+&lt;p>设置背景音乐&lt;/p>
+&lt;pre tabindex="0">&lt;code>@bgm &amp;#34;Ambi_11_1&amp;#34;
+&lt;/code>&lt;/pre> &lt;/div>
+&lt;/details>
 &lt;details >&lt;summary>char&lt;/summary>
  &lt;div class="markdown-inner">
 &lt;h2 id="char">
@@ -40,7 +53,7 @@
  &lt;a class="anchor" href="#char">#&lt;/a>
  
 &lt;/h2>
-&lt;p>&lt;a href="https://naninovel.com/api/#char">&lt;span class="book-badge info">&lt;span class="book-badge-title">官方指令&lt;/span>&lt;span class="book-badge-value">wait&lt;/span>&lt;/span>&lt;/a>&lt;/p>
+&lt;p>&lt;a href="https://naninovel.com/api/#char">&lt;span class="book-badge info">&lt;span class="book-badge-title">官方指令&lt;/span>&lt;span class="book-badge-value">char&lt;/span>&lt;/span>&lt;/a>&lt;/p>
 &lt;p>修改人物立绘&lt;/p>
 &lt;table>
  &lt;thead>
@@ -103,19 +116,7 @@
  &lt;a class="anchor" href="#hidechars">#&lt;/a>
  
 &lt;/h2>
-&lt;p>&lt;a href="https://naninovel.com/api/#hidechars">&lt;span class="book-badge info">&lt;span class="book-badge-title">官方指令&lt;/span>&lt;span class="book-badge-value">hidechars&lt;/span>&lt;/span>&lt;/a>&lt;/p>
-&lt;p>隐藏所有可见的角色&lt;/p>
- &lt;/div>
-&lt;/details>
-&lt;details >&lt;summary>print&lt;/summary>
- &lt;div class="markdown-inner">
-&lt;h2 id="print">
- print
- 
- &lt;a class="anchor" href="#print">#&lt;/a>
- 
-&lt;/h2>
-&lt;p>&lt;a href="https://naninovel.com/api/#print">&lt;span class="book-badge info">&lt;span class="book-badge-title">官方指令&lt;/span>&lt;span class="book-badge-value">print&lt;/span>&lt;/span>&lt;/a>&lt;/p></description></item><item><title>加载外部背景资源</title><link>http://manosabamoddoc.fuyumi.xyz/docs/Advanced/LoadBackgrounds/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://manosabamoddoc.fuyumi.xyz/docs/Advanced/LoadBackgrounds/</guid><description>&lt;h1 id="加载外部背景资源">
+&lt;p>&lt;a href="https://naninovel.com/api/#hidechars">&lt;span class="book-badge info">&lt;span class="book-badge-title">官方指令&lt;/span>&lt;span class="book-badge-value">hidechars&lt;/span>&lt;/span>&lt;/a>&lt;/p></description></item><item><title>加载外部背景资源</title><link>http://manosabamoddoc.fuyumi.xyz/docs/Advanced/LoadBackgrounds/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://manosabamoddoc.fuyumi.xyz/docs/Advanced/LoadBackgrounds/</guid><description>&lt;h1 id="加载外部背景资源">
  加载外部背景资源
  
  &lt;a class="anchor" href="#%e5%8a%a0%e8%bd%bd%e5%a4%96%e9%83%a8%e8%83%8c%e6%99%af%e8%b5%84%e6%ba%90">#&lt;/a>
@@ -186,6 +187,75 @@
 &lt;/h3>
 &lt;p>获取到游戏原图目录后，将二创图片的路径和名称改为和游戏图片一致，就可以覆盖游戏原图了，Mod加载剧本和资源的优先级都高于游戏原本资源&lt;/p>
 &lt;p>&lt;img src="http://manosabamoddoc.fuyumi.xyz/images/ReplaceBackgrounds.png" alt="背景效果" />&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;/div></description></item><item><title>加载外部音频资源</title><link>http://manosabamoddoc.fuyumi.xyz/docs/Advanced/LoadVoice/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://manosabamoddoc.fuyumi.xyz/docs/Advanced/LoadVoice/</guid><description>&lt;h1 id="加载外部音频资源">
+ 加载外部音频资源
+ 
+ &lt;a class="anchor" href="#%e5%8a%a0%e8%bd%bd%e5%a4%96%e9%83%a8%e9%9f%b3%e9%a2%91%e8%b5%84%e6%ba%90">#&lt;/a>
+ 
+&lt;/h1>
+&lt;hr>
+&lt;p>本Mod支持加载外部音频资源，支持wav格式&lt;/p>
+&lt;h2 id="在二创剧本中使用">
+ 在二创剧本中使用
+ 
+ &lt;a class="anchor" href="#%e5%9c%a8%e4%ba%8c%e5%88%9b%e5%89%a7%e6%9c%ac%e4%b8%ad%e4%bd%bf%e7%94%a8">#&lt;/a>
+ 
+&lt;/h2>
+&lt;div class="book-steps ">
+&lt;ol>
+&lt;li>
+&lt;h3 id="创建背景图片目录">
+ 创建背景图片目录
+ 
+ &lt;a class="anchor" href="#%e5%88%9b%e5%bb%ba%e8%83%8c%e6%99%af%e5%9b%be%e7%89%87%e7%9b%ae%e5%bd%95">#&lt;/a>
+ 
+&lt;/h3>
+&lt;p>在Mod目录下创建文件夹Voice，将你需要添加的角色对话音频文件放在里面&lt;/p>
+&lt;p>在Mod目录下创建文件夹Audio，将你需要添加的Bgm或音效音频文件放在里面&lt;/p>
+&lt;p>&lt;img src="http://manosabamoddoc.fuyumi.xyz/images/LoadVoice.png" alt="路径样例" />&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;h3 id="通过bgm指令或voice指令播放音频">
+ 通过&lt;a href="http://manosabamoddoc.fuyumi.xyz/docs/Advanced/Command/#bgm">bgm&lt;/a>指令或&lt;a href="http://manosabamoddoc.fuyumi.xyz/docs/Advanced/Command/#voice">voice&lt;/a>指令播放音频
+ 
+ &lt;a class="anchor" href="#%e9%80%9a%e8%bf%87bgm%e6%8c%87%e4%bb%a4%e6%88%96voice%e6%8c%87%e4%bb%a4%e6%92%ad%e6%94%be%e9%9f%b3%e9%a2%91">#&lt;/a>
+ 
+&lt;/h3>
+&lt;p>直接使用&lt;a href="http://manosabamoddoc.fuyumi.xyz/docs/Advanced/Command/#bgm">bgm&lt;/a>指令或&lt;a href="http://manosabamoddoc.fuyumi.xyz/docs/Advanced/Command/#voice">voice&lt;/a>指令+你刚才的音频文件名即可：&lt;/p>
+&lt;pre tabindex="0">&lt;code>;播放Bgm_10_1
+@bgm &amp;#34;Bgm_10_1&amp;#34;
+&lt;/code>&lt;/pre>&lt;pre tabindex="0">&lt;code>;播放角色声音 TaffyStory000/Noah_01
+@voice &amp;#34;TaffyStory000/Noah_01&amp;#34;
+&lt;/code>&lt;/pre>&lt;/li>
+&lt;/ol>
+&lt;/div>
+&lt;h2 id="替换游戏音频">
+ 替换游戏音频
+ 
+ &lt;a class="anchor" href="#%e6%9b%bf%e6%8d%a2%e6%b8%b8%e6%88%8f%e9%9f%b3%e9%a2%91">#&lt;/a>
+ 
+&lt;/h2>
+&lt;div class="book-steps ">
+&lt;ol>
+&lt;li>
+&lt;h3 id="获取原图背景图片目录">
+ 获取原图背景图片目录
+ 
+ &lt;a class="anchor" href="#%e8%8e%b7%e5%8f%96%e5%8e%9f%e5%9b%be%e8%83%8c%e6%99%af%e5%9b%be%e7%89%87%e7%9b%ae%e5%bd%95">#&lt;/a>
+ 
+&lt;/h3>
+&lt;p>可以通过解包工具&lt;a href="http://manosabamoddoc.fuyumi.xyz/docs/Others/UsefulTools/#Assetripper">Assetripper&lt;/a>解包音频资源查看对应的编号，也可以直接查看游戏自带的剧本寻找自己需要的音频的编号&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;h3 id="覆盖原图">
+ 覆盖原图
+ 
+ &lt;a class="anchor" href="#%e8%a6%86%e7%9b%96%e5%8e%9f%e5%9b%be">#&lt;/a>
+ 
+&lt;/h3>
+&lt;p>直接在Voice或者Audio目录下创建和游戏原音频同目录的二创音频文件即可&lt;/p>
 &lt;/li>
 &lt;/ol>
 &lt;/div></description></item></channel></rss>
