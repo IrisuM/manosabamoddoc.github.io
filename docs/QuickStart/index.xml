@@ -126,7 +126,7 @@
 &lt;p>当然，有对话模式，自然就有裁判模式，后续也会有用于初始化裁判模式的剧本&lt;/p>
 &lt;pre tabindex="0">&lt;code>;初始化日常活动状态
 @Gosub System/System_Subroutine.BeginAdv
-&lt;/code>&lt;/pre>&lt;pre tabindex="0">&lt;code>;结束化日常活动状态
+&lt;/code>&lt;/pre>&lt;pre tabindex="0">&lt;code>;结束日常活动状态
 @Gosub System/System_Subroutine.EndAdv
 &lt;/code>&lt;/pre>&lt;/li>
 &lt;li>
@@ -199,19 +199,51 @@ Ema: 再说一句就下线了。
  &lt;a class="anchor" href="#%e8%af%95%e8%af%95%e5%86%99%e4%b8%80%e4%b8%aa%e9%ad%94%e5%a5%b3%e8%a3%81%e5%88%a4">#&lt;/a>
  
 &lt;/h1>
-&lt;h2 id="如果出现红字">
- 如果出现红字
+&lt;hr>
+&lt;h2 id="让我们来写一个简单的裁判">
+ 让我们来写一个简单的裁判
  
- &lt;a class="anchor" href="#%e5%a6%82%e6%9e%9c%e5%87%ba%e7%8e%b0%e7%ba%a2%e5%ad%97">#&lt;/a>
+ &lt;a class="anchor" href="#%e8%ae%a9%e6%88%91%e4%bb%ac%e6%9d%a5%e5%86%99%e4%b8%80%e4%b8%aa%e7%ae%80%e5%8d%95%e7%9a%84%e8%a3%81%e5%88%a4">#&lt;/a>
  
 &lt;/h2>
-&lt;details >&lt;summary>Failed to load localization document for XXX&lt;/summary>
- &lt;div class="markdown-inner">
-&lt;p>&lt;strong>如果控制台出现红字 &lt;font color=Red>Failed to load localization document for XXX&lt;/font>&lt;/strong>&lt;/p>
-&lt;p>这个报错是本地化配置相关，&lt;a href="http://manosabamoddoc.fuyumi.xyz/docs/Advanced/MoreNaniFile/">参考这里~&lt;/a>：&lt;/p>
-&lt;p>&lt;img src="http://manosabamoddoc.fuyumi.xyz/images/LocalizationFileError.png" alt="本地化配置错误" />&lt;/p>
- &lt;/div>
-&lt;/details></description></item><item><title>小贴士</title><link>http://manosabamoddoc.fuyumi.xyz/docs/QuickStart/Tips/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://manosabamoddoc.fuyumi.xyz/docs/QuickStart/Tips/</guid><description>&lt;h1 id="小贴士">
+&lt;hr>
+&lt;div class="book-steps ">
+&lt;ol>
+&lt;li>
+&lt;h3 id="初始化裁判庭剧本">
+ 初始化裁判庭剧本
+ 
+ &lt;a class="anchor" href="#%e5%88%9d%e5%a7%8b%e5%8c%96%e8%a3%81%e5%88%a4%e5%ba%ad%e5%89%a7%e6%9c%ac">#&lt;/a>
+ 
+&lt;/h3>
+&lt;p>创建裁判庭初始化脚本TrialInit.nani，修改其中的设置&lt;/p>
+&lt;p>主要关注点为出场人物，不出场的人物ID设为-1即可&lt;/p>
+&lt;pre tabindex="0">&lt;code>;设置出场人物位置ID，为-1的话就是未出席
+@set &amp;#34;emaIdx = 0&amp;#34;
+@set &amp;#34;hiroIdx = 3&amp;#34;
+@set &amp;#34;meruruIdx = -1&amp;#34;
+@set &amp;#34;hannaIdx = 6&amp;#34;
+@set &amp;#34;sherryIdx = 9&amp;#34;
+@set &amp;#34;ananIdx = -1&amp;#34;
+@set &amp;#34;leiaIdx = -1&amp;#34;
+@set &amp;#34;cocoIdx = -1&amp;#34;
+@set &amp;#34;miriaIdx = -1&amp;#34;
+@set &amp;#34;margoIdx = -1&amp;#34;
+@set &amp;#34;noahIdx = -1&amp;#34;
+@set &amp;#34;nanokaIdx = -1&amp;#34;
+@set &amp;#34;alisaIdx = -1&amp;#34;
+@set &amp;#34;yukiIdx = -1&amp;#34;
+@set &amp;#34;wardenIdx = -1&amp;#34;
+@set &amp;#34;jailerIdx = -1&amp;#34;
+&lt;/code>&lt;/pre>&lt;/li>
+&lt;li>
+&lt;h3 id="调用游戏自身的初始化剧本">
+ 调用游戏自身的初始化剧本
+ 
+ &lt;a class="anchor" href="#%e8%b0%83%e7%94%a8%e6%b8%b8%e6%88%8f%e8%87%aa%e8%ba%ab%e7%9a%84%e5%88%9d%e5%a7%8b%e5%8c%96%e5%89%a7%e6%9c%ac">#&lt;/a>
+ 
+&lt;/h3>
+&lt;p>调用初始化剧本：&lt;strong>SherryAppleJuice_ExampleTrialMod/TrialInit&lt;/strong>和&lt;strong>System/System_Subroutine.EndTrial&lt;/strong>。&lt;/p></description></item><item><title>小贴士</title><link>http://manosabamoddoc.fuyumi.xyz/docs/QuickStart/Tips/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://manosabamoddoc.fuyumi.xyz/docs/QuickStart/Tips/</guid><description>&lt;h1 id="小贴士">
  小贴士
  
  &lt;a class="anchor" href="#%e5%b0%8f%e8%b4%b4%e5%a3%ab">#&lt;/a>

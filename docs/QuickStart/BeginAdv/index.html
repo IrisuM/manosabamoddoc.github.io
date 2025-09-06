@@ -26,7 +26,7 @@
 当然，有对话模式，自然就有裁判模式，后续也会有用于初始化裁判模式的剧本
 ;初始化日常活动状态
 @Gosub System/System_Subroutine.BeginAdv
-;结束化日常活动状态
+;结束日常活动状态
 @Gosub System/System_Subroutine.EndAdv
 
 
@@ -96,14 +96,14 @@ Ema: 再说一句就下线了。
 可以通过goto指令跳转到Mod安装包内的Tool.nani里的EndToTitle标签实现返回到标题页'><meta name=theme-color media="(prefers-color-scheme: light)" content="#ffffff"><meta name=theme-color media="(prefers-color-scheme: dark)" content="#343a40"><meta name=color-scheme content="light dark"><meta property="og:url" content="http://manosabamoddoc.fuyumi.xyz/docs/QuickStart/BeginAdv/"><meta property="og:site_name" content="雪莉的剧本编辑器"><meta property="og:title" content="开始一个简单的对话"><meta property="og:description" content='开始一个简单的对话 # 让我们来写一个简短的对话剧本 # 调用游戏自身的初始化剧本 # 游戏自身准备了很多用于初始化的剧本，比如样例中的System/System_Subroutine.BeginAdv和System/System_Subroutine.EndAdv。
 在对话剧本的首尾通过gosub分别执行这两个初始化剧本，让游戏进入对话的模式
 当然，有对话模式，自然就有裁判模式，后续也会有用于初始化裁判模式的剧本
-;初始化日常活动状态 @Gosub System/System_Subroutine.BeginAdv ;结束化日常活动状态 @Gosub System/System_Subroutine.EndAdv 展示背景 # 通过back指令可以修改游戏的背景
+;初始化日常活动状态 @Gosub System/System_Subroutine.BeginAdv ;结束日常活动状态 @Gosub System/System_Subroutine.EndAdv 展示背景 # 通过back指令可以修改游戏的背景
 可以通过解包工具Assetripper解包背景图资源查看对应的编号，也可以直接查看游戏自带的剧本寻找自己需要的背景的编号
 先指定 5_1 为背景图，再指定黑色的遮罩层图层消失
 ;显示背景 @back 5_1 ;将最上面原本黑色的Overlay遮罩层变为透明，同时还指定了动画时间 @back SubId:"Overlay" Transparent tint:"#000000" time:0.99 wait:true 显示人物 # 通过char指令显示人物，显示的方式一般是{人物ID}.{表情,左手,右手}
 人物ID和表情相关可以通过解包工具Assetripper解包人物立绘查看，也可以直接查看游戏自带的剧本寻找自己需要的编号
 ;显示艾玛 @char Ema pos:50,50 ;显示雪莉，表情是Smile1 @char Sherry.Smile1 pos:30,50 ;显示汉娜，表情是Angry1，双手是状态2 @char Hanna.Angry1,ArmR2,ArmL2 pos:70,50 隐藏人物 # 隐藏角色立绘可以通过hide指令隐藏指定立绘，也可以通过hidechars指令隐藏所有角色立绘
 ;隐藏艾玛 @hide Ema ;隐藏全部角色 @hideChars 打印文字 # 打印文字有多种方法，可以使用print指令打印文字，也可以直接通过人物ID: 对话或纯文本的格式实现打印文字
-@print "完美犯罪？这词真让人热血沸腾呢！" author:"Sherry" speed:1 waitInput:true Wait:true Ema: 这是一个测试用例，我来客串一下。 Ema: 再说一句就下线了。 这里是一段空白。 结束剧本 # 可以通过goto指令跳转到Mod安装包内的Tool.nani里的EndToTitle标签实现返回到标题页'><meta property="og:locale" content="zh"><meta property="og:type" content="article"><meta property="article:section" content="docs"><meta property="article:modified_time" content="2025-09-06T11:07:36+08:00"><title>开始一个简单的对话 | 雪莉的剧本编辑器</title><link rel=icon href=/favicon.png><link rel=manifest href=/manifest.json><link rel=canonical href=http://manosabamoddoc.fuyumi.xyz/docs/QuickStart/BeginAdv/><link rel=stylesheet href=/book.min.f983b1133075f34a464000952394d7dd8ca4b6c8f419ca5ae47d914318121017.css integrity="sha256-+YOxEzB180pGQACVI5TX3Yyktsj0Gcpa5H2RQxgSEBc=" crossorigin=anonymous><script defer src=/fuse.min.js></script><script defer src=/zh.search.min.601bf7187e641b6ed5c9fe462ad5660ed3aa4d3bce062d2e131459103d91f3d8.js integrity="sha256-YBv3GH5kG27Vyf5GKtVmDtOqTTvOBi0uExRZED2R89g=" crossorigin=anonymous></script></head><body dir=ltr class="book-kind-page book-type-docs"><input type=checkbox class="hidden toggle" id=menu-control>
+@print "完美犯罪？这词真让人热血沸腾呢！" author:"Sherry" speed:1 waitInput:true Wait:true Ema: 这是一个测试用例，我来客串一下。 Ema: 再说一句就下线了。 这里是一段空白。 结束剧本 # 可以通过goto指令跳转到Mod安装包内的Tool.nani里的EndToTitle标签实现返回到标题页'><meta property="og:locale" content="zh"><meta property="og:type" content="article"><meta property="article:section" content="docs"><meta property="article:modified_time" content="2025-09-06T15:32:01+08:00"><title>开始一个简单的对话 | 雪莉的剧本编辑器</title><link rel=icon href=/favicon.png><link rel=manifest href=/manifest.json><link rel=canonical href=http://manosabamoddoc.fuyumi.xyz/docs/QuickStart/BeginAdv/><link rel=stylesheet href=/book.min.f983b1133075f34a464000952394d7dd8ca4b6c8f419ca5ae47d914318121017.css integrity="sha256-+YOxEzB180pGQACVI5TX3Yyktsj0Gcpa5H2RQxgSEBc=" crossorigin=anonymous><script defer src=/fuse.min.js></script><script defer src=/zh.search.min.746929389c7d53b77892ef2b613419f5352d610004c809f8e4c89a387f494032.js integrity="sha256-dGkpOJx9U7d4ku8rYTQZ9TUtYQAEyAn45MiaOH9JQDI=" crossorigin=anonymous></script></head><body dir=ltr class="book-kind-page book-type-docs"><input type=checkbox class="hidden toggle" id=menu-control>
 <input type=checkbox class="hidden toggle" id=toc-control><main class="container flex"><aside class=book-menu><div class=book-menu-content><nav><h2 class=book-brand><a class="flex align-center" href=/><img src=/logo.png alt=Logo><span>雪莉的剧本编辑器</span></a></h2><div class="book-search hidden"><input type=text id=book-search-input placeholder=搜索 aria-label=搜索 maxlength=64 data-hotkeys=s/><div class="book-search-spinner hidden"></div><ul id=book-search-results></ul></div><script>document.querySelector(".book-search").classList.remove("hidden")</script><ul><li class=book-section-flat><input type=checkbox id=section-52b5154487ff06b89e9868121921b268 class=toggle>
 <label for=section-52b5154487ff06b89e9868121921b268 class=flex><a role=button class=flex-auto>介绍</a></label><ul><li><a href=/docs/Intruduce/ForUser/>给使用的人</a></li><li><a href=/docs/Intruduce/ForDeveloper/>给想写剧本的人</a></li></ul></li><li class=book-section-flat><a href=/docs/Install/>安装与卸载</a><ul></ul></li><li class=book-section-flat><input type=checkbox id=section-096e5f72c7ef5d62a972e4a2046cf5fb class=toggle checked>
 <label for=section-096e5f72c7ef5d62a972e4a2046cf5fb class=flex><a role=button class=flex-auto>快速开始一段创作</a></label><ul><li><a href=/docs/QuickStart/CreateMod/>创建新的剧本</a></li><li><a href=/docs/QuickStart/BeginAdv/ class=active>开始一个简单的对话</a></li><li><a href=/docs/QuickStart/BeginTrial/>试试写一个魔女裁判</a></li><li><a href=/docs/QuickStart/Tips/>小贴士</a></li></ul></li><li class=book-section-flat><a href=/docs/ModConfig/>Mod配置</a><ul></ul></li><li class=book-section-flat><input type=checkbox id=section-85b6c0237bbcba5efb9e89acf039eea2 class=toggle>
@@ -113,7 +113,7 @@ Ema: 再说一句就下线了。
 <a class=anchor href=#%e8%ae%a9%e6%88%91%e4%bb%ac%e6%9d%a5%e5%86%99%e4%b8%80%e4%b8%aa%e7%ae%80%e7%9f%ad%e7%9a%84%e5%af%b9%e8%af%9d%e5%89%a7%e6%9c%ac>#</a></h2><hr><div class=book-steps><ol><li><h3 id=调用游戏自身的初始化剧本>调用游戏自身的初始化剧本
 <a class=anchor href=#%e8%b0%83%e7%94%a8%e6%b8%b8%e6%88%8f%e8%87%aa%e8%ba%ab%e7%9a%84%e5%88%9d%e5%a7%8b%e5%8c%96%e5%89%a7%e6%9c%ac>#</a></h3><p>游戏自身准备了很多用于初始化的剧本，比如样例中的<strong>System/System_Subroutine.BeginAdv</strong>和<strong>System/System_Subroutine.EndAdv</strong>。</p><p>在对话剧本的首尾通过<a href=/docs/Advanced/Command/#gosub>gosub</a>分别执行这两个初始化剧本，让游戏进入对话的模式</p><p>当然，有对话模式，自然就有裁判模式，后续也会有用于初始化裁判模式的剧本</p><pre tabindex=0><code>;初始化日常活动状态
 @Gosub System/System_Subroutine.BeginAdv
-</code></pre><pre tabindex=0><code>;结束化日常活动状态
+</code></pre><pre tabindex=0><code>;结束日常活动状态
 @Gosub System/System_Subroutine.EndAdv
 </code></pre></li><li><h3 id=展示背景>展示背景
 <a class=anchor href=#%e5%b1%95%e7%a4%ba%e8%83%8c%e6%99%af>#</a></h3><p>通过<a href=/docs/Advanced/Command/#back>back</a>指令可以修改游戏的背景</p><p>可以通过解包工具<a href=/docs/Others/UsefulTools/#Assetripper>Assetripper</a>解包背景图资源查看对应的编号，也可以直接查看游戏自带的剧本寻找自己需要的背景的编号</p><p>先指定 5_1 为背景图，再指定黑色的遮罩层图层消失</p><pre tabindex=0><code>;显示背景
@@ -171,12 +171,12 @@ Hanna: 没事不要随便叫我出来啦。
 ;隐藏全部角色
 @hideChars
 
-;结束化日常活动状态
+;结束日常活动状态
 @gosub System/System_Subroutine.EndAdv
 
 ;跳转到结束
 @goto SherryAppleJuice_ExampleMod/Tools.EndToTitle
-</code></pre></li></ol></div><h2 id=如果出现红字>如果出现红字
+</code></pre></li></ol></div><hr><h2 id=如果出现红字>如果出现红字
 <a class=anchor href=#%e5%a6%82%e6%9e%9c%e5%87%ba%e7%8e%b0%e7%ba%a2%e5%ad%97>#</a></h2><details><summary>Failed to load localization document for XXX</summary><div class=markdown-inner><p><strong>如果控制台出现红字 <font color=Red>Failed to load localization document for XXX</font></strong></p><p>这个报错是本地化配置相关，<a href=/docs/Advanced/MoreNaniFile/>参考这里~</a>：</p><p><img src=/images/LocalizationFileError.png alt=本地化配置错误></p></div></details><hr></article><footer class=book-footer><div class="flex flex-wrap justify-between"></div><div class="flex flex-wrap justify-between"><span><a href=/docs/QuickStart/CreateMod/ class="flex align-center book-icon"><img src=/svg/backward.svg class=book-icon alt=Previous title=创建新的剧本>
 <span>创建新的剧本</span>
 </a></span><span><a href=/docs/QuickStart/BeginTrial/ class="flex align-center book-icon"><span>试试写一个魔女裁判</span>
