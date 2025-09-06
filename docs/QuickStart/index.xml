@@ -193,12 +193,25 @@ Ema: 再说一句就下线了。
  &lt;a class="anchor" href="#%e7%bb%93%e6%9d%9f%e5%89%a7%e6%9c%ac">#&lt;/a>
  
 &lt;/h3>
-&lt;p>可以通过&lt;a href="http://manosabamoddoc.fuyumi.xyz/docs/Advanced/Command/#goto">goto&lt;/a>指令跳转到Mod安装包内的Tool.nani里的EndToTitle标签实现返回到标题页。&lt;/p></description></item><item><title>试试写一个魔女裁判</title><link>http://manosabamoddoc.fuyumi.xyz/docs/QuickStart/BeginTrial/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://manosabamoddoc.fuyumi.xyz/docs/QuickStart/BeginTrial/</guid><description>&lt;h1 id="施工中">
- 施工中
+&lt;p>可以通过&lt;a href="http://manosabamoddoc.fuyumi.xyz/docs/Advanced/Command/#goto">goto&lt;/a>指令跳转到Mod安装包内的Tool.nani里的EndToTitle标签实现返回到标题页&lt;/p></description></item><item><title>试试写一个魔女裁判</title><link>http://manosabamoddoc.fuyumi.xyz/docs/QuickStart/BeginTrial/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://manosabamoddoc.fuyumi.xyz/docs/QuickStart/BeginTrial/</guid><description>&lt;h1 id="试试写一个魔女裁判">
+ 试试写一个魔女裁判
  
- &lt;a class="anchor" href="#%e6%96%bd%e5%b7%a5%e4%b8%ad">#&lt;/a>
+ &lt;a class="anchor" href="#%e8%af%95%e8%af%95%e5%86%99%e4%b8%80%e4%b8%aa%e9%ad%94%e5%a5%b3%e8%a3%81%e5%88%a4">#&lt;/a>
  
-&lt;/h1></description></item><item><title>小贴士</title><link>http://manosabamoddoc.fuyumi.xyz/docs/QuickStart/Tips/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://manosabamoddoc.fuyumi.xyz/docs/QuickStart/Tips/</guid><description>&lt;h1 id="小贴士">
+&lt;/h1>
+&lt;h2 id="如果出现红字">
+ 如果出现红字
+ 
+ &lt;a class="anchor" href="#%e5%a6%82%e6%9e%9c%e5%87%ba%e7%8e%b0%e7%ba%a2%e5%ad%97">#&lt;/a>
+ 
+&lt;/h2>
+&lt;details >&lt;summary>Failed to load localization document for XXX&lt;/summary>
+ &lt;div class="markdown-inner">
+&lt;p>&lt;strong>如果控制台出现红字 &lt;font color=Red>Failed to load localization document for XXX&lt;/font>&lt;/strong>&lt;/p>
+&lt;p>这个报错是本地化配置相关，&lt;a href="http://manosabamoddoc.fuyumi.xyz/docs/Advanced/MoreNaniFile/">参考这里~&lt;/a>：&lt;/p>
+&lt;p>&lt;img src="http://manosabamoddoc.fuyumi.xyz/images/LocalizationFileError.png" alt="本地化配置错误" />&lt;/p>
+ &lt;/div>
+&lt;/details></description></item><item><title>小贴士</title><link>http://manosabamoddoc.fuyumi.xyz/docs/QuickStart/Tips/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://manosabamoddoc.fuyumi.xyz/docs/QuickStart/Tips/</guid><description>&lt;h1 id="小贴士">
  小贴士
  
  &lt;a class="anchor" href="#%e5%b0%8f%e8%b4%b4%e5%a3%ab">#&lt;/a>
@@ -224,4 +237,13 @@ Ema: 再说一句就下线了。
  
 &lt;/h2>
 &lt;p>可以关注一下&lt;a href="http://manosabamoddoc.fuyumi.xyz/docs/Advanced/Command/#back">back&lt;/a>和&lt;a href="http://manosabamoddoc.fuyumi.xyz/docs/Advanced/Command/#back">back&lt;/a>指令的SubId属性，如果背景在人物前，就会出现遮挡人物的情况，尽量保证在同一个层级演出，不同层级用于场景过渡~&lt;/p>
+&lt;/blockquote>
+&lt;blockquote class='book-hint tip'>
+ &lt;h2 id="如果我想做双语剧本怎么办">
+ &lt;strong>如果我想做双语剧本怎么办&lt;/strong>
+ 
+ &lt;a class="anchor" href="#%e5%a6%82%e6%9e%9c%e6%88%91%e6%83%b3%e5%81%9a%e5%8f%8c%e8%af%ad%e5%89%a7%e6%9c%ac%e6%80%8e%e4%b9%88%e5%8a%9e">#&lt;/a>
+ 
+&lt;/h2>
+&lt;p>&lt;a href="http://manosabamoddoc.fuyumi.xyz/docs/Advanced/MoreNaniFile/">参考这里~&lt;/a>&lt;/p>
 &lt;/blockquote></description></item></channel></rss>
