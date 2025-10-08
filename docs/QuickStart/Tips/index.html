@@ -27,25 +27,80 @@
 
 
   
+  为什么我导入外部音频文件出现加速或者过慢的问题？
+  
+  #
+  
+
+需要关注教程中声道和采样率的设置
+
+
+  
+  为什么choice指令出现分支指令不执行且只有第一个选项的情况？
+  
+  #
+  
+
+这种问题大概率是缩进缺失，可以检查一下缩进是否和官方剧本缩进一致
+
+
+  
+  如果我想出现两个一样的人物怎么办？
+  
+  #
+  
+
+使用不同的subid在不同图层显示角色即可，具体使用参考官方剧本
+
+
+  
+  如何旋转人物
+  
+  #
+  
+
+使用char指令的rotation参数，参数类型为 x,y,z ，其中xyz为角度
+
+
+  
   如果我想做双语剧本怎么办
   
   #
   
 
 参考这里~
+
+
+  
+  为什么不用官方的Bepinex？
+  
+  #
+  
+
+截止开发插件完成，官方的Bepinex和游戏本体不兼容，存在GC处理异常的问题，所以这里单独上传修复后的版本
 "><meta name=theme-color media="(prefers-color-scheme: light)" content="#ffffff"><meta name=theme-color media="(prefers-color-scheme: dark)" content="#343a40"><meta name=color-scheme content="light dark"><meta property="og:url" content="http://manosabamoddoc.fuyumi.xyz/docs/QuickStart/Tips/"><meta property="og:site_name" content="雪莉的剧本编辑器"><meta property="og:title" content="小贴士"><meta property="og:description" content="小贴士 # 这里记录一些大家遇到的问题和编写技巧
 希望实时看到指令对应的背景或人物怎么办？ # 打开Mod的调试模式，按下ctrl+t可以开启控制台，在控制台中输入剧本指令执行即可
 有的时候我设置了背景后人物就不显示了 # 可以关注一下back和back指令的SubId属性，如果背景在人物前，就会出现遮挡人物的情况，尽量保证在同一个层级演出，不同层级用于场景过渡~
-如果我想做双语剧本怎么办 # 参考这里~"><meta property="og:locale" content="zh"><meta property="og:type" content="article"><meta property="article:section" content="docs"><meta property="article:modified_time" content="2025-09-06T11:07:36+08:00"><title>小贴士 | 雪莉的剧本编辑器</title><link rel=icon href=/favicon.png><link rel=manifest href=/manifest.json><link rel=canonical href=http://manosabamoddoc.fuyumi.xyz/docs/QuickStart/Tips/><link rel=stylesheet href=/book.min.f983b1133075f34a464000952394d7dd8ca4b6c8f419ca5ae47d914318121017.css integrity="sha256-+YOxEzB180pGQACVI5TX3Yyktsj0Gcpa5H2RQxgSEBc=" crossorigin=anonymous><script defer src=/fuse.min.js></script><script defer src=/zh.search.min.03c84c6116955f223b346ec3f1c98659cbfb5c18d912df4701e4ca8f3bc87ebf.js integrity="sha256-A8hMYRaVXyI7NG7D8cmGWcv7XBjZEt9HAeTKjzvIfr8=" crossorigin=anonymous></script></head><body dir=ltr class="book-kind-page book-type-docs"><input type=checkbox class="hidden toggle" id=menu-control>
+为什么我导入外部音频文件出现加速或者过慢的问题？ # 需要关注教程中声道和采样率的设置
+为什么choice指令出现分支指令不执行且只有第一个选项的情况？ # 这种问题大概率是缩进缺失，可以检查一下缩进是否和官方剧本缩进一致
+如果我想出现两个一样的人物怎么办？ # 使用不同的subid在不同图层显示角色即可，具体使用参考官方剧本
+如何旋转人物 # 使用char指令的rotation参数，参数类型为 x,y,z ，其中xyz为角度
+如果我想做双语剧本怎么办 # 参考这里~
+为什么不用官方的Bepinex？ # 截止开发插件完成，官方的Bepinex和游戏本体不兼容，存在GC处理异常的问题，所以这里单独上传修复后的版本"><meta property="og:locale" content="zh"><meta property="og:type" content="article"><meta property="article:section" content="docs"><meta property="article:modified_time" content="2025-10-08T14:31:13+08:00"><title>小贴士 | 雪莉的剧本编辑器</title><link rel=icon href=/favicon.png><link rel=manifest href=/manifest.json><link rel=canonical href=http://manosabamoddoc.fuyumi.xyz/docs/QuickStart/Tips/><link rel=stylesheet href=/book.min.f983b1133075f34a464000952394d7dd8ca4b6c8f419ca5ae47d914318121017.css integrity="sha256-+YOxEzB180pGQACVI5TX3Yyktsj0Gcpa5H2RQxgSEBc=" crossorigin=anonymous><script defer src=/fuse.min.js></script><script defer src=/zh.search.min.abf7a310aca0791dd0738896ee90673642d9a5b1449bb87c875aa6b29f90849a.js integrity="sha256-q/ejEKygeR3Qc4iW7pBnNkLZpbFEm7h8h1qmsp+QhJo=" crossorigin=anonymous></script></head><body dir=ltr class="book-kind-page book-type-docs"><input type=checkbox class="hidden toggle" id=menu-control>
 <input type=checkbox class="hidden toggle" id=toc-control><main class="container flex"><aside class=book-menu><div class=book-menu-content><nav><h2 class=book-brand><a class="flex align-center" href=/><img src=/logo.png alt=Logo><span>雪莉的剧本编辑器</span></a></h2><div class="book-search hidden"><input type=text id=book-search-input placeholder=搜索 aria-label=搜索 maxlength=64 data-hotkeys=s/><div class="book-search-spinner hidden"></div><ul id=book-search-results></ul></div><script>document.querySelector(".book-search").classList.remove("hidden")</script><ul><li class=book-section-flat><input type=checkbox id=section-52b5154487ff06b89e9868121921b268 class=toggle>
 <label for=section-52b5154487ff06b89e9868121921b268 class=flex><a role=button class=flex-auto>介绍</a></label><ul><li><a href=/docs/Intruduce/ForUser/>给使用的人</a></li><li><a href=/docs/Intruduce/ForDeveloper/>给想写剧本的人</a></li></ul></li><li class=book-section-flat><a href=/docs/Install/>安装与卸载</a><ul></ul></li><li class=book-section-flat><input type=checkbox id=section-096e5f72c7ef5d62a972e4a2046cf5fb class=toggle checked>
 <label for=section-096e5f72c7ef5d62a972e4a2046cf5fb class=flex><a role=button class=flex-auto>快速开始一段创作</a></label><ul><li><a href=/docs/QuickStart/CreateMod/>创建新的剧本</a></li><li><a href=/docs/QuickStart/BeginAdv/>开始一个简单的对话</a></li><li><a href=/docs/QuickStart/BeginTrial/>试试写一个魔女裁判</a></li><li><a href=/docs/QuickStart/Tips/ class=active>小贴士</a></li></ul></li><li class=book-section-flat><a href=/docs/ModConfig/>Mod配置</a><ul></ul></li><li class=book-section-flat><input type=checkbox id=section-85b6c0237bbcba5efb9e89acf039eea2 class=toggle>
 <label for=section-85b6c0237bbcba5efb9e89acf039eea2 class=flex><a role=button class=flex-auto>进阶文档</a></label><ul><li><a href=/docs/Advanced/Command/>指令介绍</a></li><li><a href=/docs/Advanced/LoadBackgrounds/>加载外部背景资源</a></li><li><a href=/docs/Advanced/LoadVoice/>加载外部音频资源</a></li><li><a href=/docs/Advanced/LoadCharacter/>加载外部立绘资源</a></li><li><a href=/docs/Advanced/MoreNaniFile/>本地化配置</a></li><li><a href=/docs/Advanced/MapMenu/>搜查示例</a></li></ul></li><li class=book-section-flat><input type=checkbox id=section-0179ebec185e705019125ac32129ed53 class=toggle>
-<label for=section-0179ebec185e705019125ac32129ed53 class=flex><a role=button class=flex-auto>其它说明</a></label><ul><li><a href=/docs/Others/AQ/>碎碎念</a></li><li><a href=/docs/Others/UsefulTools/>一些有用的工具</a></li></ul></li></ul><ul><li><a href=https://github.com/IrisuM/ManosabaMod/ target=_blank rel=noopener>Github</a></li><li><a href=https://space.bilibili.com/1265680561/ target=_blank rel=noopener>关注永雏塔菲谢谢喵！</a></li><li><a href=https://space.bilibili.com/3546949672241842/ target=_blank rel=noopener>关注我谢谢喵！</a></li></ul></nav><script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script></div></aside><div class=book-page><header class=book-header><div class="flex align-center justify-between"><label for=menu-control><img src=/svg/menu.svg class=book-icon alt=Menu></label><h3>小贴士</h3><label for=toc-control><img src=/svg/toc.svg class=book-icon alt="Table of Contents"></label></div><aside class="hidden clearfix"><nav id=TableOfContents><ul><li><a href=#小贴士>小贴士</a><ul><li><a href=#希望实时看到指令对应的背景或人物怎么办><strong>希望实时看到指令对应的背景或人物怎么办？</strong></a></li><li><a href=#有的时候我设置了背景后人物就不显示了><strong>有的时候我设置了背景后人物就不显示了</strong></a></li><li><a href=#如果我想做双语剧本怎么办><strong>如果我想做双语剧本怎么办</strong></a></li></ul></li></ul></nav></aside></header><article class="markdown book-article"><h1 id=小贴士>小贴士
+<label for=section-0179ebec185e705019125ac32129ed53 class=flex><a role=button class=flex-auto>其它说明</a></label><ul><li><a href=/docs/Others/AQ/>碎碎念</a></li><li><a href=/docs/Others/UsefulTools/>一些有用的工具</a></li></ul></li></ul><ul><li><a href=https://github.com/IrisuM/ManosabaMod/ target=_blank rel=noopener>Github</a></li><li><a href=https://space.bilibili.com/1265680561/ target=_blank rel=noopener>关注永雏塔菲谢谢喵！</a></li><li><a href=https://space.bilibili.com/3546949672241842/ target=_blank rel=noopener>关注我谢谢喵！</a></li></ul></nav><script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script></div></aside><div class=book-page><header class=book-header><div class="flex align-center justify-between"><label for=menu-control><img src=/svg/menu.svg class=book-icon alt=Menu></label><h3>小贴士</h3><label for=toc-control><img src=/svg/toc.svg class=book-icon alt="Table of Contents"></label></div><aside class="hidden clearfix"><nav id=TableOfContents><ul><li><a href=#小贴士>小贴士</a><ul><li><a href=#希望实时看到指令对应的背景或人物怎么办><strong>希望实时看到指令对应的背景或人物怎么办？</strong></a></li><li><a href=#有的时候我设置了背景后人物就不显示了><strong>有的时候我设置了背景后人物就不显示了</strong></a></li><li><a href=#为什么我导入外部音频文件出现加速或者过慢的问题><strong>为什么我导入外部音频文件出现加速或者过慢的问题？</strong></a></li><li><a href=#为什么choice指令出现分支指令不执行且只有第一个选项的情况><strong>为什么choice指令出现分支指令不执行且只有第一个选项的情况？</strong></a></li><li><a href=#如果我想出现两个一样的人物怎么办><strong>如果我想出现两个一样的人物怎么办？</strong></a></li><li><a href=#如何旋转人物><strong>如何旋转人物</strong></a></li><li><a href=#如果我想做双语剧本怎么办><strong>如果我想做双语剧本怎么办</strong></a></li><li><a href=#为什么不用官方的bepinex><strong>为什么不用官方的Bepinex？</strong></a></li></ul></li></ul></nav></aside></header><article class="markdown book-article"><h1 id=小贴士>小贴士
 <a class=anchor href=#%e5%b0%8f%e8%b4%b4%e5%a3%ab>#</a></h1><hr><p>这里记录一些大家遇到的问题和编写技巧</p><blockquote class='book-hint tip'><h2 id=希望实时看到指令对应的背景或人物怎么办><strong>希望实时看到指令对应的背景或人物怎么办？</strong>
 <a class=anchor href=#%e5%b8%8c%e6%9c%9b%e5%ae%9e%e6%97%b6%e7%9c%8b%e5%88%b0%e6%8c%87%e4%bb%a4%e5%af%b9%e5%ba%94%e7%9a%84%e8%83%8c%e6%99%af%e6%88%96%e4%ba%ba%e7%89%a9%e6%80%8e%e4%b9%88%e5%8a%9e>#</a></h2><p>打开Mod的调试模式，按下ctrl+t可以开启控制台，在控制台中输入剧本指令执行即可</p></blockquote><blockquote class='book-hint warning'><h2 id=有的时候我设置了背景后人物就不显示了><strong>有的时候我设置了背景后人物就不显示了</strong>
-<a class=anchor href=#%e6%9c%89%e7%9a%84%e6%97%b6%e5%80%99%e6%88%91%e8%ae%be%e7%bd%ae%e4%ba%86%e8%83%8c%e6%99%af%e5%90%8e%e4%ba%ba%e7%89%a9%e5%b0%b1%e4%b8%8d%e6%98%be%e7%a4%ba%e4%ba%86>#</a></h2><p>可以关注一下<a href=/docs/Advanced/Command/#back>back</a>和<a href=/docs/Advanced/Command/#back>back</a>指令的SubId属性，如果背景在人物前，就会出现遮挡人物的情况，尽量保证在同一个层级演出，不同层级用于场景过渡~</p></blockquote><blockquote class='book-hint tip'><h2 id=如果我想做双语剧本怎么办><strong>如果我想做双语剧本怎么办</strong>
-<a class=anchor href=#%e5%a6%82%e6%9e%9c%e6%88%91%e6%83%b3%e5%81%9a%e5%8f%8c%e8%af%ad%e5%89%a7%e6%9c%ac%e6%80%8e%e4%b9%88%e5%8a%9e>#</a></h2><p><a href=/docs/Advanced/MoreNaniFile/>参考这里~</a></p></blockquote></article><footer class=book-footer><div class="flex flex-wrap justify-between"></div><div class="flex flex-wrap justify-between"><span><a href=/docs/QuickStart/BeginTrial/ class="flex align-center book-icon"><img src=/svg/backward.svg class=book-icon alt=Previous title=试试写一个魔女裁判>
+<a class=anchor href=#%e6%9c%89%e7%9a%84%e6%97%b6%e5%80%99%e6%88%91%e8%ae%be%e7%bd%ae%e4%ba%86%e8%83%8c%e6%99%af%e5%90%8e%e4%ba%ba%e7%89%a9%e5%b0%b1%e4%b8%8d%e6%98%be%e7%a4%ba%e4%ba%86>#</a></h2><p>可以关注一下<a href=/docs/Advanced/Command/#back>back</a>和<a href=/docs/Advanced/Command/#back>back</a>指令的SubId属性，如果背景在人物前，就会出现遮挡人物的情况，尽量保证在同一个层级演出，不同层级用于场景过渡~</p></blockquote><blockquote class='book-hint tip'><h2 id=为什么我导入外部音频文件出现加速或者过慢的问题><strong>为什么我导入外部音频文件出现加速或者过慢的问题？</strong>
+<a class=anchor href=#%e4%b8%ba%e4%bb%80%e4%b9%88%e6%88%91%e5%af%bc%e5%85%a5%e5%a4%96%e9%83%a8%e9%9f%b3%e9%a2%91%e6%96%87%e4%bb%b6%e5%87%ba%e7%8e%b0%e5%8a%a0%e9%80%9f%e6%88%96%e8%80%85%e8%bf%87%e6%85%a2%e7%9a%84%e9%97%ae%e9%a2%98>#</a></h2><p><a href=/docs/Advanced/LoadVoice/>需要关注教程中声道和采样率的设置</a></p></blockquote><blockquote class='book-hint warning'><h2 id=为什么choice指令出现分支指令不执行且只有第一个选项的情况><strong>为什么choice指令出现分支指令不执行且只有第一个选项的情况？</strong>
+<a class=anchor href=#%e4%b8%ba%e4%bb%80%e4%b9%88choice%e6%8c%87%e4%bb%a4%e5%87%ba%e7%8e%b0%e5%88%86%e6%94%af%e6%8c%87%e4%bb%a4%e4%b8%8d%e6%89%a7%e8%a1%8c%e4%b8%94%e5%8f%aa%e6%9c%89%e7%ac%ac%e4%b8%80%e4%b8%aa%e9%80%89%e9%a1%b9%e7%9a%84%e6%83%85%e5%86%b5>#</a></h2><p>这种问题大概率是缩进缺失，可以检查一下缩进是否和官方剧本缩进一致</p></blockquote><blockquote class='book-hint tip'><h2 id=如果我想出现两个一样的人物怎么办><strong>如果我想出现两个一样的人物怎么办？</strong>
+<a class=anchor href=#%e5%a6%82%e6%9e%9c%e6%88%91%e6%83%b3%e5%87%ba%e7%8e%b0%e4%b8%a4%e4%b8%aa%e4%b8%80%e6%a0%b7%e7%9a%84%e4%ba%ba%e7%89%a9%e6%80%8e%e4%b9%88%e5%8a%9e>#</a></h2><p>使用不同的subid在不同图层显示角色即可，具体使用参考官方剧本</p></blockquote><blockquote class='book-hint tip'><h2 id=如何旋转人物><strong>如何旋转人物</strong>
+<a class=anchor href=#%e5%a6%82%e4%bd%95%e6%97%8b%e8%bd%ac%e4%ba%ba%e7%89%a9>#</a></h2><p>使用<a href=/docs/Advanced/Command/#char>char</a>指令的rotation参数，参数类型为 <strong>x,y,z</strong> ，其中xyz为角度</p></blockquote><blockquote class='book-hint tip'><h2 id=如果我想做双语剧本怎么办><strong>如果我想做双语剧本怎么办</strong>
+<a class=anchor href=#%e5%a6%82%e6%9e%9c%e6%88%91%e6%83%b3%e5%81%9a%e5%8f%8c%e8%af%ad%e5%89%a7%e6%9c%ac%e6%80%8e%e4%b9%88%e5%8a%9e>#</a></h2><p><a href=/docs/Advanced/MoreNaniFile/>参考这里~</a></p></blockquote><blockquote class='book-hint warning'><h2 id=为什么不用官方的bepinex><strong>为什么不用官方的Bepinex？</strong>
+<a class=anchor href=#%e4%b8%ba%e4%bb%80%e4%b9%88%e4%b8%8d%e7%94%a8%e5%ae%98%e6%96%b9%e7%9a%84bepinex>#</a></h2><p>截止开发插件完成，官方的Bepinex和游戏本体不兼容，存在GC处理异常的问题，所以这里单独上传修复后的版本</p></blockquote></article><footer class=book-footer><div class="flex flex-wrap justify-between"></div><div class="flex flex-wrap justify-between"><span><a href=/docs/QuickStart/BeginTrial/ class="flex align-center book-icon"><img src=/svg/backward.svg class=book-icon alt=Previous title=试试写一个魔女裁判>
 <span>试试写一个魔女裁判</span>
 </a></span><span><a href=/docs/ModConfig/ class="flex align-center book-icon"><span>Mod配置</span>
-<img src=/svg/forward.svg class=book-icon alt=Next title=Mod配置></a></span></div><script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script><!doctype html><html><head><script src=http://manosabamoddoc.fuyumi.xyz/background/sakura.js></script></head><body></body></html></footer><div class=book-comments></div><label for=menu-control class="hidden book-menu-overlay"></label></div><aside class=book-toc><div class=book-toc-content><nav id=TableOfContents><ul><li><a href=#小贴士>小贴士</a><ul><li><a href=#希望实时看到指令对应的背景或人物怎么办><strong>希望实时看到指令对应的背景或人物怎么办？</strong></a></li><li><a href=#有的时候我设置了背景后人物就不显示了><strong>有的时候我设置了背景后人物就不显示了</strong></a></li><li><a href=#如果我想做双语剧本怎么办><strong>如果我想做双语剧本怎么办</strong></a></li></ul></li></ul></nav></div></aside></main></body></html>
+<img src=/svg/forward.svg class=book-icon alt=Next title=Mod配置></a></span></div><script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script><!doctype html><html><head><script src=http://manosabamoddoc.fuyumi.xyz/background/sakura.js></script></head><body></body></html></footer><div class=book-comments></div><label for=menu-control class="hidden book-menu-overlay"></label></div><aside class=book-toc><div class=book-toc-content><nav id=TableOfContents><ul><li><a href=#小贴士>小贴士</a><ul><li><a href=#希望实时看到指令对应的背景或人物怎么办><strong>希望实时看到指令对应的背景或人物怎么办？</strong></a></li><li><a href=#有的时候我设置了背景后人物就不显示了><strong>有的时候我设置了背景后人物就不显示了</strong></a></li><li><a href=#为什么我导入外部音频文件出现加速或者过慢的问题><strong>为什么我导入外部音频文件出现加速或者过慢的问题？</strong></a></li><li><a href=#为什么choice指令出现分支指令不执行且只有第一个选项的情况><strong>为什么choice指令出现分支指令不执行且只有第一个选项的情况？</strong></a></li><li><a href=#如果我想出现两个一样的人物怎么办><strong>如果我想出现两个一样的人物怎么办？</strong></a></li><li><a href=#如何旋转人物><strong>如何旋转人物</strong></a></li><li><a href=#如果我想做双语剧本怎么办><strong>如果我想做双语剧本怎么办</strong></a></li><li><a href=#为什么不用官方的bepinex><strong>为什么不用官方的Bepinex？</strong></a></li></ul></li></ul></nav></div></aside></main></body></html>
