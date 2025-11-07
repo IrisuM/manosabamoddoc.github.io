@@ -30,7 +30,8 @@
     "Enter": "SherryAppleJuice_ExampleMod/Main",
     "Characters": [
         {
-            "ActorId": "Taffy"
+            "ActorId": "Taffy",
+            "DisplayName": "<color=#FFC0CB>永</color>雏塔菲"
         }
     ]
 }
@@ -63,12 +64,12 @@
 
 '><meta name=theme-color media="(prefers-color-scheme: light)" content="#ffffff"><meta name=theme-color media="(prefers-color-scheme: dark)" content="#343a40"><meta name=color-scheme content="light dark"><meta property="og:url" content="http://manosabamoddoc.fuyumi.xyz/docs/Advanced/LoadCharacter/"><meta property="og:site_name" content="雪莉的剧本编辑器"><meta property="og:title" content="加载外部立绘资源"><meta property="og:description" content='加载外部立绘资源 # 本Mod支持加载外部立绘资源，支持jpg/png格式
 在二创剧本中使用 # 在info.json里创建角色ID # 打开剧本目录里的info.json，增加Characters字段，写上你要加的角色ID，类似这样：
-{ "Name": "测试用例", "Description": "测试用例", "Author": "雪莉苹果汁", "Enter": "SherryAppleJuice_ExampleMod/Main", "Characters": [ { "ActorId": "Taffy" } ] } 创建背景图片目录 # 在Mod目录下创建Characters文件夹，在Characters文件夹内创建角色ID文件夹，类似这样创建Taffy文件夹
+{ "Name": "测试用例", "Description": "测试用例", "Author": "雪莉苹果汁", "Enter": "SherryAppleJuice_ExampleMod/Main", "Characters": [ { "ActorId": "Taffy", "DisplayName": "<color=#FFC0CB>永</color>雏塔菲" } ] } 创建背景图片目录 # 在Mod目录下创建Characters文件夹，在Characters文件夹内创建角色ID文件夹，类似这样创建Taffy文件夹
 在角色ID文件夹里面放上你想加载的立绘，如Hanna.jpg
 游戏原始立绘大小为1500x3000，可以参考这个大小来准备图片
 通过char指令展示角色 # 使用char指令展示立绘+角色ID.立绘图片名称即可展示立绘
 比如之前创建了Taffy文件夹，里面有一个Hanna.jpg，那么我显示这张图片的指令为：
-;显示立绘 @char Taffy.Hanna 效果类似：'><meta property="og:locale" content="zh"><meta property="og:type" content="article"><meta property="article:section" content="docs"><meta property="article:modified_time" content="2025-09-18T20:17:13+08:00"><title>加载外部立绘资源 | 雪莉的剧本编辑器</title><link rel=icon href=/favicon.png><link rel=manifest href=/manifest.json><link rel=canonical href=http://manosabamoddoc.fuyumi.xyz/docs/Advanced/LoadCharacter/><link rel=stylesheet href=/book.min.f983b1133075f34a464000952394d7dd8ca4b6c8f419ca5ae47d914318121017.css integrity="sha256-+YOxEzB180pGQACVI5TX3Yyktsj0Gcpa5H2RQxgSEBc=" crossorigin=anonymous><script defer src=/fuse.min.js></script><script defer src=/zh.search.min.d55dcbb3d54c9805417999930c7d5b7d3118a755f3bb091425132a9e7db52fb0.js integrity="sha256-1V3Ls9VMmAVBeZmTDH1bfTEYp1XzuwkUJRMqnn21L7A=" crossorigin=anonymous></script></head><body dir=ltr class="book-kind-page book-type-docs"><input type=checkbox class="hidden toggle" id=menu-control>
+;显示立绘 @char Taffy.Hanna 效果类似：'><meta property="og:locale" content="zh"><meta property="og:type" content="article"><meta property="article:section" content="docs"><meta property="article:modified_time" content="2025-11-07T20:16:27+08:00"><title>加载外部立绘资源 | 雪莉的剧本编辑器</title><link rel=icon href=/favicon.png><link rel=manifest href=/manifest.json><link rel=canonical href=http://manosabamoddoc.fuyumi.xyz/docs/Advanced/LoadCharacter/><link rel=stylesheet href=/book.min.f983b1133075f34a464000952394d7dd8ca4b6c8f419ca5ae47d914318121017.css integrity="sha256-+YOxEzB180pGQACVI5TX3Yyktsj0Gcpa5H2RQxgSEBc=" crossorigin=anonymous><script defer src=/fuse.min.js></script><script defer src=/zh.search.min.fbd99a79893b67941225f15d1ee72c75bc550a7df333ac7d8ba59c0ecf805507.js integrity="sha256-+9maeYk7Z5QSJfFdHucsdbxVCn3zM6x9i6WcDs+AVQc=" crossorigin=anonymous></script></head><body dir=ltr class="book-kind-page book-type-docs"><input type=checkbox class="hidden toggle" id=menu-control>
 <input type=checkbox class="hidden toggle" id=toc-control><main class="container flex"><aside class=book-menu><div class=book-menu-content><nav><h2 class=book-brand><a class="flex align-center" href=/><img src=/logo.png alt=Logo><span>雪莉的剧本编辑器</span></a></h2><div class="book-search hidden"><input type=text id=book-search-input placeholder=搜索 aria-label=搜索 maxlength=64 data-hotkeys=s/><div class="book-search-spinner hidden"></div><ul id=book-search-results></ul></div><script>document.querySelector(".book-search").classList.remove("hidden")</script><ul><li class=book-section-flat><input type=checkbox id=section-52b5154487ff06b89e9868121921b268 class=toggle>
 <label for=section-52b5154487ff06b89e9868121921b268 class=flex><a role=button class=flex-auto>介绍</a></label><ul><li><a href=/docs/Intruduce/ForUser/>给使用的人</a></li><li><a href=/docs/Intruduce/ForDeveloper/>给想写剧本的人</a></li></ul></li><li class=book-section-flat><a href=/docs/Install/>安装与卸载</a><ul></ul></li><li class=book-section-flat><input type=checkbox id=section-096e5f72c7ef5d62a972e4a2046cf5fb class=toggle>
 <label for=section-096e5f72c7ef5d62a972e4a2046cf5fb class=flex><a role=button class=flex-auto>快速开始一段创作</a></label><ul><li><a href=/docs/QuickStart/CreateMod/>创建新的剧本</a></li><li><a href=/docs/QuickStart/BeginAdv/>开始一个简单的对话</a></li><li><a href=/docs/QuickStart/BeginTrial/>试试写一个魔女裁判</a></li><li><a href=/docs/QuickStart/Tips/>小贴士</a></li></ul></li><li class=book-section-flat><a href=/docs/ModConfig/>Mod配置</a><ul></ul></li><li class=book-section-flat><input type=checkbox id=section-85b6c0237bbcba5efb9e89acf039eea2 class=toggle checked>
@@ -84,7 +85,8 @@
 </span></span><span style=display:flex><span>    <span style=color:#f92672>&#34;Enter&#34;</span>: <span style=color:#e6db74>&#34;SherryAppleJuice_ExampleMod/Main&#34;</span>,
 </span></span><span style=display:flex><span>    <span style=color:#f92672>&#34;Characters&#34;</span>: [
 </span></span><span style=display:flex><span>        {
-</span></span><span style=display:flex><span>            <span style=color:#f92672>&#34;ActorId&#34;</span>: <span style=color:#e6db74>&#34;Taffy&#34;</span>
+</span></span><span style=display:flex><span>            <span style=color:#f92672>&#34;ActorId&#34;</span>: <span style=color:#e6db74>&#34;Taffy&#34;</span>,
+</span></span><span style=display:flex><span>            <span style=color:#f92672>&#34;DisplayName&#34;</span>: <span style=color:#e6db74>&#34;&lt;color=#FFC0CB&gt;永&lt;/color&gt;雏塔菲&#34;</span>
 </span></span><span style=display:flex><span>        }
 </span></span><span style=display:flex><span>    ]
 </span></span><span style=display:flex><span>}

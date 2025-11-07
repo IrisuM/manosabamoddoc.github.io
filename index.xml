@@ -630,7 +630,8 @@ Ema: 再说一句就下线了。
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;#34;Enter&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;SherryAppleJuice_ExampleMod/Main&amp;#34;&lt;/span>,
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;#34;Characters&amp;#34;&lt;/span>: [
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;#34;ActorId&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;Taffy&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;#34;ActorId&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;Taffy&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;#34;DisplayName&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;&amp;lt;color=#FFC0CB&amp;gt;永&amp;lt;/color&amp;gt;雏塔菲&amp;#34;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ]
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
