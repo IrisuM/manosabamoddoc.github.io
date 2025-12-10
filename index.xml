@@ -14,48 +14,95 @@
 &lt;p>你需要先&lt;a href="http://manosabamoddoc.fuyumi.xyz/docs/Install">安装&lt;/a>本 mod，并且在安装完成后启动一次游戏，确保mod可以被正确加载（即可以正常游玩二创剧本）&lt;br>
 请完全遵守 &lt;a href="https://www.bilibili.com/opus/1090128571689599027">《魔法少女的魔女审判》直播・二次创作指南&lt;/a>&lt;/p>
 &lt;hr>
-&lt;h2 id="创建剧本工作空间">
- 创建剧本工作空间
+&lt;h2 id="从模板创建">
+ 从模板创建
  
- &lt;a class="anchor" href="#%e5%88%9b%e5%bb%ba%e5%89%a7%e6%9c%ac%e5%b7%a5%e4%bd%9c%e7%a9%ba%e9%97%b4">#&lt;/a>
+ &lt;a class="anchor" href="#%e4%bb%8e%e6%a8%a1%e6%9d%bf%e5%88%9b%e5%bb%ba">#&lt;/a>
  
 &lt;/h2>
 &lt;div class="book-steps ">
 &lt;ol>
 &lt;li>
-&lt;h3 id="启用-mod-的创作者模式">
- 启用 MOD 的创作者模式
+&lt;h3 id="剧本模板">
+ 剧本模板
  
- &lt;a class="anchor" href="#%e5%90%af%e7%94%a8-mod-%e7%9a%84%e5%88%9b%e4%bd%9c%e8%80%85%e6%a8%a1%e5%bc%8f">#&lt;/a>
+ &lt;a class="anchor" href="#%e5%89%a7%e6%9c%ac%e6%a8%a1%e6%9d%bf">#&lt;/a>
  
 &lt;/h3>
-&lt;p>找到游戏的根目录（即游戏程序&lt;code>manosaba.exe&lt;/code>的所在目录），可以通过 steam，在库中找到魔审，依次点击 &lt;code>右键游戏 -&amp;gt; 管理 -&amp;gt; 浏览本地文件&lt;/code> 来找到&lt;/p>
-&lt;p>进入 &lt;code>&amp;lt;游戏根目录&amp;gt;/BepInEx/config&lt;/code> 文件夹，通过记事本等文本编辑器打开 &lt;code>ManosabaLoader.cfg&lt;/code> 配置文件，关注下面的内容&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-toml" data-lang="toml">&lt;span style="display:flex;">&lt;span>[&lt;span style="color:#a6e22e">Scripting&lt;/span>]
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">## 是否启用剧本编辑模式（创作者使用）&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># Setting type: Boolean&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># Default value: false&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">EnableScriptingMode&lt;/span> = &lt;span style="color:#66d9ef">false&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">## 剧本工作区路径（创作者使用）&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># Setting type: String&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># Default value:&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">WorkspacePath&lt;/span> = 
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>我们需要把配置文件中的 &lt;code>EnableScriptingMode&lt;/code> 设置为true，并且把 &lt;code>WorkspacePath&lt;/code> 设置为您打算制作的mod的存放路径&lt;/p>
-&lt;p>例如我想要制作一个名为 &lt;code>SherryAppleJuice_ExampleMod&lt;/code> 的mod，然后我想把它放在 &lt;code>D:/manosaba_fan/&lt;/code> 下，最终的配置文件如下&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-toml" data-lang="toml">&lt;span style="display:flex;">&lt;span>[&lt;span style="color:#a6e22e">Scripting&lt;/span>]
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">## 是否启用剧本编辑模式（创作者使用）&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># Setting type: Boolean&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># Default value: false&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">EnableScriptingMode&lt;/span> = &lt;span style="color:#66d9ef">true&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">## 剧本工作区路径（创作者使用）&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># Setting type: String&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># Default value:&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">WorkspacePath&lt;/span> = &lt;span style="color:#a6e22e">D&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">:/&lt;/span>&lt;span style="color:#a6e22e">manosaba_fan&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">/&lt;/span>&lt;span style="color:#a6e22e">SherryAppleJuice_TestMod000&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>最终剧本文件会被放置在 &lt;code>D:/manosaba_fan/SherryAppleJuice_TestMod000/Scripts/SherryAppleJuice_TestMod000/&lt;/code> 目录内&lt;/p></description></item><item><title>给使用的人</title><link>http://manosabamoddoc.fuyumi.xyz/docs/Intruduce/ForUser/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://manosabamoddoc.fuyumi.xyz/docs/Intruduce/ForUser/</guid><description>&lt;h1 id="给使用的人">
+&lt;p>打开Mod安装包，在ManosabaMod目录下找到SherryAppleJuice_ExampleMod文件夹
+&lt;img src="http://manosabamoddoc.fuyumi.xyz/images/ExampleMod.png" alt="样例剧本" />&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;h3 id="复制模板">
+ 复制模板
+ 
+ &lt;a class="anchor" href="#%e5%a4%8d%e5%88%b6%e6%a8%a1%e6%9d%bf">#&lt;/a>
+ 
+&lt;/h3>
+&lt;p>复制整个文件夹，将文件夹改名为你的剧本ID&lt;/p>
+&lt;p>建议剧本ID按照&lt;strong>一个不容易重复的英文ID+剧本英文名称+一个数字编号&lt;/strong>这样的格式，这里的英文ID可以用一个个性的网名，随机乱码或者你的B站UID，尽量避免和别人产生碰撞就行&lt;/p>
+&lt;p>比如 &lt;strong>SherryAppleJuice_TestMod000&lt;/strong>，其中SherryAppleJuice是网名，TestMod是本英文名称，000是编号&lt;/p>
+
+&lt;blockquote class='book-hint warning'>
+ &lt;p>&lt;strong>如果剧本ID冲突&lt;/strong>&lt;br>
+剧本ID冲突的话，就会出现剧本里的内容相互穿越的情况&lt;/p>
+&lt;/blockquote>&lt;/li>
+&lt;li>
+&lt;h3 id="修改目录">
+ 修改目录
+ 
+ &lt;a class="anchor" href="#%e4%bf%ae%e6%94%b9%e7%9b%ae%e5%bd%95">#&lt;/a>
+ 
+&lt;/h3>
+&lt;p>修改目录结构，将原来叫做&lt;strong>SherryAppleJuice_ExampleMod&lt;/strong>的文件夹全部改为新的剧本ID，类似这样&lt;/p>
+&lt;p>&lt;img src="http://manosabamoddoc.fuyumi.xyz/images/NewSimpleMod.png" alt="新剧本结构" />&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;h3 id="修改配置">
+ 修改配置
+ 
+ &lt;a class="anchor" href="#%e4%bf%ae%e6%94%b9%e9%85%8d%e7%bd%ae">#&lt;/a>
+ 
+&lt;/h3>
+&lt;p>进入新的剧本文件夹，修改info.json文件&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-json" data-lang="json">&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;#34;Name&amp;#34;&lt;/span>:&lt;span style="color:#e6db74">&amp;#34;测试用例&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;#34;Description&amp;#34;&lt;/span>:&lt;span style="color:#e6db74">&amp;#34;测试用例&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;#34;Author&amp;#34;&lt;/span>:&lt;span style="color:#e6db74">&amp;#34;雪莉苹果汁&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;#34;Enter&amp;#34;&lt;/span>:&lt;span style="color:#e6db74">&amp;#34;SherryAppleJuice_ExampleMod/Main&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;#34;Version&amp;#34;&lt;/span>:&lt;span style="color:#e6db74">&amp;#34;1.0.0&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>打开info.json文件，将上面的json字符串复制进去&lt;/p>
+&lt;p>按照自己的需要修改各个属性，Name是你的剧本名字，Description是剧本描述，Author是你想留下来的笔名，Version是剧本的版本&lt;/p>
+&lt;p>关键点是Enter，这个属性的含义是你的剧本的入口点。内容是相对于Scripts目录的剧本入口文件的相对路径&lt;/p>
+&lt;p>这里样例剧本的入口点文件为&lt;strong>SherryAppleJuice_TestMod000\Scripts\SherryAppleJuice_TestMod000\Main.nani&lt;/strong>，那么Enter的相对路径为&lt;strong>SherryAppleJuice_TestMod000\Main&lt;/strong>&lt;/p>
+&lt;p>修改后的样子大概是：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-json" data-lang="json">&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;#34;Name&amp;#34;&lt;/span>:&lt;span style="color:#e6db74">&amp;#34;修改后的剧本名称&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;#34;Description&amp;#34;&lt;/span>:&lt;span style="color:#e6db74">&amp;#34;修改后的剧本描述&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;#34;Author&amp;#34;&lt;/span>:&lt;span style="color:#e6db74">&amp;#34;你的名字，不要填韦一敏&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;#34;Enter&amp;#34;&lt;/span>:&lt;span style="color:#e6db74">&amp;#34;SherryAppleJuice_TestMod000/Main&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;#34;Version&amp;#34;&lt;/span>:&lt;span style="color:#e6db74">&amp;#34;1.0.0&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;h3 id="修改剧本内跳转">
+ 修改剧本内跳转
+ 
+ &lt;a class="anchor" href="#%e4%bf%ae%e6%94%b9%e5%89%a7%e6%9c%ac%e5%86%85%e8%b7%b3%e8%bd%ac">#&lt;/a>
+ 
+&lt;/h3>
+&lt;p>打开剧本内的.nani格式文件，搜索所有的&lt;strong>SherryAppleJuice_ExampleMod&lt;/strong>，替换为你的新剧本ID，类似这样：&lt;/p>
+&lt;p>&lt;img src="http://manosabamoddoc.fuyumi.xyz/images/EditNani.png" alt="修改nani" />&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;h3 id="完成">
+ 完成
+ 
+ &lt;a class="anchor" href="#%e5%ae%8c%e6%88%90">#&lt;/a>
+ 
+&lt;/h3>
+&lt;p>这样一个新的剧本就完成啦！启动游戏点击开始游戏，就可以看到你的剧本了，把这个剧本文件夹发给其它小伙伴，也可以看到这个剧本啦&lt;/p></description></item><item><title>给使用的人</title><link>http://manosabamoddoc.fuyumi.xyz/docs/Intruduce/ForUser/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://manosabamoddoc.fuyumi.xyz/docs/Intruduce/ForUser/</guid><description>&lt;h1 id="给使用的人">
  给使用的人
  
  &lt;a class="anchor" href="#%e7%bb%99%e4%bd%bf%e7%94%a8%e7%9a%84%e4%ba%ba">#&lt;/a>
