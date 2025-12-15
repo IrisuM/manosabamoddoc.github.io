@@ -1,2 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>立绘编辑器 on 雪莉的剧本编辑器</title><link>http://manosabamoddoc.fuyumi.xyz/docs/LayerEditor/</link><description>Recent content in 立绘编辑器 on 雪莉的剧本编辑器</description><generator>Hugo</generator><language>zh</language><atom:link href="http://manosabamoddoc.fuyumi.xyz/docs/LayerEditor/index.xml" rel="self" type="application/rss+xml"/><item><title>立绘图层编辑</title><link>http://manosabamoddoc.fuyumi.xyz/docs/LayerEditor/LayerEditor/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://manosabamoddoc.fuyumi.xyz/docs/LayerEditor/LayerEditor/</guid><description>&lt;p>&lt;a href="http://manosabamoddoc.fuyumi.xyz/character_editor/character_editor.html">雪莉的立绘展示工具&lt;/a>&lt;/p>
-&lt;p>本工具由AI编写，可能有各种BUG，欢迎加群反馈&lt;/p></description></item></channel></rss>
+&lt;p>本工具由AI编写，可能有各种BUG，欢迎加群反馈&lt;/p>
+&lt;h2 id="本地版本下载">
+ 本地版本下载
+ 
+ &lt;a class="anchor" href="#%e6%9c%ac%e5%9c%b0%e7%89%88%e6%9c%ac%e4%b8%8b%e8%bd%bd">#&lt;/a>
+ 
+&lt;/h2>
+&lt;p>&lt;a href="http://manosabamoddoc.fuyumi.xyz/resources/character_editor.zip">character_editor&lt;/a>&lt;/p>
+&lt;p>本地访问可能存在跨域限制的问题，可以搜索你使用的浏览器如何关闭跨域访问限制解决&lt;/p>
+&lt;p>或者下载VS Code插件 Live Server，通过插件打开&lt;/p></description></item></channel></rss>

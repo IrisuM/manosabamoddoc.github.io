@@ -947,4 +947,13 @@ Ema: 再说一句就下线了。
 &lt;/h2>
 &lt;p>截止开发插件完成，官方的Bepinex和游戏本体不兼容，存在GC处理异常的问题，所以这里单独上传修复后的版本&lt;/p>
 &lt;/blockquote></description></item><item><title>立绘图层编辑</title><link>http://manosabamoddoc.fuyumi.xyz/docs/LayerEditor/LayerEditor/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://manosabamoddoc.fuyumi.xyz/docs/LayerEditor/LayerEditor/</guid><description>&lt;p>&lt;a href="http://manosabamoddoc.fuyumi.xyz/character_editor/character_editor.html">雪莉的立绘展示工具&lt;/a>&lt;/p>
-&lt;p>本工具由AI编写，可能有各种BUG，欢迎加群反馈&lt;/p></description></item></channel></rss>
+&lt;p>本工具由AI编写，可能有各种BUG，欢迎加群反馈&lt;/p>
+&lt;h2 id="本地版本下载">
+ 本地版本下载
+ 
+ &lt;a class="anchor" href="#%e6%9c%ac%e5%9c%b0%e7%89%88%e6%9c%ac%e4%b8%8b%e8%bd%bd">#&lt;/a>
+ 
+&lt;/h2>
+&lt;p>&lt;a href="http://manosabamoddoc.fuyumi.xyz/resources/character_editor.zip">character_editor&lt;/a>&lt;/p>
+&lt;p>本地访问可能存在跨域限制的问题，可以搜索你使用的浏览器如何关闭跨域访问限制解决&lt;/p>
+&lt;p>或者下载VS Code插件 Live Server，通过插件打开&lt;/p></description></item></channel></rss>
