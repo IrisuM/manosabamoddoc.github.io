@@ -1,0 +1,339 @@
+<!doctype html><html lang=zh dir=ltr><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content='
+  魔女图鉴
+  
+  #
+  
+
+
+本页内容：自定义魔女图鉴的完整指南，包括证物、人物档案、规定和记录。
+前置知识：创建新剧本，加载外部立绘资源
+
+魔女图鉴包含四大分类:
+
+Clues (证物) - 可在审判中出示的证据
+Profiles (人物档案) - 角色的详细介绍
+Rules (规定) - 魔女游戏的规则条款
+Notes (记录) - 剧情记录或日志
+
+所有分类的数据都在 info.json 中配置，并通过脚本指令在剧情中动态更新。
+
+  版本化结构
+  
+  #
+  
+
+所有魔女图鉴字段都使用 Id-Items 结构，支持版本管理：
+[
+    {
+        "Id": "条目ID",
+        "Items": [
+            {
+                "Version": 1,
+                "字段1": "内容"
+            },
+            {
+                "Version": 2,
+                "字段1": "更新后的内容"
+            }
+        ]
+    }
+]
+通过 @update 指令可以在剧情推进时更新到指定 Version，实现内容随剧情变化。
+
+  Clues (证物)
+  
+  #
+  
+
+自定义证物，可在审判中出示。
+
+  info.json 配置
+  
+  #
+  
+
+
+  
+      
+          字段
+          类型
+          必填
+          说明
+      
+  
+  
+      
+          Id
+          String
+          ✅
+          证物ID，推荐格式: [ModId]_[章节]-[编号]
+      
+      
+          Items
+          Array
+          ✅
+          版本列表
+      
+      
+          Items[].Version
+          Number
+          ✅
+          版本号 (1, 2, 3&mldr;)
+      
+      
+          Items[].Name
+          本地化对象
+          ✅
+          证物名称
+      
+      
+          Items[].Description
+          本地化对象
+          ✅
+          证物描述，支持 <br> 换行
+      
+  
+
+证物图片路径: [MOD文件夹]/WitchBook/Clues/[Id].png'><meta name=theme-color media="(prefers-color-scheme: light)" content="#ffffff"><meta name=theme-color media="(prefers-color-scheme: dark)" content="#343a40"><meta name=color-scheme content="light dark"><meta property="og:url" content="http://manosabamoddoc.fuyumi.xyz/docs/Advanced/WitchBook/"><meta property="og:site_name" content="雪莉的剧本编辑器"><meta property="og:title" content="魔女图鉴"><meta property="og:description" content='魔女图鉴 # 本页内容：自定义魔女图鉴的完整指南，包括证物、人物档案、规定和记录。 前置知识：创建新剧本，加载外部立绘资源
+魔女图鉴包含四大分类:
+Clues (证物) - 可在审判中出示的证据 Profiles (人物档案) - 角色的详细介绍 Rules (规定) - 魔女游戏的规则条款 Notes (记录) - 剧情记录或日志 所有分类的数据都在 info.json 中配置，并通过脚本指令在剧情中动态更新。
+版本化结构 # 所有魔女图鉴字段都使用 Id-Items 结构，支持版本管理：
+[ { "Id": "条目ID", "Items": [ { "Version": 1, "字段1": "内容" }, { "Version": 2, "字段1": "更新后的内容" } ] } ] 通过 @update 指令可以在剧情推进时更新到指定 Version，实现内容随剧情变化。
+Clues (证物) # 自定义证物，可在审判中出示。
+info.json 配置 # 字段 类型 必填 说明 Id String ✅ 证物ID，推荐格式: [ModId]_[章节]-[编号] Items Array ✅ 版本列表 Items[].Version Number ✅ 版本号 (1, 2, 3…) Items[].Name 本地化对象 ✅ 证物名称 Items[].Description 本地化对象 ✅ 证物描述，支持 <br> 换行 证物图片路径: [MOD文件夹]/WitchBook/Clues/[Id].png'><meta property="og:locale" content="zh"><meta property="og:type" content="article"><meta property="article:section" content="docs"><meta property="article:modified_time" content="2026-04-01T22:58:53+08:00"><title>魔女图鉴 | 雪莉的剧本编辑器</title><link rel=icon href=/favicon.png><link rel=manifest href=/manifest.json><link rel=canonical href=http://manosabamoddoc.fuyumi.xyz/docs/Advanced/WitchBook/><link rel=stylesheet href=/book.min.f983b1133075f34a464000952394d7dd8ca4b6c8f419ca5ae47d914318121017.css integrity="sha256-+YOxEzB180pGQACVI5TX3Yyktsj0Gcpa5H2RQxgSEBc=" crossorigin=anonymous><script defer src=/fuse.min.js></script><script defer src=/zh.search.min.bfa65412d244f7170220675f6314b1f08ca7ba26b8a8ed8a20179cf9193fc6dc.js integrity="sha256-v6ZUEtJE9xcCIGdfYxSx8Iynuia4qO2KIBec+Rk/xtw=" crossorigin=anonymous></script></head><body dir=ltr class="book-kind-page book-type-docs"><input type=checkbox class="hidden toggle" id=menu-control>
+<input type=checkbox class="hidden toggle" id=toc-control><main class="container flex"><aside class=book-menu><div class=book-menu-content><nav><h2 class=book-brand><a class="flex align-center" href=/><img src=/logo.png alt=Logo><span>雪莉的剧本编辑器</span></a></h2><div class="book-search hidden"><input type=text id=book-search-input placeholder=搜索 aria-label=搜索 maxlength=64 data-hotkeys=s/><div class="book-search-spinner hidden"></div><ul id=book-search-results></ul></div><script>document.querySelector(".book-search").classList.remove("hidden")</script><ul><li class=book-section-flat><input type=checkbox id=section-52b5154487ff06b89e9868121921b268 class=toggle>
+<label for=section-52b5154487ff06b89e9868121921b268 class=flex><a role=button class=flex-auto>介绍</a></label><ul><li><a href=/docs/Intruduce/ForUser/>给使用的人</a></li><li><a href=/docs/Intruduce/ForDeveloper/>给想写剧本的人</a></li></ul></li><li class=book-section-flat><a href=/docs/Install/>安装与卸载</a><ul></ul></li><li class=book-section-flat><input type=checkbox id=section-096e5f72c7ef5d62a972e4a2046cf5fb class=toggle>
+<label for=section-096e5f72c7ef5d62a972e4a2046cf5fb class=flex><a role=button class=flex-auto>快速开始一段创作</a></label><ul><li><a href=/docs/QuickStart/CreateMod/>创建新的剧本</a></li><li><a href=/docs/QuickStart/BeginAdv/>开始一个简单的对话</a></li><li><a href=/docs/QuickStart/BeginTrial/>试试写一个魔女裁判</a></li><li><a href=/docs/QuickStart/Tips/>小贴士</a></li></ul></li><li class=book-section-flat><a href=/docs/ModConfig/>Mod配置</a><ul></ul></li><li class=book-section-flat><input type=checkbox id=section-85b6c0237bbcba5efb9e89acf039eea2 class=toggle checked>
+<label for=section-85b6c0237bbcba5efb9e89acf039eea2 class=flex><a role=button class=flex-auto>进阶文档</a></label><ul><li><a href=/docs/Advanced/Command/>指令参考</a></li><li><a href=/docs/Advanced/LoadBackgrounds/>加载外部背景资源</a></li><li><a href=/docs/Advanced/LoadVoice/>加载外部音频资源</a></li><li><a href=/docs/Advanced/LoadCharacter/>加载外部立绘资源</a></li><li><a href=/docs/Advanced/WitchBook/ class=active>魔女图鉴</a></li><li><a href=/docs/Advanced/MoreNaniFile/>本地化配置</a></li><li><a href=/docs/Advanced/LoadMovie/>视频播放</a></li><li><a href=/docs/Advanced/ChapterNames/>存档章节名称</a></li><li><a href=/docs/Advanced/MapMenu/>搜查示例</a></li></ul></li><li class=book-section-flat><input type=checkbox id=section-0179ebec185e705019125ac32129ed53 class=toggle>
+<label for=section-0179ebec185e705019125ac32129ed53 class=flex><a role=button class=flex-auto>其它说明</a></label><ul><li><a href=/docs/Others/AQ/>碎碎念</a></li><li><a href=/docs/Others/UsefulTools/>一些有用的工具</a></li></ul></li><li class=book-section-flat><input type=checkbox id=section-e8588b3ef49116b03cfce7c9e2485f9c class=toggle>
+<label for=section-e8588b3ef49116b03cfce7c9e2485f9c class=flex><a role=button class=flex-auto>立绘编辑器</a></label><ul><li><a href=/docs/LayerEditor/LayerEditor/>立绘图层编辑</a></li></ul></li></ul><ul><li><a href=https://github.com/IrisuM/ManosabaMod/ target=_blank rel=noopener>Github</a></li><li><a href=https://space.bilibili.com/1265680561/ target=_blank rel=noopener>关注永雏塔菲谢谢喵！</a></li><li><a href=https://space.bilibili.com/3546949672241842/ target=_blank rel=noopener>关注我谢谢喵！</a></li></ul></nav><script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script></div></aside><div class=book-page><header class=book-header><div class="flex align-center justify-between"><label for=menu-control><img src=/svg/menu.svg class=book-icon alt=Menu></label><h3>魔女图鉴</h3><label for=toc-control><img src=/svg/toc.svg class=book-icon alt="Table of Contents"></label></div><aside class="hidden clearfix"><nav id=TableOfContents><ul><li><a href=#魔女图鉴>魔女图鉴</a><ul><li><a href=#版本化结构>版本化结构</a></li><li><a href=#clues-证物>Clues (证物)</a><ul><li><a href=#infojson-配置>info.json 配置</a></li><li><a href=#脚本中使用>脚本中使用</a></li></ul></li><li><a href=#profiles-人物档案>Profiles (人物档案)</a><ul><li><a href=#infojson-配置-1>info.json 配置</a></li><li><a href=#脚本中使用-1>脚本中使用</a></li><li><a href=#文件结构>文件结构</a></li></ul></li><li><a href=#rules-规定>Rules (规定)</a><ul><li><a href=#infojson-配置-2>info.json 配置</a></li><li><a href=#脚本中使用-2>脚本中使用</a></li></ul></li><li><a href=#notes-记录>Notes (记录)</a><ul><li><a href=#infojson-配置-3>info.json 配置</a></li><li><a href=#脚本中使用-3>脚本中使用</a></li></ul></li><li><a href=#命名规范>命名规范</a></li><li><a href=#覆写原版内容>覆写原版内容</a></li><li><a href=#本地化字段格式>本地化字段格式</a></li><li><a href=#完整工作流示例>完整工作流示例</a><ul><li><a href=#1-infojson-配置>1. info.json 配置</a></li><li><a href=#2-文件结构>2. 文件结构</a></li><li><a href=#3-脚本中使用>3. 脚本中使用</a></li></ul></li></ul></li></ul></nav></aside></header><article class="markdown book-article"><h1 id=魔女图鉴>魔女图鉴
+<a class=anchor href=#%e9%ad%94%e5%a5%b3%e5%9b%be%e9%89%b4>#</a></h1><blockquote class="book-hint info"><p>本页内容：自定义魔女图鉴的完整指南，包括证物、人物档案、规定和记录。
+前置知识：<a href=/docs/QuickStart/CreateMod>创建新剧本</a>，<a href=/docs/Advanced/LoadCharacter>加载外部立绘资源</a></p></blockquote><p>魔女图鉴包含四大分类:</p><ul><li><strong>Clues</strong> (证物) - 可在审判中出示的证据</li><li><strong>Profiles</strong> (人物档案) - 角色的详细介绍</li><li><strong>Rules</strong> (规定) - 魔女游戏的规则条款</li><li><strong>Notes</strong> (记录) - 剧情记录或日志</li></ul><p>所有分类的数据都在 info.json 中配置，并通过脚本指令在剧情中动态更新。</p><h2 id=版本化结构>版本化结构
+<a class=anchor href=#%e7%89%88%e6%9c%ac%e5%8c%96%e7%bb%93%e6%9e%84>#</a></h2><p>所有魔女图鉴字段都使用 Id-Items 结构，支持版本管理：</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json><span style=display:flex><span>[
+</span></span><span style=display:flex><span>    {
+</span></span><span style=display:flex><span>        <span style=color:#f92672>&#34;Id&#34;</span>: <span style=color:#e6db74>&#34;条目ID&#34;</span>,
+</span></span><span style=display:flex><span>        <span style=color:#f92672>&#34;Items&#34;</span>: [
+</span></span><span style=display:flex><span>            {
+</span></span><span style=display:flex><span>                <span style=color:#f92672>&#34;Version&#34;</span>: <span style=color:#ae81ff>1</span>,
+</span></span><span style=display:flex><span>                <span style=color:#f92672>&#34;字段1&#34;</span>: <span style=color:#e6db74>&#34;内容&#34;</span>
+</span></span><span style=display:flex><span>            },
+</span></span><span style=display:flex><span>            {
+</span></span><span style=display:flex><span>                <span style=color:#f92672>&#34;Version&#34;</span>: <span style=color:#ae81ff>2</span>,
+</span></span><span style=display:flex><span>                <span style=color:#f92672>&#34;字段1&#34;</span>: <span style=color:#e6db74>&#34;更新后的内容&#34;</span>
+</span></span><span style=display:flex><span>            }
+</span></span><span style=display:flex><span>        ]
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>]
+</span></span></code></pre></div><p>通过 <code>@update</code> 指令可以在剧情推进时更新到指定 Version，实现内容随剧情变化。</p><h2 id=clues-证物>Clues (证物)
+<a class=anchor href=#clues-%e8%af%81%e7%89%a9>#</a></h2><p>自定义证物，可在审判中出示。</p><h3 id=infojson-配置>info.json 配置
+<a class=anchor href=#infojson-%e9%85%8d%e7%bd%ae>#</a></h3><table><thead><tr><th>字段</th><th>类型</th><th>必填</th><th>说明</th></tr></thead><tbody><tr><td>Id</td><td>String</td><td>✅</td><td>证物ID，推荐格式: <code>[ModId]_[章节]-[编号]</code></td></tr><tr><td>Items</td><td>Array</td><td>✅</td><td>版本列表</td></tr><tr><td>Items[].Version</td><td>Number</td><td>✅</td><td>版本号 (1, 2, 3&mldr;)</td></tr><tr><td>Items[].Name</td><td>本地化对象</td><td>✅</td><td>证物名称</td></tr><tr><td>Items[].Description</td><td>本地化对象</td><td>✅</td><td>证物描述，支持 <code>&lt;br></code> 换行</td></tr></tbody></table><p>证物图片路径: <code>[MOD文件夹]/WitchBook/Clues/[Id].png</code></p><p>配置示例:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json><span style=display:flex><span><span style=color:#e6db74>&#34;Clues&#34;</span><span style=color:#960050;background-color:#1e0010>:</span> [
+</span></span><span style=display:flex><span>    {
+</span></span><span style=display:flex><span>        <span style=color:#f92672>&#34;Id&#34;</span>: <span style=color:#e6db74>&#34;MaxMixAlex_ManosabaModEnhance_1-1&#34;</span>,
+</span></span><span style=display:flex><span>        <span style=color:#f92672>&#34;Items&#34;</span>: [
+</span></span><span style=display:flex><span>            {
+</span></span><span style=display:flex><span>                <span style=color:#f92672>&#34;Version&#34;</span>: <span style=color:#ae81ff>1</span>,
+</span></span><span style=display:flex><span>                <span style=color:#f92672>&#34;Name&#34;</span>: {
+</span></span><span style=display:flex><span>                    <span style=color:#f92672>&#34;zh-Hans&#34;</span>: <span style=color:#e6db74>&#34;希罗的日记&#34;</span>,
+</span></span><span style=display:flex><span>                    <span style=color:#f92672>&#34;ja&#34;</span>: <span style=color:#e6db74>&#34;ヒロの日記&#34;</span>
+</span></span><span style=display:flex><span>                },
+</span></span><span style=display:flex><span>                <span style=color:#f92672>&#34;Description&#34;</span>: {
+</span></span><span style=display:flex><span>                    <span style=color:#f92672>&#34;zh-Hans&#34;</span>: <span style=color:#e6db74>&#34;在牢房中发现的薄笔记本。&lt;br&gt;&lt;br&gt;封面没有任何装饰，内页记录着在监牢里度过的日子。&#34;</span>,
+</span></span><span style=display:flex><span>                    <span style=color:#f92672>&#34;ja&#34;</span>: <span style=color:#e6db74>&#34;牢房で見つかった薄いノート。&#34;</span>
+</span></span><span style=display:flex><span>                }
+</span></span><span style=display:flex><span>            },
+</span></span><span style=display:flex><span>            {
+</span></span><span style=display:flex><span>                <span style=color:#f92672>&#34;Version&#34;</span>: <span style=color:#ae81ff>2</span>,
+</span></span><span style=display:flex><span>                <span style=color:#f92672>&#34;Name&#34;</span>: {
+</span></span><span style=display:flex><span>                    <span style=color:#f92672>&#34;zh-Hans&#34;</span>: <span style=color:#e6db74>&#34;希罗的日记&#34;</span>
+</span></span><span style=display:flex><span>                },
+</span></span><span style=display:flex><span>                <span style=color:#f92672>&#34;Description&#34;</span>: {
+</span></span><span style=display:flex><span>                    <span style=color:#f92672>&#34;zh-Hans&#34;</span>: <span style=color:#e6db74>&#34;在牢房中发现的薄笔记本。&lt;br&gt;&lt;br&gt;内页反复出现了艾玛的名字。&lt;br&gt;&lt;br&gt;在审判中被当庭公开。&#34;</span>
+</span></span><span style=display:flex><span>                }
+</span></span><span style=display:flex><span>            }
+</span></span><span style=display:flex><span>        ]
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>]
+</span></span></code></pre></div><h3 id=脚本中使用>脚本中使用
+<a class=anchor href=#%e8%84%9a%e6%9c%ac%e4%b8%ad%e4%bd%bf%e7%94%a8>#</a></h3><p>完整的搜证流程 (带UI动画):</p><pre tabindex=0><code class=language-nani data-lang=nani>; 显示证物弹窗
+@spawn &#34;Clue&#34; Params:MaxMixAlex_ManosabaModEnhance_1-1
+; 显示更新提示
+@toast &#34;魔女图鉴 更新…&#34;
+; 更新到版本1
+@update &#34;MaxMixAlex_ManosabaModEnhance_1-1&#34; Category:&#34;Clue&#34; Version:1
+@Wait &#34;i1.2&#34;
+; 关闭弹窗
+@despawn &#34;Clue&#34;
+@Wait &#34;0.6&#34;
+</code></pre><p>在审判中出示证据:</p><pre tabindex=0><code class=language-nani data-lang=nani>@evidence correct:&#34;MaxMixAlex_ManosabaModEnhance_1-1&#34; Clue
+</code></pre><h2 id=profiles-人物档案>Profiles (人物档案)
+<a class=anchor href=#profiles-%e4%ba%ba%e7%89%a9%e6%a1%a3%e6%a1%88>#</a></h2><p>角色的详细介绍，需要配合 <a href=/docs/Advanced/LoadCharacter/#%e6%96%b9%e6%b3%95%e4%ba%8c-characters-%e6%8e%a8%e8%8d%90>Characters</a> 使用。</p><h3 id=infojson-配置-1>info.json 配置
+<a class=anchor href=#infojson-%e9%85%8d%e7%bd%ae-1>#</a></h3><table><thead><tr><th>字段</th><th>类型</th><th>必填</th><th>说明</th></tr></thead><tbody><tr><td>Id</td><td>String</td><td>✅</td><td>角色ID (对应 Characters 中的 Id)</td></tr><tr><td>Items</td><td>Array</td><td>✅</td><td>版本列表</td></tr><tr><td>Items[].Version</td><td>Number</td><td>✅</td><td>版本号</td></tr><tr><td>Items[].Description</td><td>本地化对象</td><td>✅</td><td>角色档案介绍</td></tr></tbody></table><p>人物档案图片路径: <code>[MOD文件夹]/WitchBook/Profiles/[Id].png</code> (推荐尺寸 400x600)</p><blockquote class="book-hint info"><p>人物档案的 Id 必须与 Characters 中的 Id 对应，系统会自动关联角色信息</p></blockquote><p>配置示例:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json><span style=display:flex><span><span style=color:#e6db74>&#34;Profiles&#34;</span><span style=color:#960050;background-color:#1e0010>:</span> [
+</span></span><span style=display:flex><span>    {
+</span></span><span style=display:flex><span>        <span style=color:#f92672>&#34;Id&#34;</span>: <span style=color:#e6db74>&#34;EmaNew&#34;</span>,
+</span></span><span style=display:flex><span>        <span style=color:#f92672>&#34;Items&#34;</span>: [
+</span></span><span style=display:flex><span>            {
+</span></span><span style=display:flex><span>                <span style=color:#f92672>&#34;Version&#34;</span>: <span style=color:#ae81ff>1</span>,
+</span></span><span style=display:flex><span>                <span style=color:#f92672>&#34;Description&#34;</span>: {
+</span></span><span style=display:flex><span>                    <span style=color:#f92672>&#34;zh-Hans&#34;</span>: <span style=color:#e6db74>&#34;14岁，初中时期的樱羽艾玛。&lt;br&gt;&lt;br&gt;希罗的好友。&#34;</span>
+</span></span><span style=display:flex><span>                }
+</span></span><span style=display:flex><span>            },
+</span></span><span style=display:flex><span>            {
+</span></span><span style=display:flex><span>                <span style=color:#f92672>&#34;Version&#34;</span>: <span style=color:#ae81ff>2</span>,
+</span></span><span style=display:flex><span>                <span style=color:#f92672>&#34;Description&#34;</span>: {
+</span></span><span style=display:flex><span>                    <span style=color:#f92672>&#34;zh-Hans&#34;</span>: <span style=color:#e6db74>&#34;14岁，初中时期的樱羽艾玛。&lt;br&gt;&lt;br&gt;在审判中作为关键证人被传唤。&#34;</span>
+</span></span><span style=display:flex><span>                }
+</span></span><span style=display:flex><span>            }
+</span></span><span style=display:flex><span>        ]
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>]
+</span></span></code></pre></div><h3 id=脚本中使用-1>脚本中使用
+<a class=anchor href=#%e8%84%9a%e6%9c%ac%e4%b8%ad%e4%bd%bf%e7%94%a8-1>#</a></h3><pre tabindex=0><code class=language-nani data-lang=nani>; 初次出场时解锁档案
+@update &#34;EmaNew&#34; Category:&#34;Profile&#34; Version:1
+
+; 剧情发展后更新档案
+@update &#34;EmaNew&#34; Category:&#34;Profile&#34; Version:2
+
+; 在审判中出示人物档案
+@evidence correct:&#34;EmaNew&#34; Profile
+</code></pre><h3 id=文件结构>文件结构
+<a class=anchor href=#%e6%96%87%e4%bb%b6%e7%bb%93%e6%9e%84>#</a></h3><pre tabindex=0><code>[MOD根目录]/
+  ├─ Characters/
+  │   └─ EmaNew/
+  │       ├─ 1.png        ← 立绘
+  │       └─ 2.png
+  ├─ WitchBook/
+  │   └─ Profiles/
+  │       └─ EmaNew.png   ← 档案图片 (与角色ID同名)
+  └─ info.json
+</code></pre><h2 id=rules-规定>Rules (规定)
+<a class=anchor href=#rules-%e8%a7%84%e5%ae%9a>#</a></h2><p>游戏规则说明，魔女游戏的核心条款。</p><h3 id=infojson-配置-2>info.json 配置
+<a class=anchor href=#infojson-%e9%85%8d%e7%bd%ae-2>#</a></h3><table><thead><tr><th>字段</th><th>类型</th><th>必填</th><th>说明</th></tr></thead><tbody><tr><td>Id</td><td>String</td><td>✅</td><td>规定ID</td></tr><tr><td>Items</td><td>Array</td><td>✅</td><td>版本列表</td></tr><tr><td>Items[].Version</td><td>Number</td><td>✅</td><td>版本号</td></tr><tr><td>Items[].Numbering</td><td>String</td><td>✅</td><td>章节编号（如 I, II, III），支持任意文本</td></tr><tr><td>Items[].Subtitle</td><td>本地化对象</td><td>✅</td><td>规定名称</td></tr><tr><td>Items[].Description</td><td>本地化对象</td><td>✅</td><td>规定详细说明</td></tr></tbody></table><p>配置示例:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json><span style=display:flex><span><span style=color:#e6db74>&#34;Rules&#34;</span><span style=color:#960050;background-color:#1e0010>:</span> [
+</span></span><span style=display:flex><span>    {
+</span></span><span style=display:flex><span>        <span style=color:#f92672>&#34;Id&#34;</span>: <span style=color:#e6db74>&#34;MaxMixAlex_ManosabaModEnhance_1&#34;</span>,
+</span></span><span style=display:flex><span>        <span style=color:#f92672>&#34;Items&#34;</span>: [
+</span></span><span style=display:flex><span>            {
+</span></span><span style=display:flex><span>                <span style=color:#f92672>&#34;Version&#34;</span>: <span style=color:#ae81ff>1</span>,
+</span></span><span style=display:flex><span>                <span style=color:#f92672>&#34;Numbering&#34;</span>: <span style=color:#e6db74>&#34;I&#34;</span>,
+</span></span><span style=display:flex><span>                <span style=color:#f92672>&#34;Subtitle&#34;</span>: {
+</span></span><span style=display:flex><span>                    <span style=color:#f92672>&#34;zh-Hans&#34;</span>: <span style=color:#e6db74>&#34;游玩规则&#34;</span>
+</span></span><span style=display:flex><span>                },
+</span></span><span style=display:flex><span>                <span style=color:#f92672>&#34;Description&#34;</span>: {
+</span></span><span style=display:flex><span>                    <span style=color:#f92672>&#34;zh-Hans&#34;</span>: <span style=color:#e6db74>&#34;点左键浏览下一条对话，右键隐藏对话框。&lt;br&gt;滚轮可以快速浏览历史对话。&#34;</span>
+</span></span><span style=display:flex><span>                }
+</span></span><span style=display:flex><span>            }
+</span></span><span style=display:flex><span>        ]
+</span></span><span style=display:flex><span>    },
+</span></span><span style=display:flex><span>    {
+</span></span><span style=display:flex><span>        <span style=color:#f92672>&#34;Id&#34;</span>: <span style=color:#e6db74>&#34;MaxMixAlex_ManosabaModEnhance_3&#34;</span>,
+</span></span><span style=display:flex><span>        <span style=color:#f92672>&#34;Items&#34;</span>: [
+</span></span><span style=display:flex><span>            {
+</span></span><span style=display:flex><span>                <span style=color:#f92672>&#34;Version&#34;</span>: <span style=color:#ae81ff>1</span>,
+</span></span><span style=display:flex><span>                <span style=color:#f92672>&#34;Numbering&#34;</span>: <span style=color:#e6db74>&#34;R&#34;</span>,
+</span></span><span style=display:flex><span>                <span style=color:#f92672>&#34;Subtitle&#34;</span>: {
+</span></span><span style=display:flex><span>                    <span style=color:#f92672>&#34;zh-Hans&#34;</span>: <span style=color:#e6db74>&#34;碎碎念&#34;</span>
+</span></span><span style=display:flex><span>                },
+</span></span><span style=display:flex><span>                <span style=color:#f92672>&#34;Description&#34;</span>: {
+</span></span><span style=display:flex><span>                    <span style=color:#f92672>&#34;zh-Hans&#34;</span>: <span style=color:#e6db74>&#34;Numbering 字段可以使用任意文本，不局限于罗马数字。&#34;</span>
+</span></span><span style=display:flex><span>                }
+</span></span><span style=display:flex><span>            }
+</span></span><span style=display:flex><span>        ]
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>]
+</span></span></code></pre></div><h3 id=脚本中使用-2>脚本中使用
+<a class=anchor href=#%e8%84%9a%e6%9c%ac%e4%b8%ad%e4%bd%bf%e7%94%a8-2>#</a></h3><pre tabindex=0><code class=language-nani data-lang=nani>@update &#34;MaxMixAlex_ManosabaModEnhance_1&#34; Category:&#34;Rule&#34; Version:1
+</code></pre><h2 id=notes-记录>Notes (记录)
+<a class=anchor href=#notes-%e8%ae%b0%e5%bd%95>#</a></h2><p>剧情记录或日志，用于记载重要事件。</p><h3 id=infojson-配置-3>info.json 配置
+<a class=anchor href=#infojson-%e9%85%8d%e7%bd%ae-3>#</a></h3><table><thead><tr><th>字段</th><th>类型</th><th>必填</th><th>说明</th></tr></thead><tbody><tr><td>Id</td><td>String</td><td>✅</td><td>记录ID</td></tr><tr><td>Items</td><td>Array</td><td>✅</td><td>版本列表</td></tr><tr><td>Items[].Version</td><td>Number</td><td>✅</td><td>版本号</td></tr><tr><td>Items[].Title</td><td>本地化对象</td><td>✅</td><td>记录标题</td></tr><tr><td>Items[].Description</td><td>本地化对象</td><td>✅</td><td>记录内容</td></tr></tbody></table><p>配置示例:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json><span style=display:flex><span><span style=color:#e6db74>&#34;Notes&#34;</span><span style=color:#960050;background-color:#1e0010>:</span> [
+</span></span><span style=display:flex><span>    {
+</span></span><span style=display:flex><span>        <span style=color:#f92672>&#34;Id&#34;</span>: <span style=color:#e6db74>&#34;MaxMixAlex_ManosabaModEnhance_1&#34;</span>,
+</span></span><span style=display:flex><span>        <span style=color:#f92672>&#34;Items&#34;</span>: [
+</span></span><span style=display:flex><span>            {
+</span></span><span style=display:flex><span>                <span style=color:#f92672>&#34;Version&#34;</span>: <span style=color:#ae81ff>1</span>,
+</span></span><span style=display:flex><span>                <span style=color:#f92672>&#34;Title&#34;</span>: {
+</span></span><span style=display:flex><span>                    <span style=color:#f92672>&#34;zh-Hans&#34;</span>: <span style=color:#e6db74>&#34;魔女图鉴&#34;</span>
+</span></span><span style=display:flex><span>                },
+</span></span><span style=display:flex><span>                <span style=color:#f92672>&#34;Description&#34;</span>: {
+</span></span><span style=display:flex><span>                    <span style=color:#f92672>&#34;zh-Hans&#34;</span>: <span style=color:#e6db74>&#34;新增魔女图鉴中证物、人物、规定、记录四个分类下数据的自定义……&#34;</span>
+</span></span><span style=display:flex><span>                }
+</span></span><span style=display:flex><span>            }
+</span></span><span style=display:flex><span>        ]
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>]
+</span></span></code></pre></div><h3 id=脚本中使用-3>脚本中使用
+<a class=anchor href=#%e8%84%9a%e6%9c%ac%e4%b8%ad%e4%bd%bf%e7%94%a8-3>#</a></h3><pre tabindex=0><code class=language-nani data-lang=nani>@update &#34;MaxMixAlex_ManosabaModEnhance_1&#34; Category:&#34;Note&#34; Version:1
+</code></pre><h2 id=命名规范>命名规范
+<a class=anchor href=#%e5%91%bd%e5%90%8d%e8%a7%84%e8%8c%83>#</a></h2><blockquote class="book-hint warning"><p>为避免与原版游戏数据的 Id 发生冲突，所有 Id 字段都推荐以 Mod 文件夹名称作为前缀。</p></blockquote><p>推荐格式:</p><ul><li>证物: <code>[ModId]_[章节]-[编号]</code>，如 <code>MyMod_1-1</code>, <code>MyMod_2-3</code></li><li>规定/记录: <code>[ModId]_[编号]</code>，如 <code>MyMod_1</code>, <code>MyMod_2</code></li><li>人物档案: 与 Characters 中的 Id 保持一致</li></ul><p>加载器不会对 Id 格式进行强制校验。</p><h2 id=覆写原版内容>覆写原版内容
+<a class=anchor href=#%e8%a6%86%e5%86%99%e5%8e%9f%e7%89%88%e5%86%85%e5%ae%b9>#</a></h2><p>如果使用了与原版相同的 Id (如 <code>1-1</code>)，加载器将自动以 MOD 数据替换对应的原版魔女图鉴条目。</p><p>覆写规则:</p><ul><li>该 Id 下所有版本的数据都将被 MOD 数据替代</li><li>对于人物档案，覆写原版角色时无需在 Characters 中重新定义该角色，原版角色名和颜色样式会被自动使用</li><li>系统一次只加载一个 MOD 的魔女图鉴数据，不同 MOD 之间不会发生 Id 冲突</li></ul><h2 id=本地化字段格式>本地化字段格式
+<a class=anchor href=#%e6%9c%ac%e5%9c%b0%e5%8c%96%e5%ad%97%e6%ae%b5%e6%a0%bc%e5%bc%8f>#</a></h2><p>所有文本字段都使用本地化对象格式:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json><span style=display:flex><span>{
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&#34;zh-Hans&#34;</span>: <span style=color:#e6db74>&#34;简体中文文本&#34;</span>,
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&#34;ja&#34;</span>: <span style=color:#e6db74>&#34;日本語テキスト&#34;</span>
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><p>目前支持的语言:</p><ul><li><code>zh-Hans</code> - 简体中文</li><li><code>ja</code> - 日文</li></ul><blockquote class="book-hint info"><p>即使只需要支持一种语言，也必须使用对象格式而不是直接字符串</p></blockquote><h2 id=完整工作流示例>完整工作流示例
+<a class=anchor href=#%e5%ae%8c%e6%95%b4%e5%b7%a5%e4%bd%9c%e6%b5%81%e7%a4%ba%e4%be%8b>#</a></h2><p>以下是一个从配置到使用的完整示例：</p><h3 id=1-infojson-配置>1. info.json 配置
+<a class=anchor href=#1-infojson-%e9%85%8d%e7%bd%ae>#</a></h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json><span style=display:flex><span>{
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&#34;Characters&#34;</span>: [
+</span></span><span style=display:flex><span>        {
+</span></span><span style=display:flex><span>            <span style=color:#f92672>&#34;Id&#34;</span>: <span style=color:#e6db74>&#34;EmaNew&#34;</span>,
+</span></span><span style=display:flex><span>            <span style=color:#f92672>&#34;Name&#34;</span>: { <span style=color:#f92672>&#34;zh-Hans&#34;</span>: <span style=color:#e6db74>&#34;艾玛&#34;</span> },
+</span></span><span style=display:flex><span>            <span style=color:#f92672>&#34;FamilyName&#34;</span>: { <span style=color:#f92672>&#34;zh-Hans&#34;</span>: <span style=color:#e6db74>&#34;樱羽&#34;</span> },
+</span></span><span style=display:flex><span>            <span style=color:#f92672>&#34;Color&#34;</span>: <span style=color:#e6db74>&#34;#ffd1d9&#34;</span>,
+</span></span><span style=display:flex><span>            <span style=color:#f92672>&#34;Age&#34;</span>: <span style=color:#e6db74>&#34;14&#34;</span>,
+</span></span><span style=display:flex><span>            <span style=color:#f92672>&#34;Height&#34;</span>: <span style=color:#e6db74>&#34;153&#34;</span>,
+</span></span><span style=display:flex><span>            <span style=color:#f92672>&#34;Weight&#34;</span>: <span style=color:#e6db74>&#34;36&#34;</span>
+</span></span><span style=display:flex><span>        }
+</span></span><span style=display:flex><span>    ],
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&#34;Clues&#34;</span>: [
+</span></span><span style=display:flex><span>        {
+</span></span><span style=display:flex><span>            <span style=color:#f92672>&#34;Id&#34;</span>: <span style=color:#e6db74>&#34;MyMod_1-1&#34;</span>,
+</span></span><span style=display:flex><span>            <span style=color:#f92672>&#34;Items&#34;</span>: [
+</span></span><span style=display:flex><span>                {
+</span></span><span style=display:flex><span>                    <span style=color:#f92672>&#34;Version&#34;</span>: <span style=color:#ae81ff>1</span>,
+</span></span><span style=display:flex><span>                    <span style=color:#f92672>&#34;Name&#34;</span>: { <span style=color:#f92672>&#34;zh-Hans&#34;</span>: <span style=color:#e6db74>&#34;神秘信件&#34;</span> },
+</span></span><span style=display:flex><span>                    <span style=color:#f92672>&#34;Description&#34;</span>: { <span style=color:#f92672>&#34;zh-Hans&#34;</span>: <span style=color:#e6db74>&#34;一封来历不明的信件。&#34;</span> }
+</span></span><span style=display:flex><span>                }
+</span></span><span style=display:flex><span>            ]
+</span></span><span style=display:flex><span>        }
+</span></span><span style=display:flex><span>    ],
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&#34;Profiles&#34;</span>: [
+</span></span><span style=display:flex><span>        {
+</span></span><span style=display:flex><span>            <span style=color:#f92672>&#34;Id&#34;</span>: <span style=color:#e6db74>&#34;EmaNew&#34;</span>,
+</span></span><span style=display:flex><span>            <span style=color:#f92672>&#34;Items&#34;</span>: [
+</span></span><span style=display:flex><span>                {
+</span></span><span style=display:flex><span>                    <span style=color:#f92672>&#34;Version&#34;</span>: <span style=color:#ae81ff>1</span>,
+</span></span><span style=display:flex><span>                    <span style=color:#f92672>&#34;Description&#34;</span>: { <span style=color:#f92672>&#34;zh-Hans&#34;</span>: <span style=color:#e6db74>&#34;14岁，初中时期的樱羽艾玛。&#34;</span> }
+</span></span><span style=display:flex><span>                }
+</span></span><span style=display:flex><span>            ]
+</span></span><span style=display:flex><span>        }
+</span></span><span style=display:flex><span>    ]
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><h3 id=2-文件结构>2. 文件结构
+<a class=anchor href=#2-%e6%96%87%e4%bb%b6%e7%bb%93%e6%9e%84>#</a></h3><pre tabindex=0><code>[MOD根目录]/
+  ├─ Characters/
+  │   └─ EmaNew/
+  │       └─ 1.png
+  ├─ WitchBook/
+  │   ├─ Clues/
+  │   │   └─ MyMod_1-1.png
+  │   └─ Profiles/
+  │       └─ EmaNew.png
+  ├─ Scripts/
+  │   └─ ...
+  └─ info.json
+</code></pre><h3 id=3-脚本中使用>3. 脚本中使用
+<a class=anchor href=#3-%e8%84%9a%e6%9c%ac%e4%b8%ad%e4%bd%bf%e7%94%a8>#</a></h3><pre tabindex=0><code class=language-nani data-lang=nani>; 搜证 - 发现证物
+@spawn &#34;Clue&#34; Params:MyMod_1-1
+@toast &#34;魔女图鉴 更新…&#34;
+@update &#34;MyMod_1-1&#34; Category:&#34;Clue&#34; Version:1
+@Wait &#34;i1.2&#34;
+@despawn &#34;Clue&#34;
+@Wait &#34;0.6&#34;
+
+; 解锁人物档案
+@update &#34;EmaNew&#34; Category:&#34;Profile&#34; Version:1
+
+; 审判中出示证据
+@evidence correct:&#34;MyMod_1-1&#34; Clue
+</code></pre></article><footer class=book-footer><div class="flex flex-wrap justify-between"></div><div class="flex flex-wrap justify-between"><span><a href=/docs/Advanced/LoadCharacter/ class="flex align-center book-icon"><img src=/svg/backward.svg class=book-icon alt=Previous title=加载外部立绘资源>
+<span>加载外部立绘资源</span>
+</a></span><span><a href=/docs/Advanced/MoreNaniFile/ class="flex align-center book-icon"><span>本地化配置</span>
+<img src=/svg/forward.svg class=book-icon alt=Next title=本地化配置></a></span></div><script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script><!doctype html><html><head><script src=http://manosabamoddoc.fuyumi.xyz/background/sakura.js></script></head><body></body></html></footer><div class=book-comments></div><label for=menu-control class="hidden book-menu-overlay"></label></div><aside class=book-toc><div class=book-toc-content><nav id=TableOfContents><ul><li><a href=#魔女图鉴>魔女图鉴</a><ul><li><a href=#版本化结构>版本化结构</a></li><li><a href=#clues-证物>Clues (证物)</a><ul><li><a href=#infojson-配置>info.json 配置</a></li><li><a href=#脚本中使用>脚本中使用</a></li></ul></li><li><a href=#profiles-人物档案>Profiles (人物档案)</a><ul><li><a href=#infojson-配置-1>info.json 配置</a></li><li><a href=#脚本中使用-1>脚本中使用</a></li><li><a href=#文件结构>文件结构</a></li></ul></li><li><a href=#rules-规定>Rules (规定)</a><ul><li><a href=#infojson-配置-2>info.json 配置</a></li><li><a href=#脚本中使用-2>脚本中使用</a></li></ul></li><li><a href=#notes-记录>Notes (记录)</a><ul><li><a href=#infojson-配置-3>info.json 配置</a></li><li><a href=#脚本中使用-3>脚本中使用</a></li></ul></li><li><a href=#命名规范>命名规范</a></li><li><a href=#覆写原版内容>覆写原版内容</a></li><li><a href=#本地化字段格式>本地化字段格式</a></li><li><a href=#完整工作流示例>完整工作流示例</a><ul><li><a href=#1-infojson-配置>1. info.json 配置</a></li><li><a href=#2-文件结构>2. 文件结构</a></li><li><a href=#3-脚本中使用>3. 脚本中使用</a></li></ul></li></ul></li></ul></nav></div></aside></main></body></html>

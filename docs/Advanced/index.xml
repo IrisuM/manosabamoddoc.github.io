@@ -1,129 +1,189 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>进阶文档 on 雪莉的剧本编辑器</title><link>http://manosabamoddoc.fuyumi.xyz/docs/Advanced/</link><description>Recent content in 进阶文档 on 雪莉的剧本编辑器</description><generator>Hugo</generator><language>zh</language><atom:link href="http://manosabamoddoc.fuyumi.xyz/docs/Advanced/index.xml" rel="self" type="application/rss+xml"/><item><title>指令介绍</title><link>http://manosabamoddoc.fuyumi.xyz/docs/Advanced/Command/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://manosabamoddoc.fuyumi.xyz/docs/Advanced/Command/</guid><description>&lt;h1 id="指令介绍">
- 指令介绍
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>进阶文档 on 雪莉的剧本编辑器</title><link>http://manosabamoddoc.fuyumi.xyz/docs/Advanced/</link><description>Recent content in 进阶文档 on 雪莉的剧本编辑器</description><generator>Hugo</generator><language>zh</language><atom:link href="http://manosabamoddoc.fuyumi.xyz/docs/Advanced/index.xml" rel="self" type="application/rss+xml"/><item><title>指令参考</title><link>http://manosabamoddoc.fuyumi.xyz/docs/Advanced/Command/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://manosabamoddoc.fuyumi.xyz/docs/Advanced/Command/</guid><description>&lt;h1 id="指令参考">
+ 指令参考
  
- &lt;a class="anchor" href="#%e6%8c%87%e4%bb%a4%e4%bb%8b%e7%bb%8d">#&lt;/a>
+ &lt;a class="anchor" href="#%e6%8c%87%e4%bb%a4%e5%8f%82%e8%80%83">#&lt;/a>
  
 &lt;/h1>
-&lt;hr>
-&lt;details >&lt;summary>back&lt;/summary>
- &lt;div class="markdown-inner">
-&lt;h2 id="back">
- back
+&lt;blockquote class="book-hint info">
+&lt;p>Naninovel 脚本指令完整参考。前置知识: &lt;a href="http://manosabamoddoc.fuyumi.xyz/docs/QuickStart/BeginAdv">简单对话&lt;/a>, &lt;a href="http://manosabamoddoc.fuyumi.xyz/docs/QuickStart/BeginTrial">魔女裁判&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;p>本页列出了所有可用的脚本指令，包括 Naninovel 官方指令、游戏特有指令以及 MOD 新增功能。&lt;/p>
+&lt;h2 id="指令分类速查">
+ 指令分类速查
+ 
+ &lt;a class="anchor" href="#%e6%8c%87%e4%bb%a4%e5%88%86%e7%b1%bb%e9%80%9f%e6%9f%a5">#&lt;/a>
+ 
+&lt;/h2>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>分类&lt;/th>
+ &lt;th>指令&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>&lt;strong>显示控制&lt;/strong>&lt;/td>
+ &lt;td>&lt;a href="#back">@back&lt;/a>, &lt;a href="#char">@char&lt;/a>, &lt;a href="#hide">@hide&lt;/a>, &lt;a href="#hidechars">@hidechars&lt;/a>, &lt;a href="#show">@show&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;strong>动画效果&lt;/strong>&lt;/td>
+ &lt;td>&lt;a href="#animate">@animate&lt;/a>, &lt;a href="#blur">@blur&lt;/a>, &lt;a href="#shake">@shake&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;strong>对话文本&lt;/strong>&lt;/td>
+ &lt;td>&lt;a href="#print">@print&lt;/a>, &lt;a href="#printdebate">@printDebate&lt;/a>, &lt;a href="#resettext">@ResetText&lt;/a>, &lt;a href="#printer">@printer&lt;/a>, &lt;a href="#hidePrinter">@HidePrinter&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;strong>音频&lt;/strong>&lt;/td>
+ &lt;td>&lt;a href="#bgm">@bgm&lt;/a>, &lt;a href="#sfx">@sfx&lt;/a>, &lt;a href="#voice">@voice&lt;/a>, &lt;a href="#stopbgm">@stopBgm&lt;/a>, &lt;a href="#stopsfx">@stopSfx&lt;/a>, &lt;a href="#stopvoice">@StopVoice&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;strong>流程控制&lt;/strong>&lt;/td>
+ &lt;td>&lt;a href="#goto">@goto&lt;/a>, &lt;a href="#gosub">@gosub&lt;/a>, &lt;a href="#return">@return&lt;/a>, &lt;a href="#stop">@stop&lt;/a>, &lt;a href="#stopforchoice">@StopForChoice&lt;/a>, &lt;a href="#cancelgosub">@CancelGosub&lt;/a>, &lt;a href="#skip">@Skip&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;strong>选择分支&lt;/strong>&lt;/td>
+ &lt;td>&lt;a href="#choice">@choice&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;strong>变量条件&lt;/strong>&lt;/td>
+ &lt;td>&lt;a href="#set">@set&lt;/a>, &lt;a href="#if">@if&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;strong>等待&lt;/strong>&lt;/td>
+ &lt;td>&lt;a href="#wait">@wait&lt;/a>, &lt;a href="#waitfornextframe">@WaitForNextFrame&lt;/a>, &lt;a href="#i">@i&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;strong>审判系统&lt;/strong>&lt;/td>
+ &lt;td>&lt;a href="#printdebate">@printDebate&lt;/a>, &lt;a href="#evidence">@evidence&lt;/a>, &lt;a href="#timer">@timer&lt;/a>, &lt;a href="#pausetrial">@pauseTrial&lt;/a>, &lt;a href="#debate">@debate&lt;/a>, &lt;a href="#stagecamera">@stageCamera&lt;/a>, &lt;a href="#showstagescreen--hidestagescreen">@showStageScreen / @hideStageScreen&lt;/a>, &lt;a href="#gosubmodifycamera">@gosubModifyCamera&lt;/a>, &lt;a href="#gosubcutin">@gosubCutIn&lt;/a>, &lt;a href="#courtfire">@courtFire&lt;/a>, &lt;a href="#badid">@badId&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;strong>魔女图鉴&lt;/strong>&lt;/td>
+ &lt;td>&lt;a href="#update">@update&lt;/a>, &lt;a href="#spawn--despawn">@spawn / @despawn&lt;/a>, &lt;a href="#toast">@toast&lt;/a>, &lt;a href="#gosubresetbook">@gosubResetBook&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;strong>地图搜查&lt;/strong>&lt;/td>
+ &lt;td>&lt;a href="#map">@map&lt;/a>, &lt;a href="#setflag">@setFlag&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;strong>视频播放&lt;/strong>&lt;/td>
+ &lt;td>&lt;a href="#movie">@movie&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;strong>UI控制&lt;/strong>&lt;/td>
+ &lt;td>&lt;a href="#hideui">@HideUI&lt;/a>, &lt;a href="#showui">@ShowUI&lt;/a>, &lt;a href="#processinput">@ProcessInput&lt;/a>, &lt;a href="#returntotitle">@ReturnToTitle&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;strong>角色动作&lt;/strong>&lt;/td>
+ &lt;td>&lt;a href="#emotejumpdouble">@EmoteJumpDouble&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h2 id="显示控制指令">
+ 显示控制指令
+ 
+ &lt;a class="anchor" href="#%e6%98%be%e7%a4%ba%e6%8e%a7%e5%88%b6%e6%8c%87%e4%bb%a4">#&lt;/a>
+ 
+&lt;/h2>
+&lt;h3 id="back">
+ @back
  
  &lt;a class="anchor" href="#back">#&lt;/a>
  
-&lt;/h2>
-&lt;p>&lt;a href="https://naninovel.com/api/#back">&lt;span class="book-badge info">&lt;span class="book-badge-title">官方指令&lt;/span>&lt;span class="book-badge-value">back&lt;/span>&lt;/span>&lt;/a>&lt;/p>
-&lt;p>设置背景元素&lt;/p>
+&lt;/h3>
+&lt;p>&lt;a href="https://naninovel.com/api/#back">官方文档&lt;/a>&lt;/p>
+&lt;p>&lt;strong>功能:&lt;/strong> 设置背景元素&lt;/p>
+&lt;p>&lt;strong>常用参数:&lt;/strong>&lt;/p>
 &lt;table>
  &lt;thead>
  &lt;tr>
  &lt;th>参数&lt;/th>
+ &lt;th>类型&lt;/th>
  &lt;th>说明&lt;/th>
+ &lt;th>示例&lt;/th>
  &lt;/tr>
  &lt;/thead>
  &lt;tbody>
  &lt;tr>
- &lt;td>subid&lt;/td>
- &lt;td>指定层级，靠前的层级会遮挡靠后的，比如Middle会遮挡不设置时的默认层级&lt;/td>
+ &lt;td>(外观)&lt;/td>
+ &lt;td>String&lt;/td>
+ &lt;td>背景外观名称&lt;/td>
+ &lt;td>&lt;code>1_1&lt;/code>, &lt;code>SolidColor&lt;/code>, &lt;code>Transparent&lt;/code>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Id&lt;/td>
+ &lt;td>String&lt;/td>
+ &lt;td>背景处理器&lt;/td>
+ &lt;td>&lt;code>&amp;quot;Stills&amp;quot;&lt;/code> (CG图鉴用)&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>SubId&lt;/td>
+ &lt;td>String&lt;/td>
+ &lt;td>层级,靠前层级遮挡靠后&lt;/td>
+ &lt;td>&lt;code>&amp;quot;Overlay&amp;quot;&lt;/code>, &lt;code>&amp;quot;Middle&amp;quot;&lt;/code>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>pos&lt;/td>
+ &lt;td>Vector2&lt;/td>
+ &lt;td>位置偏移 (X,Y 百分比)&lt;/td>
+ &lt;td>&lt;code>50,50&lt;/code>, &lt;code>-5,-10&lt;/code>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Scale&lt;/td>
+ &lt;td>Float&lt;/td>
+ &lt;td>缩放比例,支持表达式&lt;/td>
+ &lt;td>&lt;code>1.8&lt;/code>, &lt;code>{g_backgroundDefaultScale}&lt;/code>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Rotation&lt;/td>
+ &lt;td>Vector3&lt;/td>
+ &lt;td>旋转角度 (X,Y,Z)&lt;/td>
+ &lt;td>&lt;code>,,0&lt;/code> (仅 Z 轴)&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>tint&lt;/td>
+ &lt;td>Color&lt;/td>
+ &lt;td>颜色叠加 (RGBA)&lt;/td>
+ &lt;td>&lt;code>&amp;quot;#000000&amp;quot;&lt;/code>, &lt;code>&amp;quot;#FFFFFFFF&amp;quot;&lt;/code>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>dissolve&lt;/td>
+ &lt;td>String&lt;/td>
+ &lt;td>自定义转场纹理&lt;/td>
+ &lt;td>&lt;code>&amp;quot;VerticalBlindGradually&amp;quot;&lt;/code>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>transition&lt;/td>
+ &lt;td>String&lt;/td>
+ &lt;td>转场效果&lt;/td>
+ &lt;td>&lt;code>CrossFade&lt;/code>, &lt;code>RadialBlur&lt;/code>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>time&lt;/td>
+ &lt;td>Float&lt;/td>
+ &lt;td>转场时长 (秒)&lt;/td>
+ &lt;td>&lt;code>1.5&lt;/code>, &lt;code>0&lt;/code> (立即)&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Lazy&lt;/td>
+ &lt;td>Bool&lt;/td>
+ &lt;td>从当前状态过渡 (而非重置)&lt;/td>
+ &lt;td>&lt;code>false&lt;/code>&lt;/td>
  &lt;/tr>
  &lt;/tbody>
 &lt;/table>
-&lt;pre tabindex="0">&lt;code>@back SubId:&amp;#34;Middle&amp;#34; 1_1 pos:10,30 Scale:1.8
-&lt;/code>&lt;/pre> &lt;/div>
-&lt;/details>
-&lt;details >&lt;summary>bgm&lt;/summary>
- &lt;div class="markdown-inner">
-&lt;h2 id="bgm">
- bgm
- 
- &lt;a class="anchor" href="#bgm">#&lt;/a>
- 
-&lt;/h2>
-&lt;p>&lt;a href="https://naninovel.com/api/#bgm">&lt;span class="book-badge info">&lt;span class="book-badge-title">官方指令&lt;/span>&lt;span class="book-badge-value">bgm&lt;/span>&lt;/span>&lt;/a>&lt;/p>
-&lt;p>设置背景音乐&lt;/p>
-&lt;pre tabindex="0">&lt;code>@bgm &amp;#34;Ambi_11_1&amp;#34;
-&lt;/code>&lt;/pre> &lt;/div>
-&lt;/details>
-&lt;details >&lt;summary>char&lt;/summary>
- &lt;div class="markdown-inner">
-&lt;h2 id="char">
- char
- 
- &lt;a class="anchor" href="#char">#&lt;/a>
- 
-&lt;/h2>
-&lt;p>&lt;a href="https://naninovel.com/api/#char">&lt;span class="book-badge info">&lt;span class="book-badge-title">官方指令&lt;/span>&lt;span class="book-badge-value">char&lt;/span>&lt;/span>&lt;/a>&lt;/p>
-&lt;p>修改人物立绘&lt;/p>
-&lt;table>
- &lt;thead>
- &lt;tr>
- &lt;th>参数&lt;/th>
- &lt;th>说明&lt;/th>
- &lt;/tr>
- &lt;/thead>
- &lt;tbody>
- &lt;tr>
- &lt;td>subid&lt;/td>
- &lt;td>指定层级，靠前的层级会遮挡靠后的，比如Middle会遮挡不设置时的默认层级&lt;/td>
- &lt;/tr>
- &lt;/tbody>
-&lt;/table>
-&lt;pre tabindex="0">&lt;code>@char SubId:&amp;#34;Middle&amp;#34; Warden.1 Scale:1.4
-&lt;/code>&lt;/pre> &lt;/div>
-&lt;/details>
-&lt;details >&lt;summary>gosub&lt;/summary>
- &lt;div class="markdown-inner">
-&lt;h2 id="gosub">
- gosub
- 
- &lt;a class="anchor" href="#gosub">#&lt;/a>
- 
-&lt;/h2>
-&lt;p>&lt;a href="https://naninovel.com/api/#gosub">&lt;span class="book-badge info">&lt;span class="book-badge-title">官方指令&lt;/span>&lt;span class="book-badge-value">gosub&lt;/span>&lt;/span>&lt;/a>&lt;/p>
-&lt;p>跳转到指定路径，并在遇到 &lt;a href="#return">&lt;strong>return&lt;/strong>&lt;/a> 指令后返回&lt;/p>
- &lt;/div>
-&lt;/details>
-&lt;details >&lt;summary>goto&lt;/summary>
- &lt;div class="markdown-inner">
-&lt;h2 id="goto">
- goto
- 
- &lt;a class="anchor" href="#goto">#&lt;/a>
- 
-&lt;/h2>
-&lt;p>&lt;a href="https://naninovel.com/api/#goto">&lt;span class="book-badge info">&lt;span class="book-badge-title">官方指令&lt;/span>&lt;span class="book-badge-value">goto&lt;/span>&lt;/span>&lt;/a>&lt;/p>
-&lt;p>跳转到指定路径&lt;/p>
- &lt;/div>
-&lt;/details>
-&lt;details >&lt;summary>hide&lt;/summary>
- &lt;div class="markdown-inner">
-&lt;h2 id="hide">
- hide
- 
- &lt;a class="anchor" href="#hide">#&lt;/a>
- 
-&lt;/h2>
-&lt;p>&lt;a href="https://naninovel.com/api/#hide">&lt;span class="book-badge info">&lt;span class="book-badge-title">官方指令&lt;/span>&lt;span class="book-badge-value">hide&lt;/span>&lt;/span>&lt;/a>&lt;/p>
-&lt;p>隐藏指定的actor(角色, 背景, 文字框, 选择框)&lt;/p>
- &lt;/div>
-&lt;/details>
-&lt;details >&lt;summary>hidechars&lt;/summary>
- &lt;div class="markdown-inner">
-&lt;h2 id="hidechars">
- hidechars
- 
- &lt;a class="anchor" href="#hidechars">#&lt;/a>
- 
-&lt;/h2>
-&lt;p>&lt;a href="https://naninovel.com/api/#hidechars">&lt;span class="book-badge info">&lt;span class="book-badge-title">官方指令&lt;/span>&lt;span class="book-badge-value">hidechars&lt;/span>&lt;/span>&lt;/a>&lt;/p></description></item><item><title>加载外部背景资源</title><link>http://manosabamoddoc.fuyumi.xyz/docs/Advanced/LoadBackgrounds/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://manosabamoddoc.fuyumi.xyz/docs/Advanced/LoadBackgrounds/</guid><description>&lt;h1 id="加载外部背景资源">
+&lt;p>&lt;strong>外观类型说明:&lt;/strong>&lt;/p></description></item><item><title>加载外部背景资源</title><link>http://manosabamoddoc.fuyumi.xyz/docs/Advanced/LoadBackgrounds/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://manosabamoddoc.fuyumi.xyz/docs/Advanced/LoadBackgrounds/</guid><description>&lt;h1 id="加载外部背景资源">
  加载外部背景资源
  
  &lt;a class="anchor" href="#%e5%8a%a0%e8%bd%bd%e5%a4%96%e9%83%a8%e8%83%8c%e6%99%af%e8%b5%84%e6%ba%90">#&lt;/a>
  
 &lt;/h1>
-&lt;hr>
-&lt;p>本Mod支持加载外部背景资源，支持jpg和png格式图片&lt;/p>
+&lt;blockquote class="book-hint info">
+&lt;p>本页内容：加载自定义背景图片或替换原版背景。
+前置知识：&lt;a href="http://manosabamoddoc.fuyumi.xyz/docs/QuickStart/CreateMod">创建新剧本&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;p>本 MOD 支持加载外部背景资源，支持 &lt;strong>JPG&lt;/strong> 和 &lt;strong>PNG&lt;/strong> 格式图片。&lt;/p>
 &lt;h2 id="在二创剧本中使用">
  在二创剧本中使用
  
@@ -131,30 +191,30 @@
  
 &lt;/h2>
 &lt;div class="book-steps ">
-&lt;ol>
-&lt;li>
-&lt;h3 id="创建背景图片目录">
- 创建背景图片目录
+&lt;h3 id="1-创建背景图片目录">
+ 1. 创建背景图片目录
  
- &lt;a class="anchor" href="#%e5%88%9b%e5%bb%ba%e8%83%8c%e6%99%af%e5%9b%be%e7%89%87%e7%9b%ae%e5%bd%95">#&lt;/a>
+ &lt;a class="anchor" href="#1-%e5%88%9b%e5%bb%ba%e8%83%8c%e6%99%af%e5%9b%be%e7%89%87%e7%9b%ae%e5%bd%95">#&lt;/a>
  
 &lt;/h3>
-&lt;p>在Mod目录下创建文件夹Backgrounds，然后在里面创建文件夹MainBackground，将你需要添加的背景文件放在里面。这里样例的图片名称为 &lt;strong>TaffyCover.jpg&lt;/strong>&lt;/p>
-&lt;p>&lt;img src="http://manosabamoddoc.fuyumi.xyz/images/LoadBackgroundsPath.png" alt="路径样例" />&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;h3 id="通过back指令加载背景">
- 通过&lt;a href="http://manosabamoddoc.fuyumi.xyz/docs/Advanced/Command/#back">back&lt;/a>指令加载背景
+&lt;p>在 MOD 目录下创建 &lt;code>Backgrounds/MainBackground/&lt;/code> 文件夹，将需要添加的背景文件放在里面：&lt;/p>
+&lt;pre tabindex="0">&lt;code>[MOD根目录]/
+ ├─ Backgrounds/
+ │ └─ MainBackground/
+ │ └─ TaffyCover.jpg
+ ├─ Scripts/
+ └─ info.json
+&lt;/code>&lt;/pre>&lt;p>&lt;img src="http://manosabamoddoc.fuyumi.xyz/images/LoadBackgroundsPath.png" alt="路径样例" />&lt;/p>
+&lt;h3 id="2-通过-back-指令加载背景">
+ 2. 通过 &lt;a href="http://manosabamoddoc.fuyumi.xyz/docs/Advanced/Command/#back">@back&lt;/a> 指令加载背景
  
- &lt;a class="anchor" href="#%e9%80%9a%e8%bf%87back%e6%8c%87%e4%bb%a4%e5%8a%a0%e8%bd%bd%e8%83%8c%e6%99%af">#&lt;/a>
+ &lt;a class="anchor" href="#2-%e9%80%9a%e8%bf%87-back-%e6%8c%87%e4%bb%a4%e5%8a%a0%e8%bd%bd%e8%83%8c%e6%99%af">#&lt;/a>
  
 &lt;/h3>
-&lt;p>直接使用&lt;a href="http://manosabamoddoc.fuyumi.xyz/docs/Advanced/Command/#back">back&lt;/a>指令+你刚才的背景文件名即可，效果如图：&lt;/p>
-&lt;p>&lt;img src="http://manosabamoddoc.fuyumi.xyz/images/LoadBackgrounds.png" alt="背景效果" />&lt;/p>
-&lt;pre tabindex="0">&lt;code>;设置背景为刚才添加的图片
+&lt;p>使用 &lt;a href="http://manosabamoddoc.fuyumi.xyz/docs/Advanced/Command/#back">@back&lt;/a> 指令 + 背景文件名（不含扩展名）即可：&lt;/p>
+&lt;pre tabindex="0">&lt;code class="language-nani" data-lang="nani">; 设置背景为刚才添加的图片
 @back TaffyCover
-&lt;/code>&lt;/pre>&lt;/li>
-&lt;/ol>
+&lt;/code>&lt;/pre>&lt;p>&lt;img src="http://manosabamoddoc.fuyumi.xyz/images/LoadBackgrounds.png" alt="背景效果" />&lt;/p>
 &lt;/div>
 &lt;h2 id="替换游戏背景">
  替换游戏背景
@@ -163,40 +223,37 @@
  
 &lt;/h2>
 &lt;div class="book-steps ">
-&lt;ol>
-&lt;li>
-&lt;h3 id="获取原图背景图片目录">
- 获取原图背景图片目录
+&lt;h3 id="1-获取原版背景编号">
+ 1. 获取原版背景编号
  
- &lt;a class="anchor" href="#%e8%8e%b7%e5%8f%96%e5%8e%9f%e5%9b%be%e8%83%8c%e6%99%af%e5%9b%be%e7%89%87%e7%9b%ae%e5%bd%95">#&lt;/a>
+ &lt;a class="anchor" href="#1-%e8%8e%b7%e5%8f%96%e5%8e%9f%e7%89%88%e8%83%8c%e6%99%af%e7%bc%96%e5%8f%b7">#&lt;/a>
  
 &lt;/h3>
-&lt;p>可以通过解包工具&lt;a href="http://manosabamoddoc.fuyumi.xyz/docs/Others/UsefulTools/#Assetripper">Assetripper&lt;/a>解包背景图资源查看对应的编号，也可以直接查看游戏自带的剧本寻找自己需要的背景的编号&lt;/p>
-&lt;p>游戏内背景路径由两部分组成，Id和图片名称编号，如这个例子&lt;/p>
-&lt;pre tabindex="0">&lt;code>@back 140_2 Id:&amp;#34;Stills&amp;#34; Scale:{g_backgroundDefaultScale} time:0
-&lt;/code>&lt;/pre>&lt;p>这里Id为 &lt;strong>Stills&lt;/strong>，图片名称编号为 &lt;strong>140_2&lt;/strong>&lt;/p>
-&lt;p>那么图片的路径对应为 &lt;strong>Backgrounds/Stills/140_2&lt;/strong>&lt;/p>
-&lt;p>如果游戏没有指定Id，那么默认Id为MainBackground&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;h3 id="覆盖原图">
- 覆盖原图
+&lt;p>可以通过解包工具 &lt;a href="http://manosabamoddoc.fuyumi.xyz/docs/Others/UsefulTools/#Assetripper">AssetRipper&lt;/a> 解包背景图资源查看对应的编号，也可以直接查看游戏自带的剧本寻找自己需要的背景编号。&lt;/p>
+&lt;p>游戏内背景路径由两部分组成：&lt;strong>Id&lt;/strong> 和 &lt;strong>图片名称编号&lt;/strong>，例如：&lt;/p>
+&lt;pre tabindex="0">&lt;code class="language-nani" data-lang="nani">@back 140_2 Id:&amp;#34;Stills&amp;#34; Scale:{g_backgroundDefaultScale} time:0
+&lt;/code>&lt;/pre>&lt;ul>
+&lt;li>Id 为 &lt;code>Stills&lt;/code>，图片名称编号为 &lt;code>140_2&lt;/code>&lt;/li>
+&lt;li>对应路径为 &lt;code>Backgrounds/Stills/140_2&lt;/code>&lt;/li>
+&lt;li>如果游戏没有指定 Id，则默认为 &lt;code>MainBackground&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;h3 id="2-覆盖原版背景">
+ 2. 覆盖原版背景
  
- &lt;a class="anchor" href="#%e8%a6%86%e7%9b%96%e5%8e%9f%e5%9b%be">#&lt;/a>
+ &lt;a class="anchor" href="#2-%e8%a6%86%e7%9b%96%e5%8e%9f%e7%89%88%e8%83%8c%e6%99%af">#&lt;/a>
  
 &lt;/h3>
-&lt;p>获取到游戏原图目录后，将二创图片的路径和名称改为和游戏图片一致，就可以覆盖游戏原图了，Mod加载剧本和资源的优先级都高于游戏原本资源&lt;/p>
-&lt;p>&lt;img src="http://manosabamoddoc.fuyumi.xyz/images/ReplaceBackgrounds.png" alt="背景效果" />&lt;/p>
-&lt;/li>
-&lt;/ol>
-&lt;/div></description></item><item><title>加载外部音频资源</title><link>http://manosabamoddoc.fuyumi.xyz/docs/Advanced/LoadVoice/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://manosabamoddoc.fuyumi.xyz/docs/Advanced/LoadVoice/</guid><description>&lt;h1 id="加载外部音频资源">
+&lt;p>将二创图片的路径和文件名设置为与游戏原版一致即可。MOD 资源的加载优先级高于游戏原版。&lt;/p></description></item><item><title>加载外部音频资源</title><link>http://manosabamoddoc.fuyumi.xyz/docs/Advanced/LoadVoice/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://manosabamoddoc.fuyumi.xyz/docs/Advanced/LoadVoice/</guid><description>&lt;h1 id="加载外部音频资源">
  加载外部音频资源
  
  &lt;a class="anchor" href="#%e5%8a%a0%e8%bd%bd%e5%a4%96%e9%83%a8%e9%9f%b3%e9%a2%91%e8%b5%84%e6%ba%90">#&lt;/a>
  
 &lt;/h1>
-&lt;hr>
-&lt;p>本Mod支持加载外部音频资源，支持wav格式，要求&lt;strong>双声道采样率44100Hz&lt;/strong>&lt;/p>
+&lt;blockquote class="book-hint info">
+&lt;p>本页内容：加载自定义语音、BGM 和音效。
+前置知识：&lt;a href="http://manosabamoddoc.fuyumi.xyz/docs/QuickStart/CreateMod">创建新剧本&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;p>本 MOD 支持加载外部音频资源，支持 &lt;strong>WAV&lt;/strong>（任意采样率/声道/位深度）和 &lt;strong>OGG Vorbis&lt;/strong> 格式。&lt;/p>
 &lt;h2 id="在二创剧本中使用">
  在二创剧本中使用
  
@@ -204,33 +261,39 @@
  
 &lt;/h2>
 &lt;div class="book-steps ">
-&lt;ol>
-&lt;li>
-&lt;h3 id="创建背景图片目录">
- 创建背景图片目录
+&lt;h3 id="1-创建音频目录">
+ 1. 创建音频目录
  
- &lt;a class="anchor" href="#%e5%88%9b%e5%bb%ba%e8%83%8c%e6%99%af%e5%9b%be%e7%89%87%e7%9b%ae%e5%bd%95">#&lt;/a>
+ &lt;a class="anchor" href="#1-%e5%88%9b%e5%bb%ba%e9%9f%b3%e9%a2%91%e7%9b%ae%e5%bd%95">#&lt;/a>
  
 &lt;/h3>
-&lt;p>在Mod目录下创建文件夹Voice，将你需要添加的角色对话音频文件放在里面&lt;/p>
-&lt;p>在Mod目录下创建文件夹Audio，将你需要添加的Bgm或音效音频文件放在里面&lt;/p>
-&lt;p>&lt;img src="http://manosabamoddoc.fuyumi.xyz/images/LoadVoice.png" alt="路径样例" />&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;h3 id="通过bgm指令或voice指令播放音频">
- 通过&lt;a href="http://manosabamoddoc.fuyumi.xyz/docs/Advanced/Command/#bgm">bgm&lt;/a>指令或&lt;a href="http://manosabamoddoc.fuyumi.xyz/docs/Advanced/Command/#voice">voice&lt;/a>指令播放音频
+&lt;p>在 MOD 目录下创建以下文件夹：&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>Voice/&lt;/code> — 角色对话语音&lt;/li>
+&lt;li>&lt;code>Audio/&lt;/code> — BGM 和音效&lt;/li>
+&lt;/ul>
+&lt;pre tabindex="0">&lt;code>[MOD根目录]/
+ ├─ Voice/
+ │ └─ TaffyStory000/
+ │ └─ Noah_01.wav
+ ├─ Audio/
+ │ └─ Bgm_10_1.ogg
+ ├─ Scripts/
+ └─ info.json
+&lt;/code>&lt;/pre>&lt;p>&lt;img src="http://manosabamoddoc.fuyumi.xyz/images/LoadVoice.png" alt="路径样例" />&lt;/p>
+&lt;h3 id="2-在脚本中播放音频">
+ 2. 在脚本中播放音频
  
- &lt;a class="anchor" href="#%e9%80%9a%e8%bf%87bgm%e6%8c%87%e4%bb%a4%e6%88%96voice%e6%8c%87%e4%bb%a4%e6%92%ad%e6%94%be%e9%9f%b3%e9%a2%91">#&lt;/a>
+ &lt;a class="anchor" href="#2-%e5%9c%a8%e8%84%9a%e6%9c%ac%e4%b8%ad%e6%92%ad%e6%94%be%e9%9f%b3%e9%a2%91">#&lt;/a>
  
 &lt;/h3>
-&lt;p>直接使用&lt;a href="http://manosabamoddoc.fuyumi.xyz/docs/Advanced/Command/#bgm">bgm&lt;/a>指令或&lt;a href="http://manosabamoddoc.fuyumi.xyz/docs/Advanced/Command/#voice">voice&lt;/a>指令+你刚才的音频文件名即可：&lt;/p>
-&lt;pre tabindex="0">&lt;code>;播放Bgm_10_1
+&lt;p>通过 &lt;a href="http://manosabamoddoc.fuyumi.xyz/docs/Advanced/Command/#bgm">@bgm&lt;/a> 或 &lt;a href="http://manosabamoddoc.fuyumi.xyz/docs/Advanced/Command/#voice">@voice&lt;/a> 指令播放，文件名不含扩展名：&lt;/p>
+&lt;pre tabindex="0">&lt;code class="language-nani" data-lang="nani">; 播放 BGM
 @bgm &amp;#34;Bgm_10_1&amp;#34;
-&lt;/code>&lt;/pre>&lt;pre tabindex="0">&lt;code>;播放角色声音 TaffyStory000/Noah_01
+
+; 播放角色语音
 @voice &amp;#34;TaffyStory000/Noah_01&amp;#34;
-&lt;/code>&lt;/pre>&lt;/li>
-&lt;/ol>
-&lt;/div>
+&lt;/code>&lt;/pre>&lt;/div>
 &lt;h2 id="替换游戏音频">
  替换游戏音频
  
@@ -238,132 +301,433 @@
  
 &lt;/h2>
 &lt;div class="book-steps ">
-&lt;ol>
-&lt;li>
-&lt;h3 id="获取原图背景图片目录">
- 获取原图背景图片目录
+&lt;h3 id="1-获取原版音频编号">
+ 1. 获取原版音频编号
  
- &lt;a class="anchor" href="#%e8%8e%b7%e5%8f%96%e5%8e%9f%e5%9b%be%e8%83%8c%e6%99%af%e5%9b%be%e7%89%87%e7%9b%ae%e5%bd%95">#&lt;/a>
+ &lt;a class="anchor" href="#1-%e8%8e%b7%e5%8f%96%e5%8e%9f%e7%89%88%e9%9f%b3%e9%a2%91%e7%bc%96%e5%8f%b7">#&lt;/a>
  
 &lt;/h3>
-&lt;p>可以通过解包工具&lt;a href="http://manosabamoddoc.fuyumi.xyz/docs/Others/UsefulTools/#Assetripper">Assetripper&lt;/a>解包音频资源查看对应的编号，也可以直接查看游戏自带的剧本寻找自己需要的音频的编号&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;h3 id="覆盖原图">
- 覆盖原图
- 
- &lt;a class="anchor" href="#%e8%a6%86%e7%9b%96%e5%8e%9f%e5%9b%be">#&lt;/a>
- 
-&lt;/h3>
-&lt;p>直接在Voice或者Audio目录下创建和游戏原音频同目录的二创音频文件即可&lt;/p>
-&lt;/li>
-&lt;/ol>
-&lt;/div></description></item><item><title>加载外部立绘资源</title><link>http://manosabamoddoc.fuyumi.xyz/docs/Advanced/LoadCharacter/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://manosabamoddoc.fuyumi.xyz/docs/Advanced/LoadCharacter/</guid><description>&lt;h1 id="加载外部立绘资源">
+&lt;p>可以通过解包工具 &lt;a href="http://manosabamoddoc.fuyumi.xyz/docs/Others/UsefulTools/#Assetripper">AssetRipper&lt;/a> 解包音频资源查看对应的编号，也可以直接查看游戏自带的剧本寻找自己需要的音频编号。&lt;/p></description></item><item><title>加载外部立绘资源</title><link>http://manosabamoddoc.fuyumi.xyz/docs/Advanced/LoadCharacter/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://manosabamoddoc.fuyumi.xyz/docs/Advanced/LoadCharacter/</guid><description>&lt;h1 id="加载外部立绘资源">
  加载外部立绘资源
  
  &lt;a class="anchor" href="#%e5%8a%a0%e8%bd%bd%e5%a4%96%e9%83%a8%e7%ab%8b%e7%bb%98%e8%b5%84%e6%ba%90">#&lt;/a>
  
 &lt;/h1>
-&lt;hr>
-&lt;p>本Mod支持加载外部立绘资源，支持jpg/png格式&lt;/p>
-&lt;h2 id="在二创剧本中使用">
- 在二创剧本中使用
+&lt;blockquote class="book-hint info">
+&lt;p>本页内容：添加自定义角色和立绘的完整指南。
+前置知识：&lt;a href="http://manosabamoddoc.fuyumi.xyz/docs/QuickStart/CreateMod">创建新剧本&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;p>本 MOD 支持加载外部立绘资源，支持 jpg/png 格式。&lt;/p>
+&lt;h2 id="角色定义格式">
+ 角色定义格式
  
- &lt;a class="anchor" href="#%e5%9c%a8%e4%ba%8c%e5%88%9b%e5%89%a7%e6%9c%ac%e4%b8%ad%e4%bd%bf%e7%94%a8">#&lt;/a>
+ &lt;a class="anchor" href="#%e8%a7%92%e8%89%b2%e5%ae%9a%e4%b9%89%e6%a0%bc%e5%bc%8f">#&lt;/a>
  
 &lt;/h2>
-&lt;div class="book-steps ">
-&lt;ol>
-&lt;li>
-&lt;h3 id="在infojson里创建角色id">
- 在info.json里创建角色ID
+&lt;p>MOD支持两种角色定义格式:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>SimpleCharacters&lt;/strong> - 简单角色,仅用于对话&lt;/li>
+&lt;li>&lt;strong>Characters&lt;/strong> - 完整角色,自动格式化+魔女图鉴支持&lt;/li>
+&lt;/ul>
+&lt;p>两种格式可以共存,根据需求选择使用。&lt;/p>
+&lt;h3 id="快速对比表">
+ 快速对比表
  
- &lt;a class="anchor" href="#%e5%9c%a8infojson%e9%87%8c%e5%88%9b%e5%bb%ba%e8%a7%92%e8%89%b2id">#&lt;/a>
+ &lt;a class="anchor" href="#%e5%bf%ab%e9%80%9f%e5%af%b9%e6%af%94%e8%a1%a8">#&lt;/a>
  
 &lt;/h3>
-&lt;p>打开剧本目录里的info.json，增加Characters字段，写上你要加的角色ID，类似这样：&lt;/p>
-&lt;p>&lt;img src="http://manosabamoddoc.fuyumi.xyz/images/RegCharacterID.png" alt="角色ID样例" />&lt;/p>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>特性&lt;/th>
+ &lt;th>SimpleCharacters&lt;/th>
+ &lt;th>Characters&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>&lt;strong>自动格式化&lt;/strong>&lt;/td>
+ &lt;td>❌ 需手动添加所有样式标签&lt;/td>
+ &lt;td>✅ 自动生成原版风格名称&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;strong>魔女图鉴支持&lt;/strong>&lt;/td>
+ &lt;td>❌ 不支持人物档案&lt;/td>
+ &lt;td>✅ 支持人物档案 (@update)&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;strong>所需字段&lt;/strong>&lt;/td>
+ &lt;td>Id, DisplayName&lt;/td>
+ &lt;td>Id, Name, FamilyName, Color (必填); Age, Height, Weight (可选)&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;strong>复杂度&lt;/strong>&lt;/td>
+ &lt;td>简单&lt;/td>
+ &lt;td>稍复杂&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;strong>适用场景&lt;/strong>&lt;/td>
+ &lt;td>临时NPC, 一次性角色&lt;/td>
+ &lt;td>主要角色, 需要档案的角色&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;strong>显示效果&lt;/strong>&lt;/td>
+ &lt;td>手动控制&lt;/td>
+ &lt;td>符合原版风格&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;blockquote class="book-hint success">
+&lt;p>推荐: 除非只需要简单的临时角色,否则优先使用 Characters 格式&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="方法一-simplecharacters">
+ 方法一: SimpleCharacters
+ 
+ &lt;a class="anchor" href="#%e6%96%b9%e6%b3%95%e4%b8%80-simplecharacters">#&lt;/a>
+ 
+&lt;/h2>
+&lt;h3 id="适用场景">
+ 适用场景
+ 
+ &lt;a class="anchor" href="#%e9%80%82%e7%94%a8%e5%9c%ba%e6%99%af">#&lt;/a>
+ 
+&lt;/h3>
+&lt;ul>
+&lt;li>只需要在对话中出场&lt;/li>
+&lt;li>不需要在魔女图鉴中展示&lt;/li>
+&lt;li>需要完全自定义名称样式&lt;/li>
+&lt;/ul>
+&lt;h3 id="字段说明">
+ 字段说明
+ 
+ &lt;a class="anchor" href="#%e5%ad%97%e6%ae%b5%e8%af%b4%e6%98%8e">#&lt;/a>
+ 
+&lt;/h3>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>字段&lt;/th>
+ &lt;th>类型&lt;/th>
+ &lt;th>必填&lt;/th>
+ &lt;th>说明&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>Id&lt;/td>
+ &lt;td>String&lt;/td>
+ &lt;td>✅&lt;/td>
+ &lt;td>角色ID,脚本中引用&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>DisplayName&lt;/td>
+ &lt;td>本地化对象&lt;/td>
+ &lt;td>✅&lt;/td>
+ &lt;td>显示名称,需手动添加样式标签&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h3 id="示例配置">
+ 示例配置
+ 
+ &lt;a class="anchor" href="#%e7%a4%ba%e4%be%8b%e9%85%8d%e7%bd%ae">#&lt;/a>
+ 
+&lt;/h3>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-json" data-lang="json">&lt;span style="display:flex;">&lt;span>{
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;#34;Name&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;测试用例&amp;#34;&lt;/span>,
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;#34;Description&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;测试用例&amp;#34;&lt;/span>,
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;#34;Author&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;雪莉苹果汁&amp;#34;&lt;/span>,
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;#34;Enter&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;SherryAppleJuice_ExampleMod/Main&amp;#34;&lt;/span>,
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;#34;Characters&amp;#34;&lt;/span>: [
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;#34;SimpleCharacters&amp;#34;&lt;/span>: [
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;#34;ActorId&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;Taffy&amp;#34;&lt;/span>,
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;#34;DisplayName&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;&amp;lt;color=#FFC0CB&amp;gt;永&amp;lt;/color&amp;gt;雏塔菲&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;#34;Id&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;Taffy&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;#34;DisplayName&amp;#34;&lt;/span>: {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;#34;zh-Hans&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;&amp;lt;color=#FFC0CB&amp;gt;永&amp;lt;/color&amp;gt;雏塔菲&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;#34;ja&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;&amp;lt;color=#FFC0CB&amp;gt;永&amp;lt;/color&amp;gt;雛タフィ&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> },
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;#34;Id&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;BlackCat&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;#34;DisplayName&amp;#34;&lt;/span>: {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;#34;zh-Hans&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;&amp;lt;color=#606060&amp;gt;&amp;lt;size=136&amp;gt;谜&amp;lt;/size&amp;gt;&amp;lt;/color&amp;gt;&amp;lt;space=4&amp;gt;&amp;lt;voffset=-2&amp;gt;&amp;lt;size=73&amp;gt;之黑猫&amp;lt;/size&amp;gt;&amp;lt;/voffset&amp;gt;&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;#34;ja&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;&amp;lt;color=#606060&amp;gt;&amp;lt;size=136&amp;gt;謎&amp;lt;/size&amp;gt;&amp;lt;/color&amp;gt;&amp;lt;space=4&amp;gt;&amp;lt;voffset=-2&amp;gt;&amp;lt;size=73&amp;gt;の黒猫&amp;lt;/size&amp;gt;&amp;lt;/voffset&amp;gt;&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ]
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
-&lt;li>
-&lt;h3 id="创建背景图片目录">
- 创建背景图片目录
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;blockquote class="book-hint info">
+&lt;p>样式标签:&lt;/p></description></item><item><title>魔女图鉴</title><link>http://manosabamoddoc.fuyumi.xyz/docs/Advanced/WitchBook/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://manosabamoddoc.fuyumi.xyz/docs/Advanced/WitchBook/</guid><description>&lt;h1 id="魔女图鉴">
+ 魔女图鉴
  
- &lt;a class="anchor" href="#%e5%88%9b%e5%bb%ba%e8%83%8c%e6%99%af%e5%9b%be%e7%89%87%e7%9b%ae%e5%bd%95">#&lt;/a>
+ &lt;a class="anchor" href="#%e9%ad%94%e5%a5%b3%e5%9b%be%e9%89%b4">#&lt;/a>
+ 
+&lt;/h1>
+&lt;blockquote class="book-hint info">
+&lt;p>本页内容：自定义魔女图鉴的完整指南，包括证物、人物档案、规定和记录。
+前置知识：&lt;a href="http://manosabamoddoc.fuyumi.xyz/docs/QuickStart/CreateMod">创建新剧本&lt;/a>，&lt;a href="http://manosabamoddoc.fuyumi.xyz/docs/Advanced/LoadCharacter">加载外部立绘资源&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;p>魔女图鉴包含四大分类:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Clues&lt;/strong> (证物) - 可在审判中出示的证据&lt;/li>
+&lt;li>&lt;strong>Profiles&lt;/strong> (人物档案) - 角色的详细介绍&lt;/li>
+&lt;li>&lt;strong>Rules&lt;/strong> (规定) - 魔女游戏的规则条款&lt;/li>
+&lt;li>&lt;strong>Notes&lt;/strong> (记录) - 剧情记录或日志&lt;/li>
+&lt;/ul>
+&lt;p>所有分类的数据都在 info.json 中配置，并通过脚本指令在剧情中动态更新。&lt;/p>
+&lt;h2 id="版本化结构">
+ 版本化结构
+ 
+ &lt;a class="anchor" href="#%e7%89%88%e6%9c%ac%e5%8c%96%e7%bb%93%e6%9e%84">#&lt;/a>
+ 
+&lt;/h2>
+&lt;p>所有魔女图鉴字段都使用 Id-Items 结构，支持版本管理：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-json" data-lang="json">&lt;span style="display:flex;">&lt;span>[
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;#34;Id&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;条目ID&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;#34;Items&amp;#34;&lt;/span>: [
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;#34;Version&amp;#34;&lt;/span>: &lt;span style="color:#ae81ff">1&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;#34;字段1&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;内容&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> },
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;#34;Version&amp;#34;&lt;/span>: &lt;span style="color:#ae81ff">2&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;#34;字段1&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;更新后的内容&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>]
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>通过 &lt;code>@update&lt;/code> 指令可以在剧情推进时更新到指定 Version，实现内容随剧情变化。&lt;/p>
+&lt;h2 id="clues-证物">
+ Clues (证物)
+ 
+ &lt;a class="anchor" href="#clues-%e8%af%81%e7%89%a9">#&lt;/a>
+ 
+&lt;/h2>
+&lt;p>自定义证物，可在审判中出示。&lt;/p>
+&lt;h3 id="infojson-配置">
+ info.json 配置
+ 
+ &lt;a class="anchor" href="#infojson-%e9%85%8d%e7%bd%ae">#&lt;/a>
  
 &lt;/h3>
-&lt;p>在Mod目录下创建Characters文件夹，在Characters文件夹内创建角色ID文件夹，类似这样创建Taffy文件夹&lt;/p>
-&lt;p>&lt;img src="http://manosabamoddoc.fuyumi.xyz/images/LoadCharacterFolder.png" alt="路径样例" />&lt;/p>
-&lt;p>在角色ID文件夹里面放上你想加载的立绘，如Hanna.jpg&lt;/p>
-&lt;p>游戏原始立绘大小为1500x3000，可以参考这个大小来准备图片&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;h3 id="通过char指令展示角色">
- 通过&lt;a href="http://manosabamoddoc.fuyumi.xyz/docs/Advanced/Command/#char">char&lt;/a>指令展示角色
- 
- &lt;a class="anchor" href="#%e9%80%9a%e8%bf%87char%e6%8c%87%e4%bb%a4%e5%b1%95%e7%a4%ba%e8%a7%92%e8%89%b2">#&lt;/a>
- 
-&lt;/h3>
-&lt;p>使用&lt;a href="http://manosabamoddoc.fuyumi.xyz/docs/Advanced/Command/#char">char&lt;/a>指令展示立绘+角色ID.立绘图片名称即可展示立绘&lt;/p>
-&lt;p>比如之前创建了Taffy文件夹，里面有一个Hanna.jpg，那么我显示这张图片的指令为：&lt;/p>
-&lt;pre tabindex="0">&lt;code>;显示立绘
-@char Taffy.Hanna
-&lt;/code>&lt;/pre>&lt;p>效果类似：&lt;img src="http://manosabamoddoc.fuyumi.xyz/images/LoadCharacterDemo.png" alt="效果" />&lt;/p>
-&lt;/li>
-&lt;/ol>
-&lt;/div></description></item><item><title>本地化配置</title><link>http://manosabamoddoc.fuyumi.xyz/docs/Advanced/MoreNaniFile/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://manosabamoddoc.fuyumi.xyz/docs/Advanced/MoreNaniFile/</guid><description>&lt;h1 id="本地化配置">
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>字段&lt;/th>
+ &lt;th>类型&lt;/th>
+ &lt;th>必填&lt;/th>
+ &lt;th>说明&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>Id&lt;/td>
+ &lt;td>String&lt;/td>
+ &lt;td>✅&lt;/td>
+ &lt;td>证物ID，推荐格式: &lt;code>[ModId]_[章节]-[编号]&lt;/code>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Items&lt;/td>
+ &lt;td>Array&lt;/td>
+ &lt;td>✅&lt;/td>
+ &lt;td>版本列表&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Items[].Version&lt;/td>
+ &lt;td>Number&lt;/td>
+ &lt;td>✅&lt;/td>
+ &lt;td>版本号 (1, 2, 3&amp;hellip;)&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Items[].Name&lt;/td>
+ &lt;td>本地化对象&lt;/td>
+ &lt;td>✅&lt;/td>
+ &lt;td>证物名称&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Items[].Description&lt;/td>
+ &lt;td>本地化对象&lt;/td>
+ &lt;td>✅&lt;/td>
+ &lt;td>证物描述，支持 &lt;code>&amp;lt;br&amp;gt;&lt;/code> 换行&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;p>证物图片路径: &lt;code>[MOD文件夹]/WitchBook/Clues/[Id].png&lt;/code>&lt;/p></description></item><item><title>本地化配置</title><link>http://manosabamoddoc.fuyumi.xyz/docs/Advanced/MoreNaniFile/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://manosabamoddoc.fuyumi.xyz/docs/Advanced/MoreNaniFile/</guid><description>&lt;h1 id="本地化配置">
  本地化配置
  
  &lt;a class="anchor" href="#%e6%9c%ac%e5%9c%b0%e5%8c%96%e9%85%8d%e7%bd%ae">#&lt;/a>
  
 &lt;/h1>
-&lt;hr>
+&lt;blockquote class="book-hint info">
+&lt;p>本页内容：创建本地化文件，解决文本加载报错。
+前置知识：&lt;a href="http://manosabamoddoc.fuyumi.xyz/docs/QuickStart/CreateMod">创建新剧本&lt;/a>&lt;/p>
+&lt;/blockquote>
 &lt;h2 id="为什么需要创建本地化文件">
  为什么需要创建本地化文件？
  
  &lt;a class="anchor" href="#%e4%b8%ba%e4%bb%80%e4%b9%88%e9%9c%80%e8%a6%81%e5%88%9b%e5%bb%ba%e6%9c%ac%e5%9c%b0%e5%8c%96%e6%96%87%e4%bb%b6">#&lt;/a>
  
 &lt;/h2>
-&lt;p>游戏支持中日双语，因此存在本地化机制，所有打印文本相关的指令都会涉及到读取本地化配置的操作&lt;/p>
-&lt;p>因此，在创建剧本文件时，需要同步创建本地化文件&lt;/p>
-&lt;p>如果一个剧本涉及本地化相关，但是没有本地化文件的话，就会出现如下报错：&lt;/p>
-&lt;p>&lt;img src="http://manosabamoddoc.fuyumi.xyz/images/LocalizationFileError.png" alt="路径样例" />&lt;/p>
-&lt;h2 id="什么样的nani文件需要创建本地化配置呢">
- 什么样的nani文件需要创建本地化配置呢？
+&lt;p>游戏支持中日双语，因此存在本地化机制。所有打印文本相关的指令都会涉及到读取本地化配置的操作，因此在创建剧本文件时，需要同步创建本地化文件。&lt;/p>
+&lt;p>如果一个剧本涉及本地化但缺少本地化文件，就会出现如下报错：&lt;/p>
+&lt;p>&lt;img src="http://manosabamoddoc.fuyumi.xyz/images/LocalizationFileError.png" alt="本地化报错" />&lt;/p>
+&lt;h2 id="哪些-nani-文件需要创建本地化配置">
+ 哪些 .nani 文件需要创建本地化配置？
  
- &lt;a class="anchor" href="#%e4%bb%80%e4%b9%88%e6%a0%b7%e7%9a%84nani%e6%96%87%e4%bb%b6%e9%9c%80%e8%a6%81%e5%88%9b%e5%bb%ba%e6%9c%ac%e5%9c%b0%e5%8c%96%e9%85%8d%e7%bd%ae%e5%91%a2">#&lt;/a>
+ &lt;a class="anchor" href="#%e5%93%aa%e4%ba%9b-nani-%e6%96%87%e4%bb%b6%e9%9c%80%e8%a6%81%e5%88%9b%e5%bb%ba%e6%9c%ac%e5%9c%b0%e5%8c%96%e9%85%8d%e7%bd%ae">#&lt;/a>
  
 &lt;/h2>
-&lt;p>包含类似打印文本，选择分支，人名的文本都需要&lt;/p>
-&lt;p>如果你不确定的话，全部nani文件都创建本地化文件就行&lt;/p>
+&lt;p>包含以下内容的脚本都需要：&lt;/p>
+&lt;ul>
+&lt;li>打印文本（对话、旁白）&lt;/li>
+&lt;li>选择分支（@choice）&lt;/li>
+&lt;li>角色名称&lt;/li>
+&lt;/ul>
+&lt;blockquote class="book-hint success">
+&lt;p>如果你不确定，&lt;strong>为所有 .nani 文件都创建对应的本地化文件&lt;/strong>即可。&lt;/p>
+&lt;/blockquote>
 &lt;h2 id="创建本地化文件">
  创建本地化文件
  
  &lt;a class="anchor" href="#%e5%88%9b%e5%bb%ba%e6%9c%ac%e5%9c%b0%e5%8c%96%e6%96%87%e4%bb%b6">#&lt;/a>
  
 &lt;/h2>
-&lt;p>在Mod目录下创建文件夹Text\Scripts\你的剧本文件夹名称&lt;/p>
-&lt;p>然后创建和nani文件同名的txt文件&lt;/p>
-&lt;p>如果你只想做中文内容，留空文件就行，如果你想做双语剧本，按照官方本地化格式填写多语文本即可&lt;/p>
-&lt;p>&lt;img src="http://manosabamoddoc.fuyumi.xyz/images/LocalizationFile.png" alt="路径样例" />&lt;/p></description></item><item><title>搜查示例</title><link>http://manosabamoddoc.fuyumi.xyz/docs/Advanced/MapMenu/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://manosabamoddoc.fuyumi.xyz/docs/Advanced/MapMenu/</guid><description>&lt;h1 id="搜查示例">
+&lt;p>在 MOD 目录下，按照以下结构创建 &lt;code>.txt&lt;/code> 文件（与 &lt;code>.nani&lt;/code> 文件一一对应）：&lt;/p>
+&lt;pre tabindex="0">&lt;code>[MOD根目录]/
+ ├─ Scripts/
+ │ └─ MyMod/
+ │ ├─ Main.nani
+ │ └─ Chapter1.nani
+ ├─ Text/
+ │ └─ Scripts/
+ │ └─ MyMod/
+ │ ├─ Main.txt ← 与 Main.nani 对应
+ │ └─ Chapter1.txt ← 与 Chapter1.nani 对应
+ └─ info.json
+&lt;/code>&lt;/pre>&lt;ul>
+&lt;li>如果只做中文内容，&lt;code>.txt&lt;/code> 文件&lt;strong>留空&lt;/strong>即可&lt;/li>
+&lt;li>如果需要做双语剧本，按照 &lt;a href="https://naninovel.com/guide/localization">Naninovel 官方本地化格式&lt;/a> 填写多语文本&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="http://manosabamoddoc.fuyumi.xyz/images/LocalizationFile.png" alt="路径样例" />&lt;/p></description></item><item><title>视频播放</title><link>http://manosabamoddoc.fuyumi.xyz/docs/Advanced/LoadMovie/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://manosabamoddoc.fuyumi.xyz/docs/Advanced/LoadMovie/</guid><description>&lt;h1 id="视频播放">
+ 视频播放
+ 
+ &lt;a class="anchor" href="#%e8%a7%86%e9%a2%91%e6%92%ad%e6%94%be">#&lt;/a>
+ 
+&lt;/h1>
+&lt;blockquote class="book-hint info">
+&lt;p>本页内容：在剧本中播放自定义视频。
+前置知识：&lt;a href="http://manosabamoddoc.fuyumi.xyz/docs/QuickStart/CreateMod">创建新剧本&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="添加视频文件">
+ 添加视频文件
+ 
+ &lt;a class="anchor" href="#%e6%b7%bb%e5%8a%a0%e8%a7%86%e9%a2%91%e6%96%87%e4%bb%b6">#&lt;/a>
+ 
+&lt;/h2>
+&lt;p>将视频文件放置在 MOD 文件夹的 &lt;code>Movie/&lt;/code> 目录下：&lt;/p>
+&lt;pre tabindex="0">&lt;code>[MOD根目录]/
+ ├─ Movie/
+ │ ├─ Opening.mp4
+ │ └─ Cutscene_01.webm
+ ├─ Scripts/
+ └─ info.json
+&lt;/code>&lt;/pre>&lt;p>支持的视频格式：&lt;strong>mp4&lt;/strong>、&lt;strong>webm&lt;/strong>、&lt;strong>ogv&lt;/strong>。&lt;/p>
+&lt;h2 id="在脚本中使用">
+ 在脚本中使用
+ 
+ &lt;a class="anchor" href="#%e5%9c%a8%e8%84%9a%e6%9c%ac%e4%b8%ad%e4%bd%bf%e7%94%a8">#&lt;/a>
+ 
+&lt;/h2>
+&lt;p>通过 &lt;a href="http://manosabamoddoc.fuyumi.xyz/docs/Advanced/Command/#movie">@movie&lt;/a> 指令播放视频（文件名不含扩展名）：&lt;/p>
+&lt;pre tabindex="0">&lt;code class="language-nani" data-lang="nani">; 播放开场动画
+@movie &amp;#34;Opening&amp;#34;
+
+; 播放过场视频
+@movie &amp;#34;Cutscene_01&amp;#34;
+&lt;/code>&lt;/pre>&lt;blockquote class="book-hint warning">
+&lt;p>视频播放期间玩家无法进行其他操作，播放结束后脚本自动继续执行。&lt;/p>
+&lt;/blockquote></description></item><item><title>存档章节名称</title><link>http://manosabamoddoc.fuyumi.xyz/docs/Advanced/ChapterNames/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://manosabamoddoc.fuyumi.xyz/docs/Advanced/ChapterNames/</guid><description>&lt;h1 id="存档章节名称">
+ 存档章节名称
+ 
+ &lt;a class="anchor" href="#%e5%ad%98%e6%a1%a3%e7%ab%a0%e8%8a%82%e5%90%8d%e7%a7%b0">#&lt;/a>
+ 
+&lt;/h1>
+&lt;blockquote class="book-hint info">
+&lt;p>本页内容：自定义存档中的章节名称显示。
+前置知识：&lt;a href="http://manosabamoddoc.fuyumi.xyz/docs/QuickStart/CreateMod">创建新剧本&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="infojson-配置">
+ info.json 配置
+ 
+ &lt;a class="anchor" href="#infojson-%e9%85%8d%e7%bd%ae">#&lt;/a>
+ 
+&lt;/h2>
+&lt;p>在 info.json 中添加 &lt;code>ChapterNames&lt;/code> 字段，指定每个脚本文件对应的章节名称：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-json" data-lang="json">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74">&amp;#34;ChapterNames&amp;#34;&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">:&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;#34;MaxMixAlex_ManosabaModEnhance/Main&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;&amp;lt;voffset=-1em&amp;gt;梦中审判 序&amp;lt;/voffset&amp;gt;&amp;lt;br&amp;gt;&amp;lt;size=80%&amp;gt;在梦中相遇的我们&amp;lt;/size&amp;gt;&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;#34;MaxMixAlex_ManosabaModEnhance/Trial00&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;&amp;lt;voffset=-1em&amp;gt;梦中审判&amp;lt;/voffset&amp;gt;&amp;lt;br&amp;gt;&amp;lt;size=80%&amp;gt;希罗之罪&amp;lt;/size&amp;gt;&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;#34;MaxMixAlex_ManosabaModEnhance/Ending&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;&amp;lt;voffset=-1em&amp;gt;梦中审判 尾声&amp;lt;/voffset&amp;gt;&amp;lt;br&amp;gt;&amp;lt;size=80%&amp;gt;&amp;lt;color=#fe92b4&amp;gt;属于我们的时光&amp;lt;/color&amp;gt;&amp;lt;/size&amp;gt;&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>键为 Naninovel 脚本路径 (与 &lt;code>Enter&lt;/code> 字段使用相同的格式，如 &lt;code>ModId/Main&lt;/code>)，值为显示的章节名称。&lt;/p>
+&lt;h2 id="支持富文本标签">
+ 支持富文本标签
+ 
+ &lt;a class="anchor" href="#%e6%94%af%e6%8c%81%e5%af%8c%e6%96%87%e6%9c%ac%e6%a0%87%e7%ad%be">#&lt;/a>
+ 
+&lt;/h2>
+&lt;p>章节名称支持 Unity 富文本标签来自定义显示效果：&lt;/p>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>标签&lt;/th>
+ &lt;th>说明&lt;/th>
+ &lt;th>示例&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>&lt;code>&amp;lt;size=80%&amp;gt;&lt;/code>&lt;/td>
+ &lt;td>调整字号&lt;/td>
+ &lt;td>&lt;code>&amp;lt;size=80%&amp;gt;副标题&amp;lt;/size&amp;gt;&lt;/code>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;code>&amp;lt;color=#ff0000&amp;gt;&lt;/code>&lt;/td>
+ &lt;td>设置颜色&lt;/td>
+ &lt;td>&lt;code>&amp;lt;color=#fe92b4&amp;gt;粉色文字&amp;lt;/color&amp;gt;&lt;/code>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;code>&amp;lt;voffset=-1em&amp;gt;&lt;/code>&lt;/td>
+ &lt;td>垂直偏移&lt;/td>
+ &lt;td>&lt;code>&amp;lt;voffset=-1em&amp;gt;上移文字&amp;lt;/voffset&amp;gt;&lt;/code>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;code>&amp;lt;br&amp;gt;&lt;/code>&lt;/td>
+ &lt;td>换行&lt;/td>
+ &lt;td>主标题&lt;code>&amp;lt;br&amp;gt;&lt;/code>副标题&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h2 id="简单示例">
+ 简单示例
+ 
+ &lt;a class="anchor" href="#%e7%ae%80%e5%8d%95%e7%a4%ba%e4%be%8b">#&lt;/a>
+ 
+&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-json" data-lang="json">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74">&amp;#34;ChapterNames&amp;#34;&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">:&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;#34;MyMod/Main&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;第一章 序幕&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;#34;MyMod/Chapter1&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;第一章 相遇&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;#34;MyMod/Trial&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;魔女审判&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>搜查示例</title><link>http://manosabamoddoc.fuyumi.xyz/docs/Advanced/MapMenu/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://manosabamoddoc.fuyumi.xyz/docs/Advanced/MapMenu/</guid><description>&lt;h1 id="搜查示例">
  搜查示例
  
  &lt;a class="anchor" href="#%e6%90%9c%e6%9f%a5%e7%a4%ba%e4%be%8b">#&lt;/a>
  
 &lt;/h1>
-&lt;hr>
-&lt;p>如何在剧本中使用游戏的地图进行搜查，例子by&lt;a href="https://space.bilibili.com/417461706">雪覆山茶&lt;/a>&lt;/p>
+&lt;blockquote class="book-hint info">
+&lt;p>本页内容：在剧本中使用游戏地图进行搜查。
+示例作者：&lt;a href="https://space.bilibili.com/417461706">雪覆山茶&lt;/a>&lt;/p>
+&lt;/blockquote>
 &lt;h2 id="主剧本">
  主剧本
  
@@ -371,150 +735,148 @@
  
 &lt;/h2>
 &lt;div class="book-steps ">
-&lt;ol>
-&lt;li>
-&lt;h3 id="创建背景图片目录">
- 创建背景图片目录
+&lt;h3 id="1-搜查流程说明">
+ 1. 搜查流程说明
  
- &lt;a class="anchor" href="#%e5%88%9b%e5%bb%ba%e8%83%8c%e6%99%af%e5%9b%be%e7%89%87%e7%9b%ae%e5%bd%95">#&lt;/a>
+ &lt;a class="anchor" href="#1-%e6%90%9c%e6%9f%a5%e6%b5%81%e7%a8%8b%e8%af%b4%e6%98%8e">#&lt;/a>
  
 &lt;/h3>
-&lt;p>剧本通过map指令开启地图探索，玩家点击地点后，会返回一个flag值，可以根据flag值判断玩家点击的房间走入分支&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;h3 id="剧本代码">
- 剧本代码
+&lt;p>通过 &lt;a href="http://manosabamoddoc.fuyumi.xyz/docs/Advanced/Command/#map">@map&lt;/a> 指令开启地图探索，玩家点击地点后会返回一个 flag 值，可以根据 flag 值判断玩家点击的房间走入分支。&lt;/p>
+&lt;h3 id="2-剧本代码">
+ 2. 剧本代码
  
- &lt;a class="anchor" href="#%e5%89%a7%e6%9c%ac%e4%bb%a3%e7%a0%81">#&lt;/a>
+ &lt;a class="anchor" href="#2-%e5%89%a7%e6%9c%ac%e4%bb%a3%e7%a0%81">#&lt;/a>
  
 &lt;/h3>
-&lt;pre tabindex="0">&lt;code>@Gosub System/System_Subroutine.BeginAdv
+&lt;pre>&lt;code>```nani
+@Gosub System/System_Subroutine.BeginAdv
 
 
-@update &amp;#34;F1&amp;#34; Category:&amp;#34;Map&amp;#34; Version:1
-@update &amp;#34;F2&amp;#34; Category:&amp;#34;Map&amp;#34; Version:2
-@update &amp;#34;B1&amp;#34; Category:&amp;#34;Map&amp;#34; Version:1
+@update &amp;quot;F1&amp;quot; Category:&amp;quot;Map&amp;quot; Version:1
+@update &amp;quot;F2&amp;quot; Category:&amp;quot;Map&amp;quot; Version:2
+@update &amp;quot;B1&amp;quot; Category:&amp;quot;Map&amp;quot; Version:1
 ;chosenAreaFlag中的数字应为2的你的房间总数次方减一
-@if &amp;#34;chosenAreaFlag == 4194303&amp;#34;
- @set &amp;#34;chosenAreaFlag = 0&amp;#34;
+@if &amp;quot;chosenAreaFlag == 4194303&amp;quot;
+ @set &amp;quot;chosenAreaFlag = 0&amp;quot;
  @Gosub System/System_Subroutine.EndAdv
  @goto soft:true End/End
 
-@map RecreationRoom,Library,Infirmary,SolitaryConfinement,Lake,NoahStudio,Courtyard,BasementHallway,Lounge,EntranceHall,MessHall,Showers,ChamberSalamander,ChamberUndine,ChamberGnome,FrontGuesthouse,Warehouse,Courtroom,CourtroomHallway,PrisonEntrance,Wall,FlowerFields flag:&amp;#34;chosenAreaFlag&amp;#34; Back:false Global:false
+@map RecreationRoom,Library,Infirmary,SolitaryConfinement,Lake,NoahStudio,Courtyard,BasementHallway,Lounge,EntranceHall,MessHall,Showers,ChamberSalamander,ChamberUndine,ChamberGnome,FrontGuesthouse,Warehouse,Courtroom,CourtroomHallway,PrisonEntrance,Wall,FlowerFields flag:&amp;quot;chosenAreaFlag&amp;quot; Back:false Global:false
 ;setflag中数字的顺序应与@map中房间的顺序相同
-@if &amp;#34;chosenAreaId==\&amp;#34;RecreationRoom\&amp;#34;&amp;#34;
- @setFlag 0 var:&amp;#34;chosenAreaFlag&amp;#34;
+@if &amp;quot;chosenAreaId==\&amp;quot;RecreationRoom\&amp;quot;&amp;quot;
+ @setFlag 0 var:&amp;quot;chosenAreaFlag&amp;quot;
  @Gosub System/System_Subroutine.EndAdv
  @goto soft:true RecreationRoom/RecreationRoom
 
-@if &amp;#34;chosenAreaId==\&amp;#34;Library\&amp;#34;&amp;#34;
- @setFlag 1 var:&amp;#34;chosenAreaFlag&amp;#34;
+@if &amp;quot;chosenAreaId==\&amp;quot;Library\&amp;quot;&amp;quot;
+ @setFlag 1 var:&amp;quot;chosenAreaFlag&amp;quot;
  @Gosub System/System_Subroutine.EndAdv
  @goto soft:true Library/Library
 
-@if &amp;#34;chosenAreaId==\&amp;#34;Infirmary\&amp;#34;&amp;#34;
- @setFlag 2 var:&amp;#34;chosenAreaFlag&amp;#34;
+@if &amp;quot;chosenAreaId==\&amp;quot;Infirmary\&amp;quot;&amp;quot;
+ @setFlag 2 var:&amp;quot;chosenAreaFlag&amp;quot;
  @Gosub System/System_Subroutine.EndAdv
  @goto soft:true Infirmary/Infirmary
 
-@if &amp;#34;chosenAreaId==\&amp;#34;SolitaryConfinement\&amp;#34;&amp;#34;
- @setFlag 3 var:&amp;#34;chosenAreaFlag&amp;#34;
+@if &amp;quot;chosenAreaId==\&amp;quot;SolitaryConfinement\&amp;quot;&amp;quot;
+ @setFlag 3 var:&amp;quot;chosenAreaFlag&amp;quot;
  @Gosub System/System_Subroutine.EndAdv
  @goto soft:true SolitaryConfinement/SolitaryConfinement
 
-@if &amp;#34;chosenAreaId==\&amp;#34;Lake\&amp;#34;&amp;#34;
- @setFlag 4 var:&amp;#34;chosenAreaFlag&amp;#34;
+@if &amp;quot;chosenAreaId==\&amp;quot;Lake\&amp;quot;&amp;quot;
+ @setFlag 4 var:&amp;quot;chosenAreaFlag&amp;quot;
  @Gosub System/System_Subroutine.EndAdv
  @goto soft:true Lake/Lake
 
-@if &amp;#34;chosenAreaId==\&amp;#34;NoahStudio\&amp;#34;&amp;#34;
- @setFlag 5 var:&amp;#34;chosenAreaFlag&amp;#34;
+@if &amp;quot;chosenAreaId==\&amp;quot;NoahStudio\&amp;quot;&amp;quot;
+ @setFlag 5 var:&amp;quot;chosenAreaFlag&amp;quot;
  @Gosub System/System_Subroutine.EndAdv
  @goto soft:true NoahStudio/NoahStudio
 
-@if &amp;#34;chosenAreaId==\&amp;#34;Courtyard\&amp;#34;&amp;#34;
- @setFlag 6 var:&amp;#34;chosenAreaFlag&amp;#34;
+@if &amp;quot;chosenAreaId==\&amp;quot;Courtyard\&amp;quot;&amp;quot;
+ @setFlag 6 var:&amp;quot;chosenAreaFlag&amp;quot;
  @Gosub System/System_Subroutine.EndAdv
  @goto soft:true Courtyard/Courtyard
 
-@if &amp;#34;chosenAreaId==\&amp;#34;BasementHallway\&amp;#34;&amp;#34;
- @setFlag 7 var:&amp;#34;chosenAreaFlag&amp;#34;
+@if &amp;quot;chosenAreaId==\&amp;quot;BasementHallway\&amp;quot;&amp;quot;
+ @setFlag 7 var:&amp;quot;chosenAreaFlag&amp;quot;
  @Gosub System/System_Subroutine.EndAdv
  @goto soft:true BasementHallway/BasementHallway
-
-@if &amp;#34;chosenAreaId==\&amp;#34;Lounge\&amp;#34;&amp;#34;
- @setFlag 8 var:&amp;#34;chosenAreaFlag&amp;#34;
+ 
+@if &amp;quot;chosenAreaId==\&amp;quot;Lounge\&amp;quot;&amp;quot;
+ @setFlag 8 var:&amp;quot;chosenAreaFlag&amp;quot;
  @Gosub System/System_Subroutine.EndAdv
  @goto soft:true Lounge/Lounge
-
-@if &amp;#34;chosenAreaId==\&amp;#34;EntranceHall\&amp;#34;&amp;#34;
- @setFlag 9 var:&amp;#34;chosenAreaFlag&amp;#34;
+ 
+@if &amp;quot;chosenAreaId==\&amp;quot;EntranceHall\&amp;quot;&amp;quot;
+ @setFlag 9 var:&amp;quot;chosenAreaFlag&amp;quot;
  @Gosub System/System_Subroutine.EndAdv
  @goto soft:true EntranceHall/EntranceHall
-
-@if &amp;#34;chosenAreaId==\&amp;#34;MessHall\&amp;#34;&amp;#34;
- @setFlag 10 var:&amp;#34;chosenAreaFlag&amp;#34;
+ 
+@if &amp;quot;chosenAreaId==\&amp;quot;MessHall\&amp;quot;&amp;quot;
+ @setFlag 10 var:&amp;quot;chosenAreaFlag&amp;quot;
  @Gosub System/System_Subroutine.EndAdv
  @goto soft:true MessHall/MessHall
-
-@if &amp;#34;chosenAreaId==\&amp;#34;Showers\&amp;#34;&amp;#34;
- @setFlag 11 var:&amp;#34;chosenAreaFlag&amp;#34;
+ 
+@if &amp;quot;chosenAreaId==\&amp;quot;Showers\&amp;quot;&amp;quot;
+ @setFlag 11 var:&amp;quot;chosenAreaFlag&amp;quot;
  @Gosub System/System_Subroutine.EndAdv
  @goto soft:true Showers/Showers
-
-@if &amp;#34;chosenAreaId==\&amp;#34;ChamberSalamander\&amp;#34;&amp;#34;
- @setFlag 12 var:&amp;#34;chosenAreaFlag&amp;#34;
+ 
+@if &amp;quot;chosenAreaId==\&amp;quot;ChamberSalamander\&amp;quot;&amp;quot;
+ @setFlag 12 var:&amp;quot;chosenAreaFlag&amp;quot;
  @Gosub System/System_Subroutine.EndAdv
  @goto soft:true ChamberSalamander/ChamberSalamander
 
-@if &amp;#34;chosenAreaId==\&amp;#34;ChamberUndine\&amp;#34;&amp;#34;
- @setFlag 13 var:&amp;#34;chosenAreaFlag&amp;#34;
+@if &amp;quot;chosenAreaId==\&amp;quot;ChamberUndine\&amp;quot;&amp;quot;
+ @setFlag 13 var:&amp;quot;chosenAreaFlag&amp;quot;
  @Gosub System/System_Subroutine.EndAdv
  @goto soft:true ChamberUndine/ChamberUndine
 
-@if &amp;#34;chosenAreaId==\&amp;#34;ChamberGnome\&amp;#34;&amp;#34;
- @setFlag 14 var:&amp;#34;chosenAreaFlag&amp;#34;
+@if &amp;quot;chosenAreaId==\&amp;quot;ChamberGnome\&amp;quot;&amp;quot;
+ @setFlag 14 var:&amp;quot;chosenAreaFlag&amp;quot;
  @Gosub System/System_Subroutine.EndAdv
  @goto soft:true ChamberGnome/ChamberGnome
 
-@if &amp;#34;chosenAreaId==\&amp;#34;FrontGuesthouse\&amp;#34;&amp;#34;
- @setFlag 15 var:&amp;#34;chosenAreaFlag&amp;#34;
+@if &amp;quot;chosenAreaId==\&amp;quot;FrontGuesthouse\&amp;quot;&amp;quot;
+ @setFlag 15 var:&amp;quot;chosenAreaFlag&amp;quot;
  @Gosub System/System_Subroutine.EndAdv
  @goto soft:true FrontGuesthouse/FrontGuesthouse
 
-@if &amp;#34;chosenAreaId==\&amp;#34;Warehouse\&amp;#34;&amp;#34;
- @setFlag 16 var:&amp;#34;chosenAreaFlag&amp;#34;
+@if &amp;quot;chosenAreaId==\&amp;quot;Warehouse\&amp;quot;&amp;quot;
+ @setFlag 16 var:&amp;quot;chosenAreaFlag&amp;quot;
  @Gosub System/System_Subroutine.EndAdv
  @goto soft:true Warehouse/Warehouse
 
-@if &amp;#34;chosenAreaId==\&amp;#34;Courtroom\&amp;#34;&amp;#34;
- @setFlag 17 var:&amp;#34;chosenAreaFlag&amp;#34;
+@if &amp;quot;chosenAreaId==\&amp;quot;Courtroom\&amp;quot;&amp;quot;
+ @setFlag 17 var:&amp;quot;chosenAreaFlag&amp;quot;
  @Gosub System/System_Subroutine.EndAdv
  @goto soft:true Courtroom/Courtroom
 
-@if &amp;#34;chosenAreaId==\&amp;#34;CourtroomHallway\&amp;#34;&amp;#34;
- @setFlag 18 var:&amp;#34;chosenAreaFlag&amp;#34;
+@if &amp;quot;chosenAreaId==\&amp;quot;CourtroomHallway\&amp;quot;&amp;quot;
+ @setFlag 18 var:&amp;quot;chosenAreaFlag&amp;quot;
  @Gosub System/System_Subroutine.EndAdv
  @goto soft:true CourtroomHallway/CourtroomHallway
 
-@if &amp;#34;chosenAreaId==\&amp;#34;PrisonEntrance\&amp;#34;&amp;#34;
- @setFlag 19 var:&amp;#34;chosenAreaFlag&amp;#34;
+@if &amp;quot;chosenAreaId==\&amp;quot;PrisonEntrance\&amp;quot;&amp;quot;
+ @setFlag 19 var:&amp;quot;chosenAreaFlag&amp;quot;
  @Gosub System/System_Subroutine.EndAdv
  @goto soft:true PrisonEntrance/PrisonEntrance
 
-@if &amp;#34;chosenAreaId==\&amp;#34;Wall\&amp;#34;&amp;#34;
- @setFlag 20 var:&amp;#34;chosenAreaFlag&amp;#34;
+@if &amp;quot;chosenAreaId==\&amp;quot;Wall\&amp;quot;&amp;quot;
+ @setFlag 20 var:&amp;quot;chosenAreaFlag&amp;quot;
  @Gosub System/System_Subroutine.EndAdv
  @goto soft:true Wall/Wall
 
-@if &amp;#34;chosenAreaId==\&amp;#34;FlowerFields\&amp;#34;&amp;#34;
- @setFlag 21 var:&amp;#34;chosenAreaFlag&amp;#34;
+@if &amp;quot;chosenAreaId==\&amp;quot;FlowerFields\&amp;quot;&amp;quot;
+ @setFlag 21 var:&amp;quot;chosenAreaFlag&amp;quot;
  @Gosub System/System_Subroutine.EndAdv
  @goto soft:true FlowerFields/FlowerFields
 
 @StopForChoice Clear:false
-&lt;/code>&lt;/pre>&lt;/li>
-&lt;/ol>
+
+```
+&lt;/code>&lt;/pre>
 &lt;/div>
 &lt;h2 id="例子下载">
  例子下载

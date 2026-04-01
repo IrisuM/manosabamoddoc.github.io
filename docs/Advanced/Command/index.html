@@ -1,156 +1,720 @@
 <!doctype html><html lang=zh dir=ltr><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content='
-  指令介绍
+  指令参考
   
   #
   
 
 
-back
-  
+Naninovel 脚本指令完整参考。前置知识: 简单对话, 魔女裁判
 
-  back
+本页列出了所有可用的脚本指令，包括 Naninovel 官方指令、游戏特有指令以及 MOD 新增功能。
+
+  指令分类速查
   
   #
   
 
-官方指令back
-设置背景元素
+
+  
+      
+          分类
+          指令
+      
+  
+  
+      
+          显示控制
+          @back, @char, @hide, @hidechars, @show
+      
+      
+          动画效果
+          @animate, @blur, @shake
+      
+      
+          对话文本
+          @print, @printDebate, @ResetText, @printer, @HidePrinter
+      
+      
+          音频
+          @bgm, @sfx, @voice, @stopBgm, @stopSfx, @StopVoice
+      
+      
+          流程控制
+          @goto, @gosub, @return, @stop, @StopForChoice, @CancelGosub, @Skip
+      
+      
+          选择分支
+          @choice
+      
+      
+          变量条件
+          @set, @if
+      
+      
+          等待
+          @wait, @WaitForNextFrame, @i
+      
+      
+          审判系统
+          @printDebate, @evidence, @timer, @pauseTrial, @debate, @stageCamera, @showStageScreen / @hideStageScreen, @gosubModifyCamera, @gosubCutIn, @courtFire, @badId
+      
+      
+          魔女图鉴
+          @update, @spawn / @despawn, @toast, @gosubResetBook
+      
+      
+          地图搜查
+          @map, @setFlag
+      
+      
+          视频播放
+          @movie
+      
+      
+          UI控制
+          @HideUI, @ShowUI, @ProcessInput, @ReturnToTitle
+      
+      
+          角色动作
+          @EmoteJumpDouble
+      
+  
+
+
+  显示控制指令
+  
+  #
+  
+
+
+  @back
+  
+  #
+  
+
+官方文档
+功能: 设置背景元素
+常用参数:
 
   
       
           参数
+          类型
           说明
+          示例
       
   
   
       
-          subid
-          指定层级，靠前的层级会遮挡靠后的，比如Middle会遮挡不设置时的默认层级
+          (外观)
+          String
+          背景外观名称
+          1_1, SolidColor, Transparent
+      
+      
+          Id
+          String
+          背景处理器
+          "Stills" (CG图鉴用)
+      
+      
+          SubId
+          String
+          层级,靠前层级遮挡靠后
+          "Overlay", "Middle"
+      
+      
+          pos
+          Vector2
+          位置偏移 (X,Y 百分比)
+          50,50, -5,-10
+      
+      
+          Scale
+          Float
+          缩放比例,支持表达式
+          1.8, {g_backgroundDefaultScale}
+      
+      
+          Rotation
+          Vector3
+          旋转角度 (X,Y,Z)
+          ,,0 (仅 Z 轴)
+      
+      
+          tint
+          Color
+          颜色叠加 (RGBA)
+          "#000000", "#FFFFFFFF"
+      
+      
+          dissolve
+          String
+          自定义转场纹理
+          "VerticalBlindGradually"
+      
+      
+          transition
+          String
+          转场效果
+          CrossFade, RadialBlur
+      
+      
+          time
+          Float
+          转场时长 (秒)
+          1.5, 0 (立即)
+      
+      
+          Lazy
+          Bool
+          从当前状态过渡 (而非重置)
+          false
       
   
 
-@back SubId:"Middle" 1_1 pos:10,30 Scale:1.8
-  
-
-bgm
-  
-
-  bgm
-  
-  #
-  
-
-官方指令bgm
-设置背景音乐
-@bgm "Ambi_11_1"
-  
-
-char
-  
-
-  char
-  
-  #
-  
-
-官方指令char
-修改人物立绘
-
-  
-      
-          参数
-          说明
-      
-  
-  
-      
-          subid
-          指定层级，靠前的层级会遮挡靠后的，比如Middle会遮挡不设置时的默认层级
-      
-  
-
-@char SubId:"Middle" Warden.1 Scale:1.4
-  
-
-gosub
-  
-
-  gosub
-  
-  #
-  
-
-官方指令gosub
-跳转到指定路径，并在遇到 return 指令后返回
-  
-
-goto
-  
-
-  goto
-  
-  #
-  
-
-官方指令goto
-跳转到指定路径
-  
-
-hide
-  
-
-  hide
-  
-  #
-  
-
-官方指令hide
-隐藏指定的actor(角色, 背景, 文字框, 选择框)
-  
-
-hidechars
-  
-
-  hidechars
-  
-  #
-  
-
-官方指令hidechars'><meta name=theme-color media="(prefers-color-scheme: light)" content="#ffffff"><meta name=theme-color media="(prefers-color-scheme: dark)" content="#343a40"><meta name=color-scheme content="light dark"><meta property="og:url" content="http://manosabamoddoc.fuyumi.xyz/docs/Advanced/Command/"><meta property="og:site_name" content="雪莉的剧本编辑器"><meta property="og:title" content="指令介绍"><meta property="og:description" content='指令介绍 # back back # 官方指令back
-设置背景元素
-参数 说明 subid 指定层级，靠前的层级会遮挡靠后的，比如Middle会遮挡不设置时的默认层级 @back SubId:"Middle" 1_1 pos:10,30 Scale:1.8 bgm bgm # 官方指令bgm
-设置背景音乐
-@bgm "Ambi_11_1" char char # 官方指令char
-修改人物立绘
-参数 说明 subid 指定层级，靠前的层级会遮挡靠后的，比如Middle会遮挡不设置时的默认层级 @char SubId:"Middle" Warden.1 Scale:1.4 gosub gosub # 官方指令gosub
-跳转到指定路径，并在遇到 return 指令后返回
-goto goto # 官方指令goto
-跳转到指定路径
-hide hide # 官方指令hide
-隐藏指定的actor(角色, 背景, 文字框, 选择框)
-hidechars hidechars # 官方指令hidechars'><meta property="og:locale" content="zh"><meta property="og:type" content="article"><meta property="article:section" content="docs"><meta property="article:modified_time" content="2025-10-08T13:43:07+08:00"><title>指令介绍 | 雪莉的剧本编辑器</title><link rel=icon href=/favicon.png><link rel=manifest href=/manifest.json><link rel=canonical href=http://manosabamoddoc.fuyumi.xyz/docs/Advanced/Command/><link rel=stylesheet href=/book.min.f983b1133075f34a464000952394d7dd8ca4b6c8f419ca5ae47d914318121017.css integrity="sha256-+YOxEzB180pGQACVI5TX3Yyktsj0Gcpa5H2RQxgSEBc=" crossorigin=anonymous><script defer src=/fuse.min.js></script><script defer src=/zh.search.min.5193f8c45e6add5e27388956e46f8ab07dd6a752a4f648d5e3d01d0925b414dd.js integrity="sha256-UZP4xF5q3V4nOIlW5G+KsH3Wp1Kk9kjV49AdCSW0FN0=" crossorigin=anonymous></script></head><body dir=ltr class="book-kind-page book-type-docs"><input type=checkbox class="hidden toggle" id=menu-control>
+外观类型说明:'><meta name=theme-color media="(prefers-color-scheme: light)" content="#ffffff"><meta name=theme-color media="(prefers-color-scheme: dark)" content="#343a40"><meta name=color-scheme content="light dark"><meta property="og:url" content="http://manosabamoddoc.fuyumi.xyz/docs/Advanced/Command/"><meta property="og:site_name" content="雪莉的剧本编辑器"><meta property="og:title" content="指令参考"><meta property="og:description" content='指令参考 # Naninovel 脚本指令完整参考。前置知识: 简单对话, 魔女裁判
+本页列出了所有可用的脚本指令，包括 Naninovel 官方指令、游戏特有指令以及 MOD 新增功能。
+指令分类速查 # 分类 指令 显示控制 @back, @char, @hide, @hidechars, @show 动画效果 @animate, @blur, @shake 对话文本 @print, @printDebate, @ResetText, @printer, @HidePrinter 音频 @bgm, @sfx, @voice, @stopBgm, @stopSfx, @StopVoice 流程控制 @goto, @gosub, @return, @stop, @StopForChoice, @CancelGosub, @Skip 选择分支 @choice 变量条件 @set, @if 等待 @wait, @WaitForNextFrame, @i 审判系统 @printDebate, @evidence, @timer, @pauseTrial, @debate, @stageCamera, @showStageScreen / @hideStageScreen, @gosubModifyCamera, @gosubCutIn, @courtFire, @badId 魔女图鉴 @update, @spawn / @despawn, @toast, @gosubResetBook 地图搜查 @map, @setFlag 视频播放 @movie UI控制 @HideUI, @ShowUI, @ProcessInput, @ReturnToTitle 角色动作 @EmoteJumpDouble 显示控制指令 # @back # 官方文档
+功能: 设置背景元素
+常用参数:
+参数 类型 说明 示例 (外观) String 背景外观名称 1_1, SolidColor, Transparent Id String 背景处理器 "Stills" (CG图鉴用) SubId String 层级,靠前层级遮挡靠后 "Overlay", "Middle" pos Vector2 位置偏移 (X,Y 百分比) 50,50, -5,-10 Scale Float 缩放比例,支持表达式 1.8, {g_backgroundDefaultScale} Rotation Vector3 旋转角度 (X,Y,Z) ,,0 (仅 Z 轴) tint Color 颜色叠加 (RGBA) "#000000", "#FFFFFFFF" dissolve String 自定义转场纹理 "VerticalBlindGradually" transition String 转场效果 CrossFade, RadialBlur time Float 转场时长 (秒) 1.5, 0 (立即) Lazy Bool 从当前状态过渡 (而非重置) false 外观类型说明:'><meta property="og:locale" content="zh"><meta property="og:type" content="article"><meta property="article:section" content="docs"><meta property="article:modified_time" content="2026-04-01T22:58:53+08:00"><title>指令参考 | 雪莉的剧本编辑器</title><link rel=icon href=/favicon.png><link rel=manifest href=/manifest.json><link rel=canonical href=http://manosabamoddoc.fuyumi.xyz/docs/Advanced/Command/><link rel=stylesheet href=/book.min.f983b1133075f34a464000952394d7dd8ca4b6c8f419ca5ae47d914318121017.css integrity="sha256-+YOxEzB180pGQACVI5TX3Yyktsj0Gcpa5H2RQxgSEBc=" crossorigin=anonymous><script defer src=/fuse.min.js></script><script defer src=/zh.search.min.bfa65412d244f7170220675f6314b1f08ca7ba26b8a8ed8a20179cf9193fc6dc.js integrity="sha256-v6ZUEtJE9xcCIGdfYxSx8Iynuia4qO2KIBec+Rk/xtw=" crossorigin=anonymous></script></head><body dir=ltr class="book-kind-page book-type-docs"><input type=checkbox class="hidden toggle" id=menu-control>
 <input type=checkbox class="hidden toggle" id=toc-control><main class="container flex"><aside class=book-menu><div class=book-menu-content><nav><h2 class=book-brand><a class="flex align-center" href=/><img src=/logo.png alt=Logo><span>雪莉的剧本编辑器</span></a></h2><div class="book-search hidden"><input type=text id=book-search-input placeholder=搜索 aria-label=搜索 maxlength=64 data-hotkeys=s/><div class="book-search-spinner hidden"></div><ul id=book-search-results></ul></div><script>document.querySelector(".book-search").classList.remove("hidden")</script><ul><li class=book-section-flat><input type=checkbox id=section-52b5154487ff06b89e9868121921b268 class=toggle>
 <label for=section-52b5154487ff06b89e9868121921b268 class=flex><a role=button class=flex-auto>介绍</a></label><ul><li><a href=/docs/Intruduce/ForUser/>给使用的人</a></li><li><a href=/docs/Intruduce/ForDeveloper/>给想写剧本的人</a></li></ul></li><li class=book-section-flat><a href=/docs/Install/>安装与卸载</a><ul></ul></li><li class=book-section-flat><input type=checkbox id=section-096e5f72c7ef5d62a972e4a2046cf5fb class=toggle>
 <label for=section-096e5f72c7ef5d62a972e4a2046cf5fb class=flex><a role=button class=flex-auto>快速开始一段创作</a></label><ul><li><a href=/docs/QuickStart/CreateMod/>创建新的剧本</a></li><li><a href=/docs/QuickStart/BeginAdv/>开始一个简单的对话</a></li><li><a href=/docs/QuickStart/BeginTrial/>试试写一个魔女裁判</a></li><li><a href=/docs/QuickStart/Tips/>小贴士</a></li></ul></li><li class=book-section-flat><a href=/docs/ModConfig/>Mod配置</a><ul></ul></li><li class=book-section-flat><input type=checkbox id=section-85b6c0237bbcba5efb9e89acf039eea2 class=toggle checked>
-<label for=section-85b6c0237bbcba5efb9e89acf039eea2 class=flex><a role=button class=flex-auto>进阶文档</a></label><ul><li><a href=/docs/Advanced/Command/ class=active>指令介绍</a></li><li><a href=/docs/Advanced/LoadBackgrounds/>加载外部背景资源</a></li><li><a href=/docs/Advanced/LoadVoice/>加载外部音频资源</a></li><li><a href=/docs/Advanced/LoadCharacter/>加载外部立绘资源</a></li><li><a href=/docs/Advanced/MoreNaniFile/>本地化配置</a></li><li><a href=/docs/Advanced/MapMenu/>搜查示例</a></li></ul></li><li class=book-section-flat><input type=checkbox id=section-0179ebec185e705019125ac32129ed53 class=toggle>
+<label for=section-85b6c0237bbcba5efb9e89acf039eea2 class=flex><a role=button class=flex-auto>进阶文档</a></label><ul><li><a href=/docs/Advanced/Command/ class=active>指令参考</a></li><li><a href=/docs/Advanced/LoadBackgrounds/>加载外部背景资源</a></li><li><a href=/docs/Advanced/LoadVoice/>加载外部音频资源</a></li><li><a href=/docs/Advanced/LoadCharacter/>加载外部立绘资源</a></li><li><a href=/docs/Advanced/WitchBook/>魔女图鉴</a></li><li><a href=/docs/Advanced/MoreNaniFile/>本地化配置</a></li><li><a href=/docs/Advanced/LoadMovie/>视频播放</a></li><li><a href=/docs/Advanced/ChapterNames/>存档章节名称</a></li><li><a href=/docs/Advanced/MapMenu/>搜查示例</a></li></ul></li><li class=book-section-flat><input type=checkbox id=section-0179ebec185e705019125ac32129ed53 class=toggle>
 <label for=section-0179ebec185e705019125ac32129ed53 class=flex><a role=button class=flex-auto>其它说明</a></label><ul><li><a href=/docs/Others/AQ/>碎碎念</a></li><li><a href=/docs/Others/UsefulTools/>一些有用的工具</a></li></ul></li><li class=book-section-flat><input type=checkbox id=section-e8588b3ef49116b03cfce7c9e2485f9c class=toggle>
-<label for=section-e8588b3ef49116b03cfce7c9e2485f9c class=flex><a role=button class=flex-auto>立绘编辑器</a></label><ul><li><a href=/docs/LayerEditor/LayerEditor/>立绘图层编辑</a></li></ul></li></ul><ul><li><a href=https://github.com/IrisuM/ManosabaMod/ target=_blank rel=noopener>Github</a></li><li><a href=https://space.bilibili.com/1265680561/ target=_blank rel=noopener>关注永雏塔菲谢谢喵！</a></li><li><a href=https://space.bilibili.com/3546949672241842/ target=_blank rel=noopener>关注我谢谢喵！</a></li></ul></nav><script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script></div></aside><div class=book-page><header class=book-header><div class="flex align-center justify-between"><label for=menu-control><img src=/svg/menu.svg class=book-icon alt=Menu></label><h3>指令介绍</h3><label for=toc-control><img src=/svg/toc.svg class=book-icon alt="Table of Contents"></label></div><aside class="hidden clearfix"><nav id=TableOfContents><ul><li><a href=#指令介绍>指令介绍</a><ul><li><a href=#back>back</a></li><li><a href=#bgm>bgm</a></li><li><a href=#char>char</a></li><li><a href=#gosub>gosub</a></li><li><a href=#goto>goto</a></li><li><a href=#hide>hide</a></li><li><a href=#hidechars>hidechars</a></li><li><a href=#print>print</a></li><li><a href=#return>return</a></li><li><a href=#returntotitle>returntotitle</a></li><li><a href=#voice>voice</a></li><li><a href=#wait>wait</a></li></ul></li></ul></nav></aside></header><article class="markdown book-article"><h1 id=指令介绍>指令介绍
-<a class=anchor href=#%e6%8c%87%e4%bb%a4%e4%bb%8b%e7%bb%8d>#</a></h1><hr><details><summary>back</summary><div class=markdown-inner><h2 id=back>back
-<a class=anchor href=#back>#</a></h2><p><a href=https://naninovel.com/api/#back><span class="book-badge info"><span class=book-badge-title>官方指令</span><span class=book-badge-value>back</span></span></a></p><p>设置背景元素</p><table><thead><tr><th>参数</th><th>说明</th></tr></thead><tbody><tr><td>subid</td><td>指定层级，靠前的层级会遮挡靠后的，比如Middle会遮挡不设置时的默认层级</td></tr></tbody></table><pre tabindex=0><code>@back SubId:&#34;Middle&#34; 1_1 pos:10,30 Scale:1.8
-</code></pre></div></details><details><summary>bgm</summary><div class=markdown-inner><h2 id=bgm>bgm
-<a class=anchor href=#bgm>#</a></h2><p><a href=https://naninovel.com/api/#bgm><span class="book-badge info"><span class=book-badge-title>官方指令</span><span class=book-badge-value>bgm</span></span></a></p><p>设置背景音乐</p><pre tabindex=0><code>@bgm &#34;Ambi_11_1&#34;
-</code></pre></div></details><details><summary>char</summary><div class=markdown-inner><h2 id=char>char
-<a class=anchor href=#char>#</a></h2><p><a href=https://naninovel.com/api/#char><span class="book-badge info"><span class=book-badge-title>官方指令</span><span class=book-badge-value>char</span></span></a></p><p>修改人物立绘</p><table><thead><tr><th>参数</th><th>说明</th></tr></thead><tbody><tr><td>subid</td><td>指定层级，靠前的层级会遮挡靠后的，比如Middle会遮挡不设置时的默认层级</td></tr></tbody></table><pre tabindex=0><code>@char SubId:&#34;Middle&#34; Warden.1 Scale:1.4
-</code></pre></div></details><details><summary>gosub</summary><div class=markdown-inner><h2 id=gosub>gosub
-<a class=anchor href=#gosub>#</a></h2><p><a href=https://naninovel.com/api/#gosub><span class="book-badge info"><span class=book-badge-title>官方指令</span><span class=book-badge-value>gosub</span></span></a></p><p>跳转到指定路径，并在遇到 <a href=#return><strong>return</strong></a> 指令后返回</p></div></details><details><summary>goto</summary><div class=markdown-inner><h2 id=goto>goto
-<a class=anchor href=#goto>#</a></h2><p><a href=https://naninovel.com/api/#goto><span class="book-badge info"><span class=book-badge-title>官方指令</span><span class=book-badge-value>goto</span></span></a></p><p>跳转到指定路径</p></div></details><details><summary>hide</summary><div class=markdown-inner><h2 id=hide>hide
-<a class=anchor href=#hide>#</a></h2><p><a href=https://naninovel.com/api/#hide><span class="book-badge info"><span class=book-badge-title>官方指令</span><span class=book-badge-value>hide</span></span></a></p><p>隐藏指定的actor(角色, 背景, 文字框, 选择框)</p></div></details><details><summary>hidechars</summary><div class=markdown-inner><h2 id=hidechars>hidechars
-<a class=anchor href=#hidechars>#</a></h2><p><a href=https://naninovel.com/api/#hidechars><span class="book-badge info"><span class=book-badge-title>官方指令</span><span class=book-badge-value>hidechars</span></span></a></p><p>隐藏所有可见的角色</p></div></details><details><summary>print</summary><div class=markdown-inner><h2 id=print>print
-<a class=anchor href=#print>#</a></h2><p><a href=https://naninovel.com/api/#print><span class="book-badge info"><span class=book-badge-title>官方指令</span><span class=book-badge-value>print</span></span></a></p><p>打印文本</p></div></details><details><summary>return</summary><div class=markdown-inner><h2 id=return>return
-<a class=anchor href=#return>#</a></h2><p><a href=https://naninovel.com/api/#return><span class="book-badge info"><span class=book-badge-title>官方指令</span><span class=book-badge-value>return</span></span></a></p><p>返回到<a href=#gosub><strong>gosub</strong></a>指令的调用处</p></div></details><details><summary>returntotitle</summary><div class=markdown-inner><h2 id=returntotitle>returntotitle
-<a class=anchor href=#returntotitle>#</a></h2><p><span class="book-badge warning"><span class=book-badge-title>游戏指令</span><span class=book-badge-value>returntotitle</span></span></p><p>返回标题页</p><table><thead><tr><th>参数</th><th>说明</th></tr></thead><tbody><tr><td>time</td><td>动画时长</td></tr><tr><td>delay</td><td>延迟时间</td></tr><tr><td>wait</td><td>是否等待</td></tr></tbody></table></div></details><details><summary>voice</summary><div class=markdown-inner><h2 id=voice>voice
-<a class=anchor href=#voice>#</a></h2><p><a href=https://naninovel.com/api/#voice><span class="book-badge info"><span class=book-badge-title>官方指令</span><span class=book-badge-value>voice</span></span></a></p><p>播放指定角色对话声音</p></div></details><details><summary>wait</summary><div class=markdown-inner><h2 id=wait>wait
-<a class=anchor href=#wait>#</a></h2><p><a href=https://naninovel.com/api/#wait><span class="book-badge info"><span class=book-badge-title>官方指令</span><span class=book-badge-value>wait</span></span></a></p><p>等待直到条件满足，条件通常为时间的浮点数</p></div></details></article><footer class=book-footer><div class="flex flex-wrap justify-between"></div><div class="flex flex-wrap justify-between"><span><a href=/docs/ModConfig/ class="flex align-center book-icon"><img src=/svg/backward.svg class=book-icon alt=Previous title=Mod配置>
+<label for=section-e8588b3ef49116b03cfce7c9e2485f9c class=flex><a role=button class=flex-auto>立绘编辑器</a></label><ul><li><a href=/docs/LayerEditor/LayerEditor/>立绘图层编辑</a></li></ul></li></ul><ul><li><a href=https://github.com/IrisuM/ManosabaMod/ target=_blank rel=noopener>Github</a></li><li><a href=https://space.bilibili.com/1265680561/ target=_blank rel=noopener>关注永雏塔菲谢谢喵！</a></li><li><a href=https://space.bilibili.com/3546949672241842/ target=_blank rel=noopener>关注我谢谢喵！</a></li></ul></nav><script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script></div></aside><div class=book-page><header class=book-header><div class="flex align-center justify-between"><label for=menu-control><img src=/svg/menu.svg class=book-icon alt=Menu></label><h3>指令参考</h3><label for=toc-control><img src=/svg/toc.svg class=book-icon alt="Table of Contents"></label></div><aside class="hidden clearfix"><nav id=TableOfContents><ul><li><a href=#指令参考>指令参考</a><ul><li><a href=#指令分类速查>指令分类速查</a></li><li><a href=#显示控制指令>显示控制指令</a><ul><li><a href=#back>@back</a></li><li><a href=#char>@char</a></li><li><a href=#hide>@hide</a></li><li><a href=#hidechars>@hidechars</a></li><li><a href=#show>@show</a></li></ul></li><li><a href=#动画效果指令>动画效果指令</a><ul><li><a href=#animate>@animate</a></li><li><a href=#blur>@blur</a></li><li><a href=#shake>@shake</a></li></ul></li><li><a href=#对话文本指令>对话文本指令</a><ul><li><a href=#print>@print</a></li><li><a href=#printdebate>@printDebate</a></li><li><a href=#resettext>@ResetText</a></li><li><a href=#printer>@printer</a></li><li><a href=#hideprinter>@HidePrinter</a></li></ul></li><li><a href=#音频指令>音频指令</a><ul><li><a href=#bgm>@bgm</a></li><li><a href=#sfx>@sfx</a></li><li><a href=#voice>@voice</a></li><li><a href=#stopvoice>@StopVoice</a></li><li><a href=#stopbgm>@stopBgm</a></li><li><a href=#stopsfx>@stopSfx</a></li></ul></li><li><a href=#流程控制指令>流程控制指令</a><ul><li><a href=#goto>@goto</a></li><li><a href=#gosub>@gosub</a></li><li><a href=#return>@return</a></li><li><a href=#stop>@stop</a></li><li><a href=#stopforchoice>@StopForChoice</a></li><li><a href=#cancelgosub>@CancelGosub</a></li><li><a href=#skip>@Skip</a></li></ul></li><li><a href=#选择分支指令>选择分支指令</a><ul><li><a href=#choice>@choice</a></li></ul></li><li><a href=#变量和条件指令>变量和条件指令</a><ul><li><a href=#set>@set</a></li><li><a href=#if>@if</a></li></ul></li><li><a href=#等待指令>等待指令</a><ul><li><a href=#wait>@wait</a></li><li><a href=#waitfornextframe>@WaitForNextFrame</a></li><li><a href=#i>@i</a></li></ul></li><li><a href=#审判系统指令->审判系统指令 🎯</a><ul><li><a href=#evidence>@evidence</a></li><li><a href=#timer>@timer</a></li><li><a href=#pausetrial>@pauseTrial</a></li><li><a href=#debate>@debate</a></li><li><a href=#stagecamera>@stageCamera</a></li><li><a href=#showstagescreen--hidestagescreen>@showStageScreen / @hideStageScreen</a></li><li><a href=#unloadstage>@unloadStage</a></li><li><a href=#gosubmodifycamera>@gosubModifyCamera</a></li><li><a href=#gosubcutin>@gosubCutIn</a></li><li><a href=#courtfire>@courtFire</a></li><li><a href=#badid>@badId</a></li></ul></li><li><a href=#魔女图鉴指令->魔女图鉴指令 ✨</a><ul><li><a href=#update>@update</a></li><li><a href=#spawn--despawn>@spawn / @despawn</a></li><li><a href=#toast>@toast</a></li><li><a href=#gosubresetbook>@gosubResetBook</a></li></ul></li><li><a href=#地图搜查指令>地图搜查指令</a><ul><li><a href=#map>@map</a></li><li><a href=#setflag>@setFlag</a></li></ul></li><li><a href=#视频播放指令->视频播放指令 🎬</a><ul><li><a href=#movie>@movie</a></li></ul></li><li><a href=#ui控制指令>UI控制指令</a><ul><li><a href=#hideui>@HideUI</a></li><li><a href=#showui>@ShowUI</a></li><li><a href=#processinput>@ProcessInput</a></li><li><a href=#returntotitle>@ReturnToTitle</a></li></ul></li><li><a href=#角色动作指令>角色动作指令</a><ul><li><a href=#emotejumpdouble>@EmoteJumpDouble</a></li></ul></li><li><a href=#常见问题>常见问题</a></li><li><a href=#相关教程>相关教程</a></li></ul></li></ul></nav></aside></header><article class="markdown book-article"><h1 id=指令参考>指令参考
+<a class=anchor href=#%e6%8c%87%e4%bb%a4%e5%8f%82%e8%80%83>#</a></h1><blockquote class="book-hint info"><p>Naninovel 脚本指令完整参考。前置知识: <a href=/docs/QuickStart/BeginAdv>简单对话</a>, <a href=/docs/QuickStart/BeginTrial>魔女裁判</a></p></blockquote><p>本页列出了所有可用的脚本指令，包括 Naninovel 官方指令、游戏特有指令以及 MOD 新增功能。</p><h2 id=指令分类速查>指令分类速查
+<a class=anchor href=#%e6%8c%87%e4%bb%a4%e5%88%86%e7%b1%bb%e9%80%9f%e6%9f%a5>#</a></h2><table><thead><tr><th>分类</th><th>指令</th></tr></thead><tbody><tr><td><strong>显示控制</strong></td><td><a href=#back>@back</a>, <a href=#char>@char</a>, <a href=#hide>@hide</a>, <a href=#hidechars>@hidechars</a>, <a href=#show>@show</a></td></tr><tr><td><strong>动画效果</strong></td><td><a href=#animate>@animate</a>, <a href=#blur>@blur</a>, <a href=#shake>@shake</a></td></tr><tr><td><strong>对话文本</strong></td><td><a href=#print>@print</a>, <a href=#printdebate>@printDebate</a>, <a href=#resettext>@ResetText</a>, <a href=#printer>@printer</a>, <a href=#hidePrinter>@HidePrinter</a></td></tr><tr><td><strong>音频</strong></td><td><a href=#bgm>@bgm</a>, <a href=#sfx>@sfx</a>, <a href=#voice>@voice</a>, <a href=#stopbgm>@stopBgm</a>, <a href=#stopsfx>@stopSfx</a>, <a href=#stopvoice>@StopVoice</a></td></tr><tr><td><strong>流程控制</strong></td><td><a href=#goto>@goto</a>, <a href=#gosub>@gosub</a>, <a href=#return>@return</a>, <a href=#stop>@stop</a>, <a href=#stopforchoice>@StopForChoice</a>, <a href=#cancelgosub>@CancelGosub</a>, <a href=#skip>@Skip</a></td></tr><tr><td><strong>选择分支</strong></td><td><a href=#choice>@choice</a></td></tr><tr><td><strong>变量条件</strong></td><td><a href=#set>@set</a>, <a href=#if>@if</a></td></tr><tr><td><strong>等待</strong></td><td><a href=#wait>@wait</a>, <a href=#waitfornextframe>@WaitForNextFrame</a>, <a href=#i>@i</a></td></tr><tr><td><strong>审判系统</strong></td><td><a href=#printdebate>@printDebate</a>, <a href=#evidence>@evidence</a>, <a href=#timer>@timer</a>, <a href=#pausetrial>@pauseTrial</a>, <a href=#debate>@debate</a>, <a href=#stagecamera>@stageCamera</a>, <a href=#showstagescreen--hidestagescreen>@showStageScreen / @hideStageScreen</a>, <a href=#gosubmodifycamera>@gosubModifyCamera</a>, <a href=#gosubcutin>@gosubCutIn</a>, <a href=#courtfire>@courtFire</a>, <a href=#badid>@badId</a></td></tr><tr><td><strong>魔女图鉴</strong></td><td><a href=#update>@update</a>, <a href=#spawn--despawn>@spawn / @despawn</a>, <a href=#toast>@toast</a>, <a href=#gosubresetbook>@gosubResetBook</a></td></tr><tr><td><strong>地图搜查</strong></td><td><a href=#map>@map</a>, <a href=#setflag>@setFlag</a></td></tr><tr><td><strong>视频播放</strong></td><td><a href=#movie>@movie</a></td></tr><tr><td><strong>UI控制</strong></td><td><a href=#hideui>@HideUI</a>, <a href=#showui>@ShowUI</a>, <a href=#processinput>@ProcessInput</a>, <a href=#returntotitle>@ReturnToTitle</a></td></tr><tr><td><strong>角色动作</strong></td><td><a href=#emotejumpdouble>@EmoteJumpDouble</a></td></tr></tbody></table><h2 id=显示控制指令>显示控制指令
+<a class=anchor href=#%e6%98%be%e7%a4%ba%e6%8e%a7%e5%88%b6%e6%8c%87%e4%bb%a4>#</a></h2><h3 id=back>@back
+<a class=anchor href=#back>#</a></h3><p><a href=https://naninovel.com/api/#back>官方文档</a></p><p><strong>功能:</strong> 设置背景元素</p><p><strong>常用参数:</strong></p><table><thead><tr><th>参数</th><th>类型</th><th>说明</th><th>示例</th></tr></thead><tbody><tr><td>(外观)</td><td>String</td><td>背景外观名称</td><td><code>1_1</code>, <code>SolidColor</code>, <code>Transparent</code></td></tr><tr><td>Id</td><td>String</td><td>背景处理器</td><td><code>"Stills"</code> (CG图鉴用)</td></tr><tr><td>SubId</td><td>String</td><td>层级,靠前层级遮挡靠后</td><td><code>"Overlay"</code>, <code>"Middle"</code></td></tr><tr><td>pos</td><td>Vector2</td><td>位置偏移 (X,Y 百分比)</td><td><code>50,50</code>, <code>-5,-10</code></td></tr><tr><td>Scale</td><td>Float</td><td>缩放比例,支持表达式</td><td><code>1.8</code>, <code>{g_backgroundDefaultScale}</code></td></tr><tr><td>Rotation</td><td>Vector3</td><td>旋转角度 (X,Y,Z)</td><td><code>,,0</code> (仅 Z 轴)</td></tr><tr><td>tint</td><td>Color</td><td>颜色叠加 (RGBA)</td><td><code>"#000000"</code>, <code>"#FFFFFFFF"</code></td></tr><tr><td>dissolve</td><td>String</td><td>自定义转场纹理</td><td><code>"VerticalBlindGradually"</code></td></tr><tr><td>transition</td><td>String</td><td>转场效果</td><td><code>CrossFade</code>, <code>RadialBlur</code></td></tr><tr><td>time</td><td>Float</td><td>转场时长 (秒)</td><td><code>1.5</code>, <code>0</code> (立即)</td></tr><tr><td>Lazy</td><td>Bool</td><td>从当前状态过渡 (而非重置)</td><td><code>false</code></td></tr></tbody></table><p><strong>外观类型说明:</strong></p><table><thead><tr><th>外观</th><th>说明</th><th>用途</th></tr></thead><tbody><tr><td><code>背景ID</code></td><td>普通背景图片</td><td><code>@back 5_1</code></td></tr><tr><td><code>Transparent</code></td><td>完全透明</td><td>淡入/淡出遮罩层</td></tr><tr><td><code>Transparent.Custom</code></td><td>带自定义转场的透明</td><td>配合 <code>dissolve</code> 使用特殊转场</td></tr><tr><td><code>SolidColor</code></td><td>纯色背景 (默认黑色)</td><td>场景过渡暗转</td></tr><tr><td><code>SolidColor.Custom</code></td><td>自定义颜色纯色背景</td><td>配合 <code>tint</code> 指定 RGBA 颜色</td></tr></tbody></table><p><strong>示例:</strong></p><pre tabindex=0><code class=language-nani data-lang=nani>; ===== 基础用法 =====
+@back 5_1
+@back 5_1 Scale:{g_backgroundDefaultScale} time:0 Lazy:false
+
+; ===== CG 图鉴背景 =====
+; 使用 Id:&#34;Stills&#34; 加载 CG 图片
+@back 270_1 Id:&#34;Stills&#34;
+@back 500_1 Id:&#34;Stills&#34; Scale:{g_backgroundDefaultScale} time:0 Lazy:false
+
+; ===== 多层背景 =====
+; Middle 层: 实现视差效果或前景遮挡
+@back SubId:&#34;Middle&#34; 500_1 pos:50,50 Id:&#34;Stills&#34; Rotation:,,0 Scale:{g_backgroundDefaultScale} time:0.6 Lazy:false
+@back SubId:&#34;Middle&#34; 270_1 pos:95,75 Id:&#34;Stills&#34; Scale:3 time:0.6 Lazy:false
+
+; ===== Overlay 遮罩层 =====
+; 黑色遮罩 → 透明 (淡入效果)
+@back SubId:&#34;Overlay&#34; Transparent tint:&#34;#000000&#34; time:1.2 Lazy:false
+
+; 透明 → 黑色纯色 (淡出效果)
+@back SubId:&#34;Overlay&#34; SolidColor time:0.9 Lazy:false
+
+; 自定义转场效果 (百叶窗)
+@back SubId:&#34;Overlay&#34; Transparent.Custom dissolve:&#34;VerticalBlindGradually&#34; tint:&#34;#000000&#34; time:0.99 Lazy:false
+@back SubId:&#34;Overlay&#34; SolidColor.Custom dissolve:&#34;VerticalBlindGradually&#34; tint:&#34;#000000&#34; time:0.9 Lazy:false
+
+; 白屏闪烁效果
+@back SubId:&#34;Overlay&#34; SolidColor.Custom tint:&#34;#FFFFFF00&#34; time:0 Lazy:false
+@back SubId:&#34;Overlay&#34; SolidColor.Custom tint:&#34;#FFFFFFFF&#34; time:0.2 Lazy:false
+@back SubId:&#34;Overlay&#34; SolidColor.Custom tint:&#34;#FFFFFF00&#34; time:0.2 Lazy:false
+
+; ===== 带位置和旋转 =====
+@back 270_1 pos:-5,-10 Id:&#34;Stills&#34; Scale:2.5 time:0 Lazy:false
+@back 270_1 pos:50,50 Id:&#34;Stills&#34; Rotation:,,0 Scale:1.5 time:0 Lazy:false
+</code></pre><blockquote class="book-hint info"><p><strong>Overlay 遮罩层:</strong> <code>SubId:"Overlay"</code> 是最上层遮罩,用于实现淡入淡出和场景过渡效果。<code>Transparent</code> 使遮罩变透明 (显示背景),<code>SolidColor</code> 使遮罩变为纯色 (遮挡背景)。</p></blockquote><blockquote class="book-hint warning"><p><strong>Lazy 参数:</strong> 游戏脚本中几乎所有 <code>@back</code> 和 <code>@char</code> 都使用了 <code>Lazy:false</code>。Lazy 控制动画是否从当前状态过渡 (<code>true</code>) 还是先重置再过渡 (<code>false</code>)。MOD 中建议统一使用 <code>Lazy:false</code>。</p></blockquote><hr><h3 id=char>@char
+<a class=anchor href=#char>#</a></h3><p><a href=https://naninovel.com/api/#char>官方文档</a></p><p><strong>功能:</strong> 修改人物立绘和表情</p><p><strong>常用参数:</strong></p><table><thead><tr><th>参数</th><th>类型</th><th>说明</th><th>示例</th></tr></thead><tbody><tr><td>id</td><td>String</td><td>角色ID.表情</td><td><code>Ema.4</code>, <code>Sherry.Smile1</code></td></tr><tr><td>SubId</td><td>String</td><td>层级</td><td><code>"Middle"</code></td></tr><tr><td>pos</td><td>Vector2</td><td>位置 (百分比)</td><td><code>50</code>, <code>50,50</code>, <code>70,30</code></td></tr><tr><td>Scale</td><td>Float</td><td>缩放</td><td><code>1.25</code>, <code>0.75</code></td></tr><tr><td>look</td><td>String</td><td>转向</td><td><code>Left</code>, <code>Right</code></td></tr><tr><td>visible</td><td>Bool</td><td>是否可见</td><td><code>true</code>, <code>false</code></td></tr><tr><td>transition</td><td>String</td><td>转场效果</td><td><code>DropFade</code></td></tr><tr><td>time</td><td>Float</td><td>转场时长</td><td><code>0.5</code>, <code>0</code> (立即)</td></tr><tr><td>Lazy</td><td>Bool</td><td>从当前状态过渡</td><td><code>false</code></td></tr></tbody></table><p><strong>表情与部件组合语法:</strong></p><p>游戏角色使用分层立绘系统,可以自由组合面部表情、手臂状态和其他部件:</p><pre tabindex=0><code class=language-nani data-lang=nani>; ===== 基础表情 =====
+@char Ema.Normal1 pos:50 Lazy:false
+@char Sherry.Smile1 pos:30 Lazy:false
+@char Yuki.6 Lazy:false
+
+; ===== 手臂状态组合 =====
+; 角色.表情,右手,左手
+@char Sherry.Smile1,ArmR16 pos:70 Lazy:false
+@char Ema.Smile1,ArmR1,ArmL1 pos:50 Lazy:false
+@char Hanna.Angry1,ArmR2,ArmL2 pos:70,50 Lazy:false
+
+; ===== 特殊部件 =====
+; Option 前缀用于可选部件
+@char Alisa.Normal1,Option-ArmL-Off pos:50 Lazy:false
+@char AnAn.Normal1,Angle01/Option_Arms- pos:50 Lazy:false
+
+; ===== 高级分层表情 (Angle 路径语法) =====
+; 格式: Angle路径/部件组&gt;具体状态
+; 可精确控制眼睛、嘴巴、脸红、汗水等
+@char Hiro.Head1,Pale1-Off,Sweat1-Off,Cheeks1-Normal,Angle01/Head01/Facial01/Eyes01&gt;Eyes01_Angry_Open,Angle01/Head01/Facial01/Mouth01&gt;Mouth01_Fearful_Open pos:70 Lazy:false
+
+; 组合面部状态
+@char Ema.Determined2,ArmR3,ArmL10,Angle01/Head02/Facial02/Mouth02&gt;Mouth02_Angry_Open time:0 Lazy:false
+
+; 多部件组合
+@char Coco.Fearful1,ArmR6,ArmL7,Angle01/Facial/Eyes&gt;Eyes_Surprised_Open,Angle01/Facial/Mouth&gt;Mouth_Normal_Open,Angle01/Facial/Sweat&gt;Sweat01 Lazy:false
+
+; ===== SubId 层级 =====
+; 使用 Middle 层实现近景特写
+@char SubId:&#34;Middle&#34; Hiro.Smile1 pos:30,30 Scale:1.25 Lazy:false
+@char SubId:&#34;Middle&#34; Ema.Smile1,ArmR1,ArmL1 pos:70,30 Scale:1.25 Lazy:false
+
+; ===== 隐藏角色 =====
+@char Warden visible:false
+</code></pre><blockquote class="book-hint success"><p>自定义角色: 支持加载外部立绘,参见 <a href=/docs/Advanced/LoadCharacter>加载外部立绘资源</a></p></blockquote><blockquote class="book-hint info"><p><strong>Angle 路径语法:</strong> 格式为 <code>Angle编号/部件组/子部件>状态名</code>。常见部件:</p><ul><li><code>Eyes</code> — 眼睛: <code>Eyes_Angry_Open</code>, <code>Eyes_Surprised_Open</code>, <code>Eyes_Pensive_Open01</code></li><li><code>Mouth</code> — 嘴巴: <code>Mouth_Normal_Open</code>, <code>Mouth_Yell_Open</code>, <code>Mouth_Smile_Closed1</code></li><li><code>Sweat</code> — 汗水: <code>Sweat01</code>, <code>Sweat01_01</code></li><li><code>Option_Arms</code> — 手臂: <code>Option_Arms01_05</code>, <code>Option_ArmR01_02</code></li></ul><p>并非所有角色都支持 Angle 路径语法,取决于角色立绘的分层设计。</p></blockquote><hr><h3 id=hide>@hide
+<a class=anchor href=#hide>#</a></h3><p><a href=https://naninovel.com/api/#hide>官方文档</a></p><p><strong>功能:</strong> 隐藏指定的 Actor (角色/背景/文字框/选择框)</p><p><strong>常用参数:</strong></p><table><thead><tr><th>参数</th><th>类型</th><th>说明</th><th>示例</th></tr></thead><tbody><tr><td>(目标)</td><td>String</td><td>要隐藏的 Actor ID</td><td><code>Ema</code>, <code>Stills</code></td></tr><tr><td>time</td><td>Float</td><td>隐藏动画时长</td><td><code>0</code>, <code>0.6</code></td></tr><tr><td>Lazy</td><td>Bool</td><td>从当前状态过渡</td><td><code>false</code></td></tr></tbody></table><p><strong>示例:</strong></p><pre tabindex=0><code class=language-nani data-lang=nani>; 隐藏角色
+@hide Ema Lazy:false
+
+; 立即隐藏 (time:0)
+@hide Stills time:0 Lazy:false
+
+; 隐藏 Middle 层背景
+@hide Stills-Middle time:0.6 Lazy:false
+@hide MainBackground-Middle Lazy:false
+
+; 带转场效果
+@hide Sherry transition:RadialBlur time:1.0
+</code></pre><hr><h3 id=hidechars>@hidechars
+<a class=anchor href=#hidechars>#</a></h3><p><a href=https://naninovel.com/api/#hidechars>官方文档</a></p><p><strong>功能:</strong> 隐藏所有可见的角色</p><p><strong>示例:</strong></p><pre tabindex=0><code class=language-nani data-lang=nani>@hideChars
+@hideChars Lazy:false
+@hideChars time:0 Lazy:false
+@hideChars time:1.5
+</code></pre><hr><h3 id=show>@show
+<a class=anchor href=#show>#</a></h3><p><a href=https://naninovel.com/api/#show>官方文档</a></p><p><strong>功能:</strong> 显示之前隐藏的 Actor</p><p><strong>示例:</strong></p><pre tabindex=0><code class=language-nani data-lang=nani>@show Ema
+@show Printer
+</code></pre><hr><h2 id=动画效果指令>动画效果指令
+<a class=anchor href=#%e5%8a%a8%e7%94%bb%e6%95%88%e6%9e%9c%e6%8c%87%e4%bb%a4>#</a></h2><h3 id=animate>@animate
+<a class=anchor href=#animate>#</a></h3><p><a href=https://naninovel.com/api/#animate>官方文档</a></p><p><strong>功能:</strong> 通过关键帧动画修改 Actor 的属性 (位置、缩放等)</p><p><strong>常用参数:</strong></p><table><thead><tr><th>参数</th><th>类型</th><th>说明</th><th>示例</th></tr></thead><tbody><tr><td>(目标)</td><td>String</td><td>Actor ID</td><td><code>Stills</code>, <code>MainBackground</code></td></tr><tr><td>Loop</td><td>Bool</td><td>是否循环</td><td><code>false</code></td></tr><tr><td>posX</td><td>String</td><td>X 轴位置</td><td><code>"15"</code>, <code>"80"</code></td></tr><tr><td>posY</td><td>String</td><td>Y 轴位置</td><td><code>"50"</code></td></tr><tr><td>Scale</td><td>String</td><td>缩放</td><td><code>"1.15"</code></td></tr><tr><td>easing</td><td>String</td><td>缓动函数</td><td><code>"EaseOutQuad"</code></td></tr><tr><td>time</td><td>String</td><td>动画时长</td><td><code>"1.5"</code>, <code>"20"</code></td></tr></tbody></table><p><strong>示例:</strong></p><pre tabindex=0><code class=language-nani data-lang=nani>; 背景平移动画 (CG 镜头移动效果)
+@back 270_1 pos:-5,-10 Id:&#34;Stills&#34; Scale:2.5 time:0 Lazy:false
+@animate Stills Loop:false posX:&#34;15&#34; easing:&#34;EaseOutQuad&#34; time:&#34;1.5&#34;
+@Wait &#34;2.4&#34;
+
+; 停止动画
+@animate Stills Loop:false
+
+; Middle 层动画
+@animate Stills-Middle Loop:false posX:&#34;80&#34; easing:&#34;EaseOutQuad&#34; time:&#34;1.5&#34;
+@Wait &#34;2.4&#34;
+@animate Stills-Middle Loop:false
+
+; 缩放动画 (放大效果)
+@animate Stills Loop:false Scale:&#34;1.15&#34; easing:&#34;EaseOutQuad&#34; time:&#34;2.4&#34;
+
+; 长时间缓慢平移 (用于审判庭场景)
+@animate MainBackground Loop:false posX:&#34;25&#34; time:&#34;20&#34;
+</code></pre><blockquote class="book-hint info"><p><strong>注意:</strong> <code>@animate</code> 的参数值需要用引号包裹。动画完成后建议使用 <code>@animate 目标名 Loop:false</code> (不带其他参数) 来停止动画,避免状态冲突。</p></blockquote><hr><h3 id=blur>@blur
+<a class=anchor href=#blur>#</a></h3><p><a href=https://naninovel.com/api/#blur>官方文档</a></p><p><strong>功能:</strong> 为 Actor (角色/背景) 添加模糊效果</p><p><strong>常用参数:</strong></p><table><thead><tr><th>参数</th><th>类型</th><th>说明</th><th>示例</th></tr></thead><tbody><tr><td>(目标)</td><td>String</td><td>Actor ID</td><td><code>Yuki</code>, <code>"Stills"</code></td></tr><tr><td>power</td><td>Float</td><td>模糊强度 (0-1)</td><td><code>1</code> (强模糊), <code>0</code> (取消)</td></tr><tr><td>time</td><td>Float</td><td>过渡时长</td><td><code>0</code> (立即), <code>1.8</code></td></tr></tbody></table><p><strong>示例:</strong></p><pre tabindex=0><code class=language-nani data-lang=nani>; 模糊角色
+@blur Yuki power:1
+; 取消模糊
+@blur Yuki power:0
+
+; 立即模糊背景
+@blur &#34;Stills&#34; time:0
+@blur &#34;MainBackground-Middle&#34; time:0
+
+; 渐变取消模糊
+@blur &#34;Stills&#34; power:0 time:1.8
+
+; 模糊 Middle 层角色
+@blur &#34;Jailer-Middle&#34;
+</code></pre><hr><h3 id=shake>@shake
+<a class=anchor href=#shake>#</a></h3><p><strong>功能:</strong> 让 Actor 产生震动效果</p><p><strong>常用参数:</strong></p><table><thead><tr><th>参数</th><th>类型</th><th>说明</th><th>示例</th></tr></thead><tbody><tr><td>(目标)</td><td>String</td><td>震动目标</td><td><code>Debate</code></td></tr><tr><td>hor</td><td>Bool</td><td>水平震动</td><td><code>true</code></td></tr><tr><td>ver</td><td>Bool</td><td>垂直震动</td><td><code>true</code></td></tr><tr><td>count</td><td>Int</td><td>震动次数 (0=循环,-1=停止)</td><td><code>0</code>, <code>-1</code></td></tr></tbody></table><p><strong>示例:</strong></p><pre tabindex=0><code class=language-nani data-lang=nani>; 开始震动 (循环)
+@shake Debate hor:true ver:true count:0
+
+; 停止震动
+@shake Debate count:-1
+</code></pre><hr><h2 id=对话文本指令>对话文本指令
+<a class=anchor href=#%e5%af%b9%e8%af%9d%e6%96%87%e6%9c%ac%e6%8c%87%e4%bb%a4>#</a></h2><h3 id=print>@print
+<a class=anchor href=#print>#</a></h3><p><a href=https://naninovel.com/api/#print>官方文档</a></p><p><strong>功能:</strong> 打印文本到对话框</p><p><strong>常用参数:</strong></p><table><thead><tr><th>参数</th><th>类型</th><th>说明</th></tr></thead><tbody><tr><td>text</td><td>String</td><td>要显示的文本</td></tr><tr><td>author</td><td>String</td><td>说话角色ID</td></tr><tr><td>speed</td><td>Float</td><td>文本显示速度</td></tr><tr><td>reset</td><td>Bool</td><td>是否清空之前的文本</td></tr><tr><td>waitInput</td><td>Bool</td><td>是否等待玩家输入</td></tr><tr><td>Wait</td><td>Bool</td><td>是否等待文本显示完成</td></tr></tbody></table><p><strong>示例:</strong></p><pre tabindex=0><code class=language-nani data-lang=nani>; 简写形式 (推荐)
+雪莉: 我是完美的名侦探雪莉!
+
+; 完整形式 (游戏脚本常用)
+@print &#34;我是完美的名侦探雪莉!&#34; author:&#34;Sherry&#34; speed:1 waitInput:true Wait:true
+
+; 不带角色名 (叙述)
+@print &#34;进入会客厅后，&lt;br&gt;我观察着陆续进来的少女们。&#34; speed:1 waitInput:true Wait:true
+
+; 带角色名的独白
+@print &#34;（她们就是【魔女】……？）&#34; author:&#34;Hiro&#34; speed:1 waitInput:true Wait:true
+
+; 带富文本标签
+雪莉: 这是&lt;color=#ff0000&gt;红色&lt;/color&gt;的文字!
+</code></pre><blockquote class="book-hint info"><p><strong>简写与完整形式:</strong> 简写形式 <code>角色名: 对话</code> 更简洁,适合简单对话。完整形式 <code>@print</code> 可以精确控制 <code>speed</code>、<code>waitInput</code>、<code>Wait</code> 等参数。游戏原始脚本统一使用完整形式。</p></blockquote><hr><h3 id=printdebate>@printDebate
+<a class=anchor href=#printdebate>#</a></h3><p><strong>功能:</strong> 显示审判辩论对话 (3D法庭专用)</p><p><strong>常用参数:</strong></p><table><thead><tr><th>参数</th><th>类型</th><th>说明</th><th>示例</th></tr></thead><tbody><tr><td>text</td><td>String</td><td>辩论文本</td><td><code>"这就是证据!"</code></td></tr><tr><td>pos</td><td>Vector2</td><td>屏幕位置 (百分比)</td><td><code>65,50</code></td></tr><tr><td>Roll</td><td>Float</td><td>旋转角度</td><td><code>4</code>, <code>-3</code></td></tr><tr><td>speed</td><td>Float</td><td>文本速度</td><td><code>1.0</code></td></tr></tbody></table><p><strong>链接语法:</strong> 使用 <code>&lt;link="标签">文本&lt;/link></code> 创建可点击区域</p><p><strong>示例:</strong></p><pre tabindex=0><code class=language-nani data-lang=nani>; 基础辩论
+@printDebate pos:65,50 Roll:4 &#34;被告自始至终就对艾玛……&#34; speed:1
+
+; 带可点击链接
+@printDebate pos:65,50 Roll:3 &#34;抱有&lt;br&gt;&lt;link=\&#34;LoveEvidence\&#34;&gt;&lt;size=175%&gt;爱意&lt;/size&gt;&lt;/link&gt;！&#34; speed:1
+
+; 反方辩论 (负角度)
+@printDebate pos:30,50 Roll:-4 &#34;等、等一下……&lt;br&gt;这种事怎么能当众说！&#34; speed:1
+</code></pre><blockquote class="book-hint info"><p>使用场景: 仅在审判场景 (3D法庭) 中使用,配合 <a href=#evidence-%e6%b8%b8%e6%88%8f%e6%8c%87%e4%bb%a4>@evidence</a> 和 <a href=#timer-%e6%b8%b8%e6%88%8f%e6%8c%87%e4%bb%a4>@timer</a></p></blockquote><hr><h3 id=resettext>@ResetText
+<a class=anchor href=#resettext>#</a></h3><p><strong>功能:</strong> 清空当前显示的文本</p><p><strong>示例:</strong></p><pre tabindex=0><code class=language-nani data-lang=nani>; 清空默认打印器
+@ResetText
+
+; 清空指定打印器
+@ResetText &#34;Debate&#34;
+</code></pre><hr><h3 id=printer>@printer
+<a class=anchor href=#printer>#</a></h3><p><strong>功能:</strong> 切换文本打印器</p><p><strong>示例:</strong></p><pre tabindex=0><code class=language-nani data-lang=nani>; 切换到默认打印器,隐藏其他打印器
+@printer Normal.Default default:true HideOther:true Lazy:false
+</code></pre><blockquote class="book-hint info"><p>游戏使用两种打印器: <code>Normal.Default</code> (普通对话) 和 <code>Debate</code> (辩论文本)。切换场景时需要切回对应的打印器。</p></blockquote><hr><h3 id=hideprinter>@HidePrinter
+<a class=anchor href=#hideprinter>#</a></h3><p><strong>功能:</strong> 隐藏文本打印器</p><p><strong>示例:</strong></p><pre tabindex=0><code class=language-nani data-lang=nani>; 隐藏默认打印器
+@HidePrinter
+
+; 隐藏辩论打印器
+@HidePrinter &#34;Debate&#34;
+</code></pre><hr><h2 id=音频指令>音频指令
+<a class=anchor href=#%e9%9f%b3%e9%a2%91%e6%8c%87%e4%bb%a4>#</a></h2><h3 id=bgm>@bgm
+<a class=anchor href=#bgm>#</a></h3><p><a href=https://naninovel.com/api/#bgm>官方文档</a></p><p><strong>功能:</strong> 播放背景音乐</p><p><strong>常用参数:</strong></p><table><thead><tr><th>参数</th><th>类型</th><th>说明</th></tr></thead><tbody><tr><td>path</td><td>String</td><td>音频文件名 (不含扩展名)</td></tr><tr><td>intro</td><td>String</td><td>前奏音轨 (播放一次后循环主音轨)</td></tr><tr><td>volume</td><td>Float</td><td>音量 (0-1)</td></tr><tr><td>loop</td><td>Bool</td><td>是否循环</td></tr><tr><td>fade</td><td>Float</td><td>淡入时长 (秒)</td></tr></tbody></table><p><strong>示例:</strong></p><pre tabindex=0><code class=language-nani data-lang=nani>; 基础用法
+@bgm &#34;Bgm_26_1&#34; Volume:1 Loop:true fade:0
+
+; 带前奏的BGM (前奏播放一次,然后循环主音轨)
+@bgm &#34;Bgm_12_1_Loop&#34; intro:&#34;Bgm_12_1_Intro&#34; Volume:1 Loop:true fade:0
+@bgm &#34;Bgm_2_1_Loop&#34; intro:&#34;Bgm_2_1_Intro&#34; Volume:1 Loop:true fade:0
+
+; 带淡入
+@bgm &#34;Trial_1&#34; volume:0.8 fade:2.0
+</code></pre><hr><h3 id=sfx>@sfx
+<a class=anchor href=#sfx>#</a></h3><p><a href=https://naninovel.com/api/#sfx>官方文档</a></p><p><strong>功能:</strong> 播放音效</p><p><strong>常用参数:</strong></p><table><thead><tr><th>参数</th><th>类型</th><th>说明</th></tr></thead><tbody><tr><td>path</td><td>String</td><td>音效文件名</td></tr><tr><td>Volume</td><td>Float</td><td>音量 (0-1)</td></tr><tr><td>Loop</td><td>Bool</td><td>是否循环</td></tr><tr><td>fade</td><td>Float</td><td>淡入时长</td></tr></tbody></table><p><strong>示例:</strong></p><pre tabindex=0><code class=language-nani data-lang=nani>@sfx &#34;Sfx_8&#34; Volume:1 Loop:false fade:0
+@sfx &#34;Sfx_Common_1&#34; Volume:1 Loop:false fade:0
+@sfx &#34;DoorOpen&#34; volume:0.5
+</code></pre><hr><h3 id=voice>@voice
+<a class=anchor href=#voice>#</a></h3><p><a href=https://naninovel.com/api/#voice>官方文档</a></p><p><strong>功能:</strong> 播放角色对话语音</p><p><strong>示例:</strong></p><pre tabindex=0><code class=language-nani data-lang=nani>; 基础用法
+@voice &#34;Ema_001&#34;
+
+; 使用子目录路径 (MOD名/文件名)
+@voice &#34;TaffyStory001/Hiro_00&#34;
+@voice &#34;TaffyStory000/Sherry_01&#34;
+</code></pre><blockquote class="book-hint success"><p>自定义语音: 参见 <a href=/docs/Advanced/LoadVoice>加载语音</a></p></blockquote><hr><h3 id=stopvoice>@StopVoice
+<a class=anchor href=#stopvoice>#</a></h3><p><strong>功能:</strong> 停止当前正在播放的语音</p><p><strong>示例:</strong></p><pre tabindex=0><code class=language-nani data-lang=nani>@StopVoice
+</code></pre><hr><h3 id=stopbgm>@stopBgm
+<a class=anchor href=#stopbgm>#</a></h3><p><strong>功能:</strong> 停止背景音乐</p><p><strong>示例:</strong></p><pre tabindex=0><code class=language-nani data-lang=nani>@stopBgm
+@stopBgm fade:1.5
+</code></pre><hr><h3 id=stopsfx>@stopSfx
+<a class=anchor href=#stopsfx>#</a></h3><p><strong>功能:</strong> 停止音效</p><p><strong>示例:</strong></p><pre tabindex=0><code class=language-nani data-lang=nani>@stopSfx &#34;DoorOpen&#34;
+</code></pre><hr><h2 id=流程控制指令>流程控制指令
+<a class=anchor href=#%e6%b5%81%e7%a8%8b%e6%8e%a7%e5%88%b6%e6%8c%87%e4%bb%a4>#</a></h2><h3 id=goto>@goto
+<a class=anchor href=#goto>#</a></h3><p><a href=https://naninovel.com/api/#goto>官方文档</a></p><p><strong>功能:</strong> 跳转到指定脚本位置</p><p><strong>常用参数:</strong></p><table><thead><tr><th>参数</th><th>类型</th><th>说明</th></tr></thead><tbody><tr><td>path</td><td>String</td><td>跳转路径 (脚本名.标签)</td></tr><tr><td>soft</td><td>Bool</td><td>软跳转,不重置状态</td></tr></tbody></table><p><strong>示例:</strong></p><pre tabindex=0><code class=language-nani data-lang=nani>; 跳转到当前文件的标签
+@goto .LabelName
+
+; 跳转到其他文件
+@goto ModName/ScriptFile.LabelName
+
+; 软跳转 (不重置引擎状态,适合审判场景间跳转)
+@goto soft:true SherryAppleJuice_IfAlive001/Trial01
+@goto soft:true SherryAppleJuice_IfAlive000/Trial00
+</code></pre><blockquote class="book-hint info"><p><strong>soft 参数:</strong> 使用 <code>soft:true</code> 时,跳转不会重置引擎状态 (背景、角色、音乐等保持不变)。适用于审判场景中的幕间跳转。</p></blockquote><hr><h3 id=gosub>@gosub
+<a class=anchor href=#gosub>#</a></h3><p><a href=https://naninovel.com/api/#gosub>官方文档</a></p><p><strong>功能:</strong> 跳转到子程序,遇到 <a href=#return>@return</a> 后返回</p><p><strong>示例:</strong></p><pre tabindex=0><code class=language-nani data-lang=nani>@gosub .SubRoutine
+
+; 跳转到其他文件
+@gosub Common/DialogueUtils.ShowChoice
+</code></pre><hr><h3 id=return>@return
+<a class=anchor href=#return>#</a></h3><p><a href=https://naninovel.com/api/#return>官方文档</a></p><p><strong>功能:</strong> 从 <a href=#gosub>@gosub</a> 调用中返回</p><p><strong>示例:</strong></p><pre tabindex=0><code class=language-nani data-lang=nani># SubRoutine
+雪莉: 这是子程序!
+@return
+</code></pre><hr><h3 id=stop>@stop
+<a class=anchor href=#stop>#</a></h3><p><strong>功能:</strong> 停止脚本执行</p><p><strong>示例:</strong></p><pre tabindex=0><code class=language-nani data-lang=nani>; 坏结局
+雪莉: 审判失败了……
+@stop
+</code></pre><hr><h3 id=stopforchoice>@StopForChoice
+<a class=anchor href=#stopforchoice>#</a></h3><p><strong>功能:</strong> 等待选择 (通常与 <a href=#choice>@choice</a> 配合)</p><p><strong>常用参数:</strong></p><table><thead><tr><th>参数</th><th>类型</th><th>说明</th></tr></thead><tbody><tr><td>Clear</td><td>Bool</td><td>是否清除选项</td></tr></tbody></table><p><strong>示例:</strong></p><pre tabindex=0><code class=language-nani data-lang=nani>@StopForChoice Clear:false
+</code></pre><hr><h3 id=cancelgosub>@CancelGosub
+<a class=anchor href=#cancelgosub>#</a></h3><p><strong>功能:</strong> 取消 gosub 调用栈,使 @return 不再回到之前的位置</p><p><strong>示例:</strong></p><pre tabindex=0><code class=language-nani data-lang=nani>; 在审判选对答案后,取消 gosub 栈并跳转到下一阶段
+@CancelGosub
+@goto .NextPhase
+</code></pre><hr><h3 id=skip>@Skip
+<a class=anchor href=#skip>#</a></h3><p><strong>功能:</strong> 控制玩家是否可以跳过文本</p><p><strong>示例:</strong></p><pre tabindex=0><code class=language-nani data-lang=nani>; 禁止跳过 (审判弱点选择时使用)
+@Skip false
+</code></pre><hr><h2 id=选择分支指令>选择分支指令
+<a class=anchor href=#%e9%80%89%e6%8b%a9%e5%88%86%e6%94%af%e6%8c%87%e4%bb%a4>#</a></h2><h3 id=choice>@choice
+<a class=anchor href=#choice>#</a></h3><p><a href=https://naninovel.com/api/#choice>官方文档</a></p><p><strong>功能:</strong> 显示选项按钮</p><p><strong>常用参数:</strong></p><table><thead><tr><th>参数</th><th>类型</th><th>说明</th></tr></thead><tbody><tr><td>text</td><td>String</td><td>选项文本</td></tr><tr><td>goto</td><td>String</td><td>跳转目标</td></tr><tr><td>set</td><td>String</td><td>设置变量</td></tr><tr><td>do</td><td>String</td><td>执行指令</td></tr><tr><td>Lock</td><td>Bool</td><td>是否锁定 (禁用)</td></tr><tr><td>button</td><td>String</td><td>按钮预制体路径</td></tr><tr><td>handler</td><td>String</td><td>选择处理器ID</td></tr><tr><td>play</td><td>Bool</td><td>选择后是否自动继续</td></tr><tr><td>show</td><td>Bool</td><td>是否显示选择面板</td></tr></tbody></table><p><strong>审判按钮类型:</strong></p><table><thead><tr><th>button 路径</th><th>说明</th></tr></thead><tbody><tr><td><code>ChoiceButtons/Trial/Objection</code></td><td>异议 (指出问题)</td></tr><tr><td><code>ChoiceButtons/Trial/Cancel</code></td><td>取消/返回</td></tr><tr><td><code>ChoiceButtons/Trial/Perjury</code></td><td>伪证 (指出伪证)</td></tr></tbody></table><p><strong>示例:</strong></p><pre tabindex=0><code class=language-nani data-lang=nani>; ===== 普通选项 =====
+@choice &#34;继续审判&#34; goto:.ContinueTrial
+@choice &#34;回到主菜单&#34; do:&#34;@returntotitle&#34;
+
+; 带变量设置
+@choice &#34;选择A&#34; set:&#34;playerChoice=A&#34; goto:.ResultA
+@choice &#34;选择B&#34; set:&#34;playerChoice=B&#34; goto:.ResultB
+@StopForChoice
+
+; ===== 审判选项 (完整格式) =====
+; 异议按钮
+@choice &#34;人是无罪的&#34; Lock:false button:&#34;ChoiceButtons/Trial/Objection&#34; handler:&#34;TrialHiro&#34; play:true show:true
+    @sfx &#34;Sfx_System_SaveData_001_2x&#34; Volume:1 Loop:false fade:0
+    @StopVoice
+    @pauseTrial false timer:true
+    @printDebate pos:70,50 Roll:4 &#34;你的反驳无效。&#34; speed:1
+    @return
+
+; 返回按钮
+@choice &#34;返回&#34; Lock:false button:&#34;ChoiceButtons/Trial/Cancel&#34; handler:&#34;TrialHiro&#34; play:true show:true
+    @pauseTrial false timer:true
+    @Wait &#34;i{debateWaitTime}&#34;
+    @Return
+
+@StopForChoice Clear:false
+
+; ===== 伪证按钮 =====
+@choice &#34;艾玛不可能有勇气&#34; Lock:false button:&#34;ChoiceButtons/Trial/Perjury&#34; handler:&#34;TrialHiro&#34; play:true show:true
+    @sfx &#34;Sfx_System_SaveData_001_2x&#34; Volume:1 Loop:false fade:0
+    @StopVoice
+    @CancelGosub
+    @goto .NextPhase
+</code></pre><blockquote class="book-hint info"><p><strong>审判选项嵌套:</strong> 审判中的 <code>@choice</code> 使用嵌套命令 (缩进),选择后直接执行嵌套内的指令。<code>handler:"TrialHiro"</code> 指定审判专用的选择处理器。</p></blockquote><hr><h2 id=变量和条件指令>变量和条件指令
+<a class=anchor href=#%e5%8f%98%e9%87%8f%e5%92%8c%e6%9d%a1%e4%bb%b6%e6%8c%87%e4%bb%a4>#</a></h2><h3 id=set>@set
+<a class=anchor href=#set>#</a></h3><p><a href=https://naninovel.com/api/#set>官方文档</a></p><p><strong>功能:</strong> 设置变量</p><p><strong>示例:</strong></p><pre tabindex=0><code class=language-nani data-lang=nani>; 设置变量
+@set counter=0
+@set playerName=&#34;雪莉&#34;
+@set hasKey=true
+
+; 变量运算
+@set counter=counter+1
+@set score=score*2
+</code></pre><blockquote class="book-hint info"><p>详细说明: 参见 <a href=/docs/Advanced/Variables>变量与表达式</a></p></blockquote><hr><h3 id=if>@if
+<a class=anchor href=#if>#</a></h3><p><a href=https://naninovel.com/api/#if>官方文档</a></p><p><strong>功能:</strong> 条件判断</p><p><strong>示例:</strong></p><pre tabindex=0><code class=language-nani data-lang=nani>@if counter&gt;5
+    雪莉: 计数器大于5!
+@endif
+
+@if hasKey
+    @goto .OpenDoor
+@else
+    雪莉: 没有钥匙……
+@endif
+</code></pre><hr><h2 id=等待指令>等待指令
+<a class=anchor href=#%e7%ad%89%e5%be%85%e6%8c%87%e4%bb%a4>#</a></h2><h3 id=wait>@wait
+<a class=anchor href=#wait>#</a></h3><p><a href=https://naninovel.com/api/#wait>官方文档</a></p><p><strong>功能:</strong> 等待指定时长或条件</p><p><strong>示例:</strong></p><pre tabindex=0><code class=language-nani data-lang=nani>; 等待秒数
+@wait 2.5
+
+; 等待带 i 前缀 (忽略跳过)
+@wait i1.5
+
+; 等待用户点击
+@wait i
+</code></pre><hr><h3 id=waitfornextframe>@WaitForNextFrame
+<a class=anchor href=#waitfornextframe>#</a></h3><p><strong>功能:</strong> 等待下一帧 (极短时间)</p><p><strong>示例:</strong></p><pre tabindex=0><code class=language-nani data-lang=nani>@WaitForNextFrame
+</code></pre><hr><h3 id=i>@i
+<a class=anchor href=#i>#</a></h3><p><strong>功能:</strong> 等待用户输入 (点击/按键)</p><p><strong>示例:</strong></p><pre tabindex=0><code class=language-nani data-lang=nani>@i
+</code></pre><hr><h2 id=审判系统指令->审判系统指令 🎯
+<a class=anchor href=#%e5%ae%a1%e5%88%a4%e7%b3%bb%e7%bb%9f%e6%8c%87%e4%bb%a4->#</a></h2><h3 id=evidence>@evidence
+<a class=anchor href=#evidence>#</a></h3><p><strong>功能:</strong> 出示证据 (审判中的证物/人物档案)</p><p><strong>常用参数:</strong></p><table><thead><tr><th>参数</th><th>类型</th><th>说明</th></tr></thead><tbody><tr><td>correct</td><td>String</td><td>正确答案的ID</td></tr><tr><td>type</td><td>String</td><td>类型: <code>Clue</code> (证物) 或 <code>Profile</code> (人物档案)</td></tr></tbody></table><p><strong>示例:</strong></p><pre tabindex=0><code class=language-nani data-lang=nani>; 出示证物
+@evidence correct:&#34;MaxMixAlex_ManosabaModEnhance_1-1&#34; Clue
+
+; 出示人物档案
+@evidence correct:&#34;Hiro&#34; Profile
+
+; 出示原版证物
+@evidence correct:&#34;1-1&#34; Clue
+</code></pre><blockquote class="book-hint warning"><p>注意: 必须与 <a href=#printdebate>@printDebate</a> 的链接标签配合使用</p></blockquote><hr><h3 id=timer>@timer
+<a class=anchor href=#timer>#</a></h3><p><strong>功能:</strong> 设置审判倒计时</p><p><strong>参数:</strong> 时长 (秒)</p><p><strong>示例:</strong></p><pre tabindex=0><code class=language-nani data-lang=nani>; 设置 720 秒 (12分钟) 倒计时
+@timer 720
+
+; 设置超长倒计时 (几乎无限)
+@timer 5999
+</code></pre><hr><h3 id=pausetrial>@pauseTrial
+<a class=anchor href=#pausetrial>#</a></h3><p><strong>功能:</strong> 暂停/恢复审判状态和计时器</p><p><strong>常用参数:</strong></p><table><thead><tr><th>参数</th><th>类型</th><th>说明</th></tr></thead><tbody><tr><td>(暂停)</td><td>Bool</td><td><code>true</code> 暂停,<code>false</code> 恢复</td></tr><tr><td>timer</td><td>Bool</td><td>是否同时暂停/恢复计时器</td></tr></tbody></table><p><strong>示例:</strong></p><pre tabindex=0><code class=language-nani data-lang=nani>; 恢复审判和计时器 (辩论开始)
+@pauseTrial false timer:true
+
+; 暂停审判和计时器 (辩论结束)
+@pauseTrial true timer:true
+
+; 恢复审判但不恢复计时器 (特殊场景)
+@pauseTrial false timer:false
+</code></pre><hr><h3 id=debate>@debate
+<a class=anchor href=#debate>#</a></h3><p><strong>功能:</strong> 开启/关闭辩论模式</p><p><strong>示例:</strong></p><pre tabindex=0><code class=language-nani data-lang=nani>; 关闭辩论模式 (结束时调用)
+@debate false
+</code></pre><hr><h3 id=stagecamera>@stageCamera
+<a class=anchor href=#stagecamera>#</a></h3><p><strong>功能:</strong> 控制 3D 审判法庭的摄像机位置和旋转</p><p><strong>常用参数:</strong></p><table><thead><tr><th>参数</th><th>类型</th><th>说明</th><th>示例</th></tr></thead><tbody><tr><td>(索引)</td><td>Int</td><td>摄像机索引 (0 或 1)</td><td><code>0</code>, <code>1</code></td></tr><tr><td>Height</td><td>Float</td><td>摄像机高度</td><td><code>5.6</code>, <code>3</code>, <code>4</code></td></tr><tr><td>Rotation</td><td>Vector3</td><td>旋转角度 (X,Y,Z)</td><td><code>0,{expr},0</code></td></tr><tr><td>Distance</td><td>Float</td><td>距离中心的距离</td><td><code>12</code>, <code>4</code>, <code>7</code></td></tr><tr><td>time</td><td>Float</td><td>过渡时长</td><td><code>0</code> (立即), <code>1</code></td></tr><tr><td>easing</td><td>String</td><td>缓动函数</td><td><code>"OutQuad"</code></td></tr></tbody></table><p><strong>Rotation Y 轴公式:</strong></p><p>审判庭为圆形布局,角色按索引分布在圆周上。使用公式 <code>{ (角色索引 / courtStandCount * 360) }</code> 计算 Y 轴旋转角度,使摄像机面向指定角色。</p><p><strong>示例:</strong></p><pre tabindex=0><code class=language-nani data-lang=nani>; ===== TrialInit 中设置法庭参数 =====
+@set &#34;courtStandCount = 12&#34;
+@set &#34;emaIdx = 0&#34;
+@set &#34;hiroIdx = 8&#34;
+
+; ===== 摄像机设置 =====
+; 立即定位到角色 (time:0)
+@stageCamera 0 Height:5.6 Rotation:0,{ (8 / courtStandCount * 360) },0 Distance:12 time:0
+@WaitForNextFrame
+
+; 缓慢旋转到相邻位置 (动画效果)
+@stageCamera 0 Rotation:0,{ (7.9 / courtStandCount * 360) },0 time:1 easing:&#34;OutQuad&#34;
+
+; 近距离特写摄像机
+@stageCamera 1 Height:3 Rotation:-2,{ (2.2 / courtStandCount * 360) },-2 Distance:4 time:0
+
+; 环绕旋转 (长时间动画)
+@stageCamera 1 Height:4 Rotation:-1,{ (5.8 / courtStandCount * 360) } time:25
+
+; 全景摄像机
+@stageCamera 0 Height:5 Distance:7 time:0
+</code></pre><blockquote class="book-hint info"><p><strong>双摄像机系统:</strong> 索引 <code>0</code> 和 <code>1</code> 分别对应两个摄像机,配合 <code>@showStageScreen</code> / <code>@hideStageScreen</code> 实现分屏和镜头切换效果。</p></blockquote><hr><h3 id=showstagescreen--hidestagescreen>@showStageScreen / @hideStageScreen
+<a class=anchor href=#showstagescreen--hidestagescreen>#</a></h3><p><strong>功能:</strong> 显示/隐藏 3D 法庭场景的渲染画面</p><p><strong>常用参数:</strong></p><table><thead><tr><th>参数</th><th>类型</th><th>说明</th><th>示例</th></tr></thead><tbody><tr><td>(索引)</td><td>Int</td><td>画面索引 (0 或 1)</td><td><code>0</code>, <code>1</code></td></tr><tr><td>time</td><td>Float</td><td>过渡时长</td><td><code>0</code> (立即)</td></tr><tr><td>Reset</td><td>Bool</td><td>是否重置状态</td><td><code>true</code></td></tr></tbody></table><p><strong>示例:</strong></p><pre tabindex=0><code class=language-nani data-lang=nani>; 显示 3D 法庭画面
+@showStageScreen 1
+
+; 隐藏 3D 法庭画面
+@hideStageScreen 1 Reset:true
+
+; 立即隐藏
+@hideStageScreen 1 time:0 Reset:true
+@hideStageScreen 0 time:0 Reset:true
+</code></pre><hr><h3 id=unloadstage>@unloadStage
+<a class=anchor href=#unloadstage>#</a></h3><p><strong>功能:</strong> 卸载 3D 法庭场景 (释放资源)</p><p><strong>示例:</strong></p><pre tabindex=0><code class=language-nani data-lang=nani>; 审判结束时调用
+@unloadStage
+</code></pre><hr><h3 id=gosubmodifycamera>@gosubModifyCamera
+<a class=anchor href=#gosubmodifycamera>#</a></h3><p><strong>功能:</strong> 控制 3D 法庭镜头聚焦到指定角色</p><p><strong>常用参数:</strong></p><table><thead><tr><th>参数</th><th>类型</th><th>说明</th><th>可选值</th></tr></thead><tbody><tr><td>(索引)</td><td>Int</td><td>摄像机索引</td><td><code>0</code></td></tr><tr><td>look</td><td>String</td><td>聚焦角色</td><td>角色名 (如 <code>"Hiro"</code>, <code>"Yuki"</code>, <code>"Ema"</code>)</td></tr><tr><td>comp</td><td>String</td><td>镜头构图方向</td><td><code>"Left"</code>, <code>"Right"</code>, <code>"Center"</code></td></tr><tr><td>rollDir</td><td>String</td><td>旋转方向</td><td><code>"Left"</code>, <code>"Right"</code></td></tr><tr><td>zoomLvl</td><td>Float</td><td>缩放等级</td><td><code>2</code>, <code>3</code></td></tr></tbody></table><p><strong>示例:</strong></p><pre tabindex=0><code class=language-nani data-lang=nani>; 聚焦到角色 (基础用法)
+@gosubModifyCamera 0 look:&#34;Hiro&#34; comp:&#34;Center&#34;
+@gosubModifyCamera 0 look:&#34;Yuki&#34; comp:&#34;Right&#34;
+@gosubModifyCamera 0 look:&#34;Ema&#34; comp:&#34;Left&#34;
+
+; 带旋转方向和缩放 (特写)
+@gosubModifyCamera 0 look:&#34;Yuki&#34; comp:&#34;Left&#34; rollDir:&#34;Right&#34; zoomLvl:3
+@gosubModifyCamera 0 look:&#34;Alisa&#34; comp:&#34;Right&#34; rollDir:&#34;Left&#34; zoomLvl:3
+
+; 中距离缩放
+@gosubModifyCamera 0 look:&#34;Ema&#34; comp:&#34;Center&#34; zoomLvl:2
+</code></pre><blockquote class="book-hint info"><p><strong>comp 参数:</strong> <code>"Left"</code> / <code>"Right"</code> / <code>"Center"</code> 控制角色在画面中的位置偏移方向,不是角色朝向。配合 <code>rollDir</code> 可以制造倾斜镜头效果。</p></blockquote><hr><h3 id=gosubcutin>@gosubCutIn
+<a class=anchor href=#gosubcutin>#</a></h3><p><strong>功能:</strong> 播放审判切入演出 (如异议、伪证等动画效果)</p><p><strong>常用参数:</strong></p><table><thead><tr><th>参数</th><th>类型</th><th>说明</th></tr></thead><tbody><tr><td>(角色)</td><td>String</td><td>演出角色</td></tr><tr><td>Index</td><td>Int</td><td>演出动画编号</td></tr></tbody></table><p><strong>示例:</strong></p><pre tabindex=0><code class=language-nani data-lang=nani>; 异议切入演出
+@gosubCutIn &#34;Hiro&#34; Index:2
+
+; 伪证切入演出
+@gosubCutIn &#34;Hiro&#34; Index:1
+</code></pre><hr><h3 id=courtfire>@courtFire
+<a class=anchor href=#courtfire>#</a></h3><p><strong>功能:</strong> 开启/关闭法庭火焰特效</p><p><strong>示例:</strong></p><pre tabindex=0><code class=language-nani data-lang=nani>; 开启火焰特效
+@courtFire true
+@printDebate pos:70,50 Roll:4 &#34;不要妨碍我！&#34; speed:1
+; 关闭火焰特效
+@courtFire false
+</code></pre><hr><h3 id=badid>@badId
+<a class=anchor href=#badid>#</a></h3><p><strong>功能:</strong> 设置坏结局 ID (用于分支结局判断)</p><p><strong>示例:</strong></p><pre tabindex=0><code class=language-nani data-lang=nani>@badId 1
+</code></pre><hr><h2 id=魔女图鉴指令->魔女图鉴指令 ✨
+<a class=anchor href=#%e9%ad%94%e5%a5%b3%e5%9b%be%e9%89%b4%e6%8c%87%e4%bb%a4->#</a></h2><h3 id=update>@update
+<a class=anchor href=#update>#</a></h3><p><strong>功能:</strong> 更新魔女图鉴条目</p><p><strong>常用参数:</strong></p><table><thead><tr><th>参数</th><th>类型</th><th>说明</th><th>可选值</th></tr></thead><tbody><tr><td>id</td><td>String</td><td>条目ID</td><td>-</td></tr><tr><td>Category</td><td>String</td><td>分类</td><td><code>Clue</code>, <code>Profile</code>, <code>Rule</code>, <code>Note</code></td></tr><tr><td>Version</td><td>Int</td><td>版本号</td><td>1, 2, 3&mldr;</td></tr></tbody></table><p><strong>示例:</strong></p><pre tabindex=0><code class=language-nani data-lang=nani>; 更新证物
+@update &#34;MaxMixAlex_ManosabaModEnhance_1-1&#34; Category:&#34;Clue&#34; Version:1
+
+; 更新人物档案
+@update &#34;Ema&#34; Category:&#34;Profile&#34; Version:2
+
+; 更新规定
+@update &#34;MaxMixAlex_ManosabaModEnhance_1&#34; Category:&#34;Rule&#34; Version:1
+
+; 更新记录
+@update &#34;MaxMixAlex_ManosabaModEnhance_1&#34; Category:&#34;Note&#34; Version:1
+</code></pre><blockquote class="book-hint success"><p>配合使用: 参见 <a href=/docs/Advanced/WitchBook>魔女图鉴</a></p></blockquote><hr><h3 id=spawn--despawn>@spawn / @despawn
+<a class=anchor href=#spawn--despawn>#</a></h3><p><strong>功能:</strong> 显示/关闭证物弹窗 (带动画)</p><p><strong>示例:</strong></p><pre tabindex=0><code class=language-nani data-lang=nani>; 完整的搜证流程
+@spawn &#34;Clue&#34; Params:MaxMixAlex_ManosabaModEnhance_1-1
+@toast &#34;魔女图鉴 更新…&#34;
+@update &#34;MaxMixAlex_ManosabaModEnhance_1-1&#34; Category:&#34;Clue&#34; Version:1
+@Wait &#34;i1.2&#34;
+@despawn &#34;Clue&#34;
+@Wait &#34;0.6&#34;
+</code></pre><hr><h3 id=toast>@toast
+<a class=anchor href=#toast>#</a></h3><p><strong>功能:</strong> 显示屏幕提示文本 (黑底白字)</p><p><strong>示例:</strong></p><pre tabindex=0><code class=language-nani data-lang=nani>@toast &#34;魔女图鉴 更新…&#34;
+@toast &#34;获得新证物！&#34;
+</code></pre><hr><h3 id=gosubresetbook>@gosubResetBook
+<a class=anchor href=#gosubresetbook>#</a></h3><p><strong>功能:</strong> 重置魔女图鉴到指定版本 (审判开始前调用)</p><p><strong>常用参数:</strong></p><table><thead><tr><th>参数</th><th>类型</th><th>说明</th></tr></thead><tbody><tr><td>Version</td><td>Int</td><td>重置到的版本号</td></tr><tr><td>(路径)</td><td>String</td><td>重置子程序的脚本路径</td></tr></tbody></table><p><strong>示例:</strong></p><pre tabindex=0><code class=language-nani data-lang=nani>; 审判开始前重置图鉴
+@gosubResetBook Version:1 System/System_ResetWitchBook
+</code></pre><hr><h2 id=地图搜查指令>地图搜查指令
+<a class=anchor href=#%e5%9c%b0%e5%9b%be%e6%90%9c%e6%9f%a5%e6%8c%87%e4%bb%a4>#</a></h2><h3 id=map>@map
+<a class=anchor href=#map>#</a></h3><p><strong>功能:</strong> 打开地图搜查菜单</p><p><strong>常用参数:</strong></p><table><thead><tr><th>参数</th><th>类型</th><th>说明</th></tr></thead><tbody><tr><td>flag</td><td>String</td><td>标记变量前缀</td></tr><tr><td>Back</td><td>String</td><td>返回标签</td></tr><tr><td>Global</td><td>Bool</td><td>是否全局变量</td></tr></tbody></table><p><strong>示例:</strong></p><pre tabindex=0><code class=language-nani data-lang=nani>@map flag:&#34;F1_Prison&#34; Back:&#34;.BackFromMap&#34; Global:true
+</code></pre><blockquote class="book-hint info"><p>详细说明: 参见 <a href=/docs/Advanced/MapMenu>地图搜查示例</a></p></blockquote><hr><h3 id=setflag>@setFlag
+<a class=anchor href=#setflag>#</a></h3><p><strong>功能:</strong> 设置地图标记变量</p><p><strong>示例:</strong></p><pre tabindex=0><code class=language-nani data-lang=nani>@setFlag F1_Prison_Room1=true
+</code></pre><hr><h2 id=视频播放指令->视频播放指令 🎬
+<a class=anchor href=#%e8%a7%86%e9%a2%91%e6%92%ad%e6%94%be%e6%8c%87%e4%bb%a4->#</a></h2><h3 id=movie>@movie
+<a class=anchor href=#movie>#</a></h3><p><strong>功能:</strong> 播放视频文件</p><p><strong>参数:</strong> 视频文件名 (不含扩展名)</p><p><strong>支持格式:</strong> mp4, webm, ogv</p><p><strong>文件路径:</strong></p><pre tabindex=0><code>[MOD文件夹]/Movie/[filename].[ext]
+</code></pre><p><strong>示例:</strong></p><pre tabindex=0><code class=language-nani data-lang=nani>; 播放开场动画
+@movie &#34;Opening&#34;
+
+; 播放过场视频
+@movie &#34;Cutscene_01&#34;
+</code></pre><blockquote class="book-hint info"><p>详细说明: 参见 <a href=/docs/Advanced/LoadMovie>视频播放</a></p></blockquote><hr><h2 id=ui控制指令>UI控制指令
+<a class=anchor href=#ui%e6%8e%a7%e5%88%b6%e6%8c%87%e4%bb%a4>#</a></h2><h3 id=hideui>@HideUI
+<a class=anchor href=#hideui>#</a></h3><p><strong>功能:</strong> 隐藏指定的 UI 元素</p><p><strong>常用参数:</strong></p><table><thead><tr><th>参数</th><th>类型</th><th>说明</th></tr></thead><tbody><tr><td>(UI名)</td><td>String</td><td>要隐藏的 UI 名称,可逗号分隔多个</td></tr><tr><td>AllowToggle</td><td>Bool</td><td>是否允许玩家手动切换</td></tr></tbody></table><p><strong>常见 UI 名称:</strong></p><table><thead><tr><th>UI 名称</th><th>说明</th></tr></thead><tbody><tr><td><code>ControlPanel</code></td><td>控制面板 (暂停、跳过等按钮)</td></tr><tr><td><code>DebateUI</code></td><td>辩论界面</td></tr><tr><td><code>AutoToggle</code></td><td>自动播放切换</td></tr><tr><td><code>WitchBookButtonUI</code></td><td>魔女图鉴按钮</td></tr></tbody></table><p><strong>示例:</strong></p><pre tabindex=0><code class=language-nani data-lang=nani>; 隐藏控制面板 (禁止玩家操作)
+@HideUI ControlPanel AllowToggle:false
+
+; 隐藏辩论 UI
+@HideUI DebateUI AllowToggle:false
+
+; 隐藏多个 UI
+@HideUI ControlPanel,AutoToggle,WitchBookButtonUI,DebateUI AllowToggle:false
+</code></pre><hr><h3 id=showui>@ShowUI
+<a class=anchor href=#showui>#</a></h3><p><strong>功能:</strong> 显示指定的 UI 元素</p><p><strong>示例:</strong></p><pre tabindex=0><code class=language-nani data-lang=nani>; 显示辩论 UI
+@ShowUI DebateUI
+
+; 显示控制面板
+@ShowUI ControlPanel
+</code></pre><hr><h3 id=processinput>@ProcessInput
+<a class=anchor href=#processinput>#</a></h3><p><strong>功能:</strong> 控制玩家输入权限 (哪些操作可用)</p><p><strong>常用参数:</strong></p><table><thead><tr><th>参数</th><th>类型</th><th>说明</th></tr></thead><tbody><tr><td>(启用)</td><td>Bool</td><td>是否启用输入</td></tr><tr><td>set</td><td>String</td><td>各输入操作的开关 (逗号分隔)</td></tr></tbody></table><p><strong>示例:</strong></p><pre tabindex=0><code class=language-nani data-lang=nani>; 启用输入 (默认状态)
+@ProcessInput true
+
+; 精细控制各项输入权限
+@ProcessInput true set:Continue.true,Pause.false,Skip.true,ToggleSkip.true,SkipMovie.true,AutoPlay.false,ToggleUI.false,ShowBacklog.false,Rollback.false
+</code></pre><blockquote class="book-hint info"><p><strong>set 参数格式:</strong> <code>操作名.true/false</code>,多个操作用逗号分隔。常见操作: <code>Continue</code> (继续)、<code>Pause</code> (暂停)、<code>Skip</code> (跳过)、<code>AutoPlay</code> (自动播放)、<code>ToggleUI</code> (切换 UI)、<code>ShowBacklog</code> (显示记录)、<code>Rollback</code> (回退)。</p></blockquote><hr><h3 id=returntotitle>@ReturnToTitle
+<a class=anchor href=#returntotitle>#</a></h3><p><strong>功能:</strong> 返回标题菜单</p><p><strong>示例:</strong></p><pre tabindex=0><code class=language-nani data-lang=nani>@ReturnToTitle
+</code></pre><hr><h2 id=角色动作指令>角色动作指令
+<a class=anchor href=#%e8%a7%92%e8%89%b2%e5%8a%a8%e4%bd%9c%e6%8c%87%e4%bb%a4>#</a></h2><h3 id=emotejumpdouble>@EmoteJumpDouble
+<a class=anchor href=#emotejumpdouble>#</a></h3><p><strong>功能:</strong> 角色跳跃表情动作</p><p><strong>常用参数:</strong></p><table><thead><tr><th>参数</th><th>类型</th><th>说明</th></tr></thead><tbody><tr><td>Speed</td><td>Float</td><td>动画速度</td></tr><tr><td>(角色)</td><td>String</td><td>角色 Actor ID</td></tr><tr><td>Loop</td><td>Bool</td><td>是否循环</td></tr></tbody></table><p><strong>示例:</strong></p><pre tabindex=0><code class=language-nani data-lang=nani>; 雪莉跳跃
+@EmoteJumpDouble Speed:1 Sherry Loop:false
+
+; Middle 层角色跳跃
+@EmoteJumpDouble Speed:1 Sherry-Middle Loop:false
+</code></pre><hr><h2 id=常见问题>常见问题
+<a class=anchor href=#%e5%b8%b8%e8%a7%81%e9%97%ae%e9%a2%98>#</a></h2><details><summary>Q: 指令参数的格式是什么?</summary><div class=markdown-inner><p><strong>A:</strong></p><ul><li><strong>字符串:</strong> 用引号 <code>"文本"</code> 或不加引号 <code>文本</code></li><li><strong>数字:</strong> 直接写 <code>1.5</code>, <code>720</code></li><li><strong>布尔值:</strong> <code>true</code>, <code>false</code></li><li><strong>坐标:</strong> <code>50,30</code> (X,Y)</li><li><strong>颜色:</strong> <code>"#ff0000"</code> (HEX格式,带引号), <code>"#RRGGBBAA"</code> (含透明度)</li><li><strong>表达式:</strong> <code>{g_backgroundDefaultScale}</code>, <code>{counter + 1}</code></li></ul><p><strong>参数赋值:</strong> 使用冒号 <code>参数:值</code> 或等号 <code>参数=值</code></p></div></details><details><summary>Q: Lazy 参数是什么意思?</summary><div class=markdown-inner><p><strong>A:</strong> <code>Lazy</code> 控制动画过渡方式:</p><ul><li><code>Lazy:true</code> (默认): 从当前动画状态继续过渡到新目标</li><li><code>Lazy:false</code>: 先立即完成当前动画,再过渡到新目标</li></ul><p>游戏脚本中几乎所有 <code>@back</code> 和 <code>@char</code> 都使用 <code>Lazy:false</code>,建议 MOD 中也统一使用。</p></div></details><details><summary>Q: SubId 参数怎么用?</summary><div class=markdown-inner><p><strong>A:</strong> <code>SubId</code> 用于多层渲染:</p><ul><li><code>SubId:"Overlay"</code> — 最上层遮罩 (用于淡入淡出效果)</li><li><code>SubId:"Middle"</code> — 中间层 (用于特写、视差效果)</li><li>无 SubId — 默认层 (主背景/主角色)</li></ul><p>层级从前到后: Overlay > Middle > Default。靠前的层会遮挡靠后的层。</p><pre tabindex=0><code class=language-nani data-lang=nani>; 背景在默认层
+@back 5_1 Scale:{g_backgroundDefaultScale} Lazy:false
+; 遮罩在最上层
+@back SubId:&#34;Overlay&#34; Transparent tint:&#34;#000000&#34; time:1.2 Lazy:false
+; 角色特写在中间层
+@char SubId:&#34;Middle&#34; Hiro.Smile1 pos:30,30 Scale:1.25 Lazy:false
+</code></pre></div></details><details><summary>Q: @printDebate 的 Roll 参数如何使用?</summary><div class=markdown-inner><p><strong>A:</strong></p><ul><li><strong>正数 (1~5):</strong> 文本框向右倾斜,用于检察官 (左侧)</li><li><strong>负数 (-1~-5):</strong> 文本框向左倾斜,用于辩方 (右侧)</li><li><strong>0:</strong> 不旋转</li></ul><p><strong>示例:</strong></p><pre tabindex=0><code class=language-nani data-lang=nani>; 检察官发言 (右倾)
+@printDebate pos:70,50 Roll:4 &#34;这就是证据！&#34;
+
+; 辩方发言 (左倾)
+@printDebate pos:30,50 Roll:-3 &#34;有异议！&#34;
+</code></pre></div></details><details><summary>Q: 审判脚本的基本流程是什么?</summary><div class=markdown-inner><p><strong>A:</strong> 审判流程的典型结构:</p><pre tabindex=0><code class=language-nani data-lang=nani>; 1. 初始化
+@gosubResetBook Version:1 System/System_ResetWitchBook
+@Gosub ModName/TrialInit00
+@timer 720
+
+; 2. 隐藏普通 UI,显示辩论 UI
+@HideUI ControlPanel AllowToggle:false
+@ShowUI DebateUI
+
+; 3. 开始辩论
+@Gosub System/System_Subroutine.BeginDebate-First
+@Gosub System/System_Subroutine.BeginDebate-Effect
+@Gosub System/System_Subroutine.BeginDebate-Last
+@pauseTrial false timer:true
+
+; 4. 辩论文本 (带弱点链接)
+@gosubModifyCamera 0 look:&#34;Yuki&#34; comp:&#34;Left&#34; rollDir:&#34;Right&#34; zoomLvl:3
+@printDebate pos:70,50 Roll:4 &#34;人生而有&lt;link=\&#34;Objection_00_00\&#34;&gt;罪&lt;/link&gt;。&#34; speed:1
+
+; 5. 弱点选项
+# Objection_00_00
+@Skip false
+@pauseTrial true timer:true
+@choice &#34;异议内容&#34; Lock:false button:&#34;ChoiceButtons/Trial/Objection&#34; handler:&#34;TrialHiro&#34; play:true show:true
+    @sfx &#34;Sfx_System_SaveData_001_2x&#34; Volume:1 Loop:false fade:0
+    @StopVoice
+    @pauseTrial false timer:true
+    @printDebate pos:70,50 Roll:4 &#34;反驳内容&#34; speed:1
+    @return
+@choice &#34;返回&#34; Lock:false button:&#34;ChoiceButtons/Trial/Cancel&#34; handler:&#34;TrialHiro&#34; play:true show:true
+    @pauseTrial false timer:true
+    @Wait &#34;i{debateWaitTime}&#34;
+    @Return
+@StopForChoice Clear:false
+
+; 6. 结束辩论
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial true timer:true
+@Gosub System/System_Subroutine.EndDebate-Effect
+@Gosub System/System_Subroutine.EndDebate-Last
+</code></pre></div></details><details><summary>Q: 如何实现条件分支?</summary><div class=markdown-inner><p><strong>A:</strong> 使用 <a href=#set>@set</a> 和 <a href=#if>@if</a>:</p><pre tabindex=0><code class=language-nani data-lang=nani>@set foundEvidence=false
+
+; 搜查后设置变量
+@set foundEvidence=true
+
+; 根据变量分支
+@if foundEvidence
+    雪莉: 找到证据了！
+    @goto .GoodEnding
+@else
+    雪莉: 没找到线索……
+    @goto .BadEnding
+@endif
+</code></pre></div></details><hr><h2 id=相关教程>相关教程
+<a class=anchor href=#%e7%9b%b8%e5%85%b3%e6%95%99%e7%a8%8b>#</a></h2><ul><li><a href=/docs/QuickStart/BeginAdv>简单对话</a> - 基础对话脚本</li><li><a href=/docs/QuickStart/BeginTrial>魔女裁判</a> - 审判系统使用</li><li><a href=/docs/Advanced/WitchBook>魔女图鉴</a> - @update 指令详解</li><li><a href=/docs/Advanced/Variables>变量与表达式</a> - @set 和 @if 详解</li><li><a href=/docs/Advanced/LoadCharacter>加载外部立绘资源</a> - 自定义角色</li><li><a href=/docs/Advanced/LoadVoice>加载语音</a> - 自定义语音</li><li><a href=/docs/Advanced/LoadBackgrounds>加载外部背景</a> - 自定义背景</li></ul></article><footer class=book-footer><div class="flex flex-wrap justify-between"></div><div class="flex flex-wrap justify-between"><span><a href=/docs/ModConfig/ class="flex align-center book-icon"><img src=/svg/backward.svg class=book-icon alt=Previous title=Mod配置>
 <span>Mod配置</span>
 </a></span><span><a href=/docs/Advanced/LoadBackgrounds/ class="flex align-center book-icon"><span>加载外部背景资源</span>
-<img src=/svg/forward.svg class=book-icon alt=Next title=加载外部背景资源></a></span></div><script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script><!doctype html><html><head><script src=http://manosabamoddoc.fuyumi.xyz/background/sakura.js></script></head><body></body></html></footer><div class=book-comments></div><label for=menu-control class="hidden book-menu-overlay"></label></div><aside class=book-toc><div class=book-toc-content><nav id=TableOfContents><ul><li><a href=#指令介绍>指令介绍</a><ul><li><a href=#back>back</a></li><li><a href=#bgm>bgm</a></li><li><a href=#char>char</a></li><li><a href=#gosub>gosub</a></li><li><a href=#goto>goto</a></li><li><a href=#hide>hide</a></li><li><a href=#hidechars>hidechars</a></li><li><a href=#print>print</a></li><li><a href=#return>return</a></li><li><a href=#returntotitle>returntotitle</a></li><li><a href=#voice>voice</a></li><li><a href=#wait>wait</a></li></ul></li></ul></nav></div></aside></main></body></html>
+<img src=/svg/forward.svg class=book-icon alt=Next title=加载外部背景资源></a></span></div><script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script><!doctype html><html><head><script src=http://manosabamoddoc.fuyumi.xyz/background/sakura.js></script></head><body></body></html></footer><div class=book-comments></div><label for=menu-control class="hidden book-menu-overlay"></label></div><aside class=book-toc><div class=book-toc-content><nav id=TableOfContents><ul><li><a href=#指令参考>指令参考</a><ul><li><a href=#指令分类速查>指令分类速查</a></li><li><a href=#显示控制指令>显示控制指令</a><ul><li><a href=#back>@back</a></li><li><a href=#char>@char</a></li><li><a href=#hide>@hide</a></li><li><a href=#hidechars>@hidechars</a></li><li><a href=#show>@show</a></li></ul></li><li><a href=#动画效果指令>动画效果指令</a><ul><li><a href=#animate>@animate</a></li><li><a href=#blur>@blur</a></li><li><a href=#shake>@shake</a></li></ul></li><li><a href=#对话文本指令>对话文本指令</a><ul><li><a href=#print>@print</a></li><li><a href=#printdebate>@printDebate</a></li><li><a href=#resettext>@ResetText</a></li><li><a href=#printer>@printer</a></li><li><a href=#hideprinter>@HidePrinter</a></li></ul></li><li><a href=#音频指令>音频指令</a><ul><li><a href=#bgm>@bgm</a></li><li><a href=#sfx>@sfx</a></li><li><a href=#voice>@voice</a></li><li><a href=#stopvoice>@StopVoice</a></li><li><a href=#stopbgm>@stopBgm</a></li><li><a href=#stopsfx>@stopSfx</a></li></ul></li><li><a href=#流程控制指令>流程控制指令</a><ul><li><a href=#goto>@goto</a></li><li><a href=#gosub>@gosub</a></li><li><a href=#return>@return</a></li><li><a href=#stop>@stop</a></li><li><a href=#stopforchoice>@StopForChoice</a></li><li><a href=#cancelgosub>@CancelGosub</a></li><li><a href=#skip>@Skip</a></li></ul></li><li><a href=#选择分支指令>选择分支指令</a><ul><li><a href=#choice>@choice</a></li></ul></li><li><a href=#变量和条件指令>变量和条件指令</a><ul><li><a href=#set>@set</a></li><li><a href=#if>@if</a></li></ul></li><li><a href=#等待指令>等待指令</a><ul><li><a href=#wait>@wait</a></li><li><a href=#waitfornextframe>@WaitForNextFrame</a></li><li><a href=#i>@i</a></li></ul></li><li><a href=#审判系统指令->审判系统指令 🎯</a><ul><li><a href=#evidence>@evidence</a></li><li><a href=#timer>@timer</a></li><li><a href=#pausetrial>@pauseTrial</a></li><li><a href=#debate>@debate</a></li><li><a href=#stagecamera>@stageCamera</a></li><li><a href=#showstagescreen--hidestagescreen>@showStageScreen / @hideStageScreen</a></li><li><a href=#unloadstage>@unloadStage</a></li><li><a href=#gosubmodifycamera>@gosubModifyCamera</a></li><li><a href=#gosubcutin>@gosubCutIn</a></li><li><a href=#courtfire>@courtFire</a></li><li><a href=#badid>@badId</a></li></ul></li><li><a href=#魔女图鉴指令->魔女图鉴指令 ✨</a><ul><li><a href=#update>@update</a></li><li><a href=#spawn--despawn>@spawn / @despawn</a></li><li><a href=#toast>@toast</a></li><li><a href=#gosubresetbook>@gosubResetBook</a></li></ul></li><li><a href=#地图搜查指令>地图搜查指令</a><ul><li><a href=#map>@map</a></li><li><a href=#setflag>@setFlag</a></li></ul></li><li><a href=#视频播放指令->视频播放指令 🎬</a><ul><li><a href=#movie>@movie</a></li></ul></li><li><a href=#ui控制指令>UI控制指令</a><ul><li><a href=#hideui>@HideUI</a></li><li><a href=#showui>@ShowUI</a></li><li><a href=#processinput>@ProcessInput</a></li><li><a href=#returntotitle>@ReturnToTitle</a></li></ul></li><li><a href=#角色动作指令>角色动作指令</a><ul><li><a href=#emotejumpdouble>@EmoteJumpDouble</a></li></ul></li><li><a href=#常见问题>常见问题</a></li><li><a href=#相关教程>相关教程</a></li></ul></li></ul></nav></div></aside></main></body></html>

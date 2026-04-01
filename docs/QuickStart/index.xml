@@ -108,14 +108,10 @@
  &lt;a class="anchor" href="#%e5%bc%80%e5%a7%8b%e4%b8%80%e4%b8%aa%e7%ae%80%e5%8d%95%e7%9a%84%e5%af%b9%e8%af%9d">#&lt;/a>
  
 &lt;/h1>
-&lt;hr>
-&lt;h2 id="让我们来写一个简短的对话剧本">
- 让我们来写一个简短的对话剧本
- 
- &lt;a class="anchor" href="#%e8%ae%a9%e6%88%91%e4%bb%ac%e6%9d%a5%e5%86%99%e4%b8%80%e4%b8%aa%e7%ae%80%e7%9f%ad%e7%9a%84%e5%af%b9%e8%af%9d%e5%89%a7%e6%9c%ac">#&lt;/a>
- 
-&lt;/h2>
-&lt;hr>
+&lt;blockquote class="book-hint info">
+&lt;p>本页内容：编写一个简单的对话剧本。
+前置知识：&lt;a href="http://manosabamoddoc.fuyumi.xyz/docs/QuickStart/CreateMod">创建新剧本&lt;/a>&lt;/p>
+&lt;/blockquote>
 &lt;div class="book-steps ">
 &lt;ol>
 &lt;li>
@@ -128,9 +124,9 @@
 &lt;p>游戏自身准备了很多用于初始化的剧本，比如样例中的&lt;strong>System/System_Subroutine.BeginAdv&lt;/strong>和&lt;strong>System/System_Subroutine.EndAdv&lt;/strong>。&lt;/p>
 &lt;p>在对话剧本的首尾通过&lt;a href="http://manosabamoddoc.fuyumi.xyz/docs/Advanced/Command/#gosub">gosub&lt;/a>分别执行这两个初始化剧本，让游戏进入对话的模式&lt;/p>
 &lt;p>当然，有对话模式，自然就有裁判模式，后续也会有用于初始化裁判模式的剧本&lt;/p>
-&lt;pre tabindex="0">&lt;code>;初始化日常活动状态
+&lt;pre tabindex="0">&lt;code class="language-nani" data-lang="nani">; 初始化日常活动状态
 @Gosub System/System_Subroutine.BeginAdv
-&lt;/code>&lt;/pre>&lt;pre tabindex="0">&lt;code>;结束日常活动状态
+&lt;/code>&lt;/pre>&lt;pre tabindex="0">&lt;code class="language-nani" data-lang="nani">; 结束日常活动状态
 @Gosub System/System_Subroutine.EndAdv
 &lt;/code>&lt;/pre>&lt;/li>
 &lt;li>
@@ -143,9 +139,9 @@
 &lt;p>通过&lt;a href="http://manosabamoddoc.fuyumi.xyz/docs/Advanced/Command/#back">back&lt;/a>指令可以修改游戏的背景&lt;/p>
 &lt;p>可以通过解包工具&lt;a href="http://manosabamoddoc.fuyumi.xyz/docs/Others/UsefulTools/#Assetripper">Assetripper&lt;/a>解包背景图资源查看对应的编号，也可以直接查看游戏自带的剧本寻找自己需要的背景的编号&lt;/p>
 &lt;p>先指定 5_1 为背景图，再指定黑色的遮罩层图层消失&lt;/p>
-&lt;pre tabindex="0">&lt;code>;显示背景
+&lt;pre tabindex="0">&lt;code class="language-nani" data-lang="nani">; 显示背景
 @back 5_1
-;将最上面原本黑色的Overlay遮罩层变为透明，同时还指定了动画时间
+; 将最上面原本黑色的 Overlay 遮罩层变为透明，同时还指定了动画时间
 @back SubId:&amp;#34;Overlay&amp;#34; Transparent tint:&amp;#34;#000000&amp;#34; time:0.99 wait:true
 &lt;/code>&lt;/pre>&lt;/li>
 &lt;li>
@@ -157,11 +153,11 @@
 &lt;/h3>
 &lt;p>通过&lt;a href="http://manosabamoddoc.fuyumi.xyz/docs/Advanced/Command/#char">char&lt;/a>指令显示人物，显示的方式一般是{人物ID}.{表情,左手,右手}&lt;/p>
 &lt;p>人物ID和表情相关可以通过解包工具&lt;a href="http://manosabamoddoc.fuyumi.xyz/docs/Others/UsefulTools/#Assetripper">Assetripper&lt;/a>解包人物立绘查看，也可以直接查看游戏自带的剧本寻找自己需要的编号&lt;/p>
-&lt;pre tabindex="0">&lt;code>;显示艾玛
+&lt;pre tabindex="0">&lt;code class="language-nani" data-lang="nani">; 显示艾玛
 @char Ema pos:50,50
-&lt;/code>&lt;/pre>&lt;pre tabindex="0">&lt;code>;显示雪莉，表情是Smile1
+&lt;/code>&lt;/pre>&lt;pre tabindex="0">&lt;code class="language-nani" data-lang="nani">; 显示雪莉，表情是 Smile1
 @char Sherry.Smile1 pos:30,50
-&lt;/code>&lt;/pre>&lt;pre tabindex="0">&lt;code>;显示汉娜，表情是Angry1，双手是状态2
+&lt;/code>&lt;/pre>&lt;pre tabindex="0">&lt;code class="language-nani" data-lang="nani">; 显示汉娜，表情是 Angry1，双手是状态2
 @char Hanna.Angry1,ArmR2,ArmL2 pos:70,50
 &lt;/code>&lt;/pre>&lt;/li>
 &lt;li>
@@ -171,46 +167,16 @@
  &lt;a class="anchor" href="#%e9%9a%90%e8%97%8f%e4%ba%ba%e7%89%a9">#&lt;/a>
  
 &lt;/h3>
-&lt;p>隐藏角色立绘可以通过&lt;a href="http://manosabamoddoc.fuyumi.xyz/docs/Advanced/Command/#hide">hide&lt;/a>指令隐藏指定立绘，也可以通过&lt;a href="http://manosabamoddoc.fuyumi.xyz/docs/Advanced/Command/#hidechars">hidechars&lt;/a>指令隐藏所有角色立绘&lt;/p>
-&lt;pre tabindex="0">&lt;code>;隐藏艾玛
-@hide Ema
-&lt;/code>&lt;/pre>&lt;pre tabindex="0">&lt;code>;隐藏全部角色
-@hideChars
-&lt;/code>&lt;/pre>&lt;/li>
-&lt;li>
-&lt;h3 id="打印文字">
- 打印文字
- 
- &lt;a class="anchor" href="#%e6%89%93%e5%8d%b0%e6%96%87%e5%ad%97">#&lt;/a>
- 
-&lt;/h3>
-&lt;p>打印文字有多种方法，可以使用&lt;a href="http://manosabamoddoc.fuyumi.xyz/docs/Advanced/Command/#print">print&lt;/a>指令打印文字，也可以直接通过&lt;strong>人物ID: 对话&lt;/strong>或&lt;strong>纯文本&lt;/strong>的格式实现打印文字&lt;/p>
-&lt;pre tabindex="0">&lt;code>@print &amp;#34;完美犯罪？这词真让人热血沸腾呢！&amp;#34; author:&amp;#34;Sherry&amp;#34; speed:1 waitInput:true Wait:true
-&lt;/code>&lt;/pre>&lt;pre tabindex="0">&lt;code>Ema: 这是一个测试用例，我来客串一下。
-Ema: 再说一句就下线了。
-&lt;/code>&lt;/pre>&lt;pre tabindex="0">&lt;code>这里是一段空白。
-&lt;/code>&lt;/pre>&lt;/li>
-&lt;li>
-&lt;h3 id="结束剧本">
- 结束剧本
- 
- &lt;a class="anchor" href="#%e7%bb%93%e6%9d%9f%e5%89%a7%e6%9c%ac">#&lt;/a>
- 
-&lt;/h3>
-&lt;p>可以通过&lt;a href="http://manosabamoddoc.fuyumi.xyz/docs/Advanced/Command/#goto">goto&lt;/a>指令跳转到Mod安装包内的Tool.nani里的EndToTitle标签实现返回到标题页&lt;/p></description></item><item><title>试试写一个魔女裁判</title><link>http://manosabamoddoc.fuyumi.xyz/docs/QuickStart/BeginTrial/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://manosabamoddoc.fuyumi.xyz/docs/QuickStart/BeginTrial/</guid><description>&lt;h1 id="试试写一个魔女裁判">
+&lt;p>隐藏角色立绘可以通过&lt;a href="http://manosabamoddoc.fuyumi.xyz/docs/Advanced/Command/#hide">hide&lt;/a>指令隐藏指定立绘，也可以通过&lt;a href="http://manosabamoddoc.fuyumi.xyz/docs/Advanced/Command/#hidechars">hidechars&lt;/a>指令隐藏所有角色立绘&lt;/p></description></item><item><title>试试写一个魔女裁判</title><link>http://manosabamoddoc.fuyumi.xyz/docs/QuickStart/BeginTrial/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://manosabamoddoc.fuyumi.xyz/docs/QuickStart/BeginTrial/</guid><description>&lt;h1 id="试试写一个魔女裁判">
  试试写一个魔女裁判
  
  &lt;a class="anchor" href="#%e8%af%95%e8%af%95%e5%86%99%e4%b8%80%e4%b8%aa%e9%ad%94%e5%a5%b3%e8%a3%81%e5%88%a4">#&lt;/a>
  
 &lt;/h1>
-&lt;hr>
-&lt;h2 id="让我们来写一个简单的裁判">
- 让我们来写一个简单的裁判
- 
- &lt;a class="anchor" href="#%e8%ae%a9%e6%88%91%e4%bb%ac%e6%9d%a5%e5%86%99%e4%b8%80%e4%b8%aa%e7%ae%80%e5%8d%95%e7%9a%84%e8%a3%81%e5%88%a4">#&lt;/a>
- 
-&lt;/h2>
-&lt;hr>
+&lt;blockquote class="book-hint info">
+&lt;p>本页内容：编写一个简单的审判剧本。
+前置知识：&lt;a href="http://manosabamoddoc.fuyumi.xyz/docs/QuickStart/CreateMod">创建新剧本&lt;/a>，&lt;a href="http://manosabamoddoc.fuyumi.xyz/docs/QuickStart/BeginAdv">简单对话&lt;/a>&lt;/p>
+&lt;/blockquote>
 &lt;div class="book-steps ">
 &lt;ol>
 &lt;li>
@@ -253,78 +219,45 @@ Ema: 再说一句就下线了。
  &lt;a class="anchor" href="#%e5%b0%8f%e8%b4%b4%e5%a3%ab">#&lt;/a>
  
 &lt;/h1>
+&lt;p>常见问题和编写技巧汇总。&lt;/p>
 &lt;hr>
-&lt;p>这里记录一些大家遇到的问题和编写技巧&lt;/p>
-
-&lt;blockquote class='book-hint tip'>
- &lt;h2 id="希望实时看到指令对应的背景或人物怎么办">
- &lt;strong>希望实时看到指令对应的背景或人物怎么办？&lt;/strong>
- 
- &lt;a class="anchor" href="#%e5%b8%8c%e6%9c%9b%e5%ae%9e%e6%97%b6%e7%9c%8b%e5%88%b0%e6%8c%87%e4%bb%a4%e5%af%b9%e5%ba%94%e7%9a%84%e8%83%8c%e6%99%af%e6%88%96%e4%ba%ba%e7%89%a9%e6%80%8e%e4%b9%88%e5%8a%9e">#&lt;/a>
- 
-&lt;/h2>
-&lt;p>打开Mod的调试模式，按下ctrl+t可以开启控制台，在控制台中输入剧本指令执行即可&lt;/p>
-&lt;/blockquote>
-&lt;blockquote class='book-hint warning'>
- &lt;h2 id="有的时候我设置了背景后人物就不显示了">
- &lt;strong>有的时候我设置了背景后人物就不显示了&lt;/strong>
- 
- &lt;a class="anchor" href="#%e6%9c%89%e7%9a%84%e6%97%b6%e5%80%99%e6%88%91%e8%ae%be%e7%bd%ae%e4%ba%86%e8%83%8c%e6%99%af%e5%90%8e%e4%ba%ba%e7%89%a9%e5%b0%b1%e4%b8%8d%e6%98%be%e7%a4%ba%e4%ba%86">#&lt;/a>
- 
-&lt;/h2>
-&lt;p>可以关注一下&lt;a href="http://manosabamoddoc.fuyumi.xyz/docs/Advanced/Command/#back">back&lt;/a>和&lt;a href="http://manosabamoddoc.fuyumi.xyz/docs/Advanced/Command/#back">back&lt;/a>指令的SubId属性，如果背景在人物前，就会出现遮挡人物的情况，尽量保证在同一个层级演出，不同层级用于场景过渡~&lt;/p>
-&lt;/blockquote>
-&lt;blockquote class='book-hint tip'>
- &lt;h2 id="为什么我导入外部音频文件出现加速或者过慢的问题">
- &lt;strong>为什么我导入外部音频文件出现加速或者过慢的问题？&lt;/strong>
- 
- &lt;a class="anchor" href="#%e4%b8%ba%e4%bb%80%e4%b9%88%e6%88%91%e5%af%bc%e5%85%a5%e5%a4%96%e9%83%a8%e9%9f%b3%e9%a2%91%e6%96%87%e4%bb%b6%e5%87%ba%e7%8e%b0%e5%8a%a0%e9%80%9f%e6%88%96%e8%80%85%e8%bf%87%e6%85%a2%e7%9a%84%e9%97%ae%e9%a2%98">#&lt;/a>
- 
-&lt;/h2>
-&lt;p>&lt;a href="http://manosabamoddoc.fuyumi.xyz/docs/Advanced/LoadVoice/">需要关注教程中声道和采样率的设置&lt;/a>&lt;/p>
-&lt;/blockquote>
-&lt;blockquote class='book-hint warning'>
- &lt;h2 id="为什么choice指令出现分支指令不执行且只有第一个选项的情况">
- &lt;strong>为什么choice指令出现分支指令不执行且只有第一个选项的情况？&lt;/strong>
- 
- &lt;a class="anchor" href="#%e4%b8%ba%e4%bb%80%e4%b9%88choice%e6%8c%87%e4%bb%a4%e5%87%ba%e7%8e%b0%e5%88%86%e6%94%af%e6%8c%87%e4%bb%a4%e4%b8%8d%e6%89%a7%e8%a1%8c%e4%b8%94%e5%8f%aa%e6%9c%89%e7%ac%ac%e4%b8%80%e4%b8%aa%e9%80%89%e9%a1%b9%e7%9a%84%e6%83%85%e5%86%b5">#&lt;/a>
- 
-&lt;/h2>
-&lt;p>这种问题大概率是缩进缺失，可以检查一下缩进是否和官方剧本缩进一致（一层缩进必须是&lt;strong>4&lt;/strong>个空格！）&lt;/p>
-&lt;/blockquote>
-&lt;blockquote class='book-hint tip'>
- &lt;h2 id="如果我想出现两个一样的人物怎么办">
- &lt;strong>如果我想出现两个一样的人物怎么办？&lt;/strong>
- 
- &lt;a class="anchor" href="#%e5%a6%82%e6%9e%9c%e6%88%91%e6%83%b3%e5%87%ba%e7%8e%b0%e4%b8%a4%e4%b8%aa%e4%b8%80%e6%a0%b7%e7%9a%84%e4%ba%ba%e7%89%a9%e6%80%8e%e4%b9%88%e5%8a%9e">#&lt;/a>
- 
-&lt;/h2>
-&lt;p>使用不同的subid在不同图层显示角色即可，具体使用参考官方剧本&lt;/p>
-&lt;/blockquote>
-&lt;blockquote class='book-hint tip'>
- &lt;h2 id="如何旋转人物">
- &lt;strong>如何旋转人物&lt;/strong>
- 
- &lt;a class="anchor" href="#%e5%a6%82%e4%bd%95%e6%97%8b%e8%bd%ac%e4%ba%ba%e7%89%a9">#&lt;/a>
- 
-&lt;/h2>
-&lt;p>使用&lt;a href="http://manosabamoddoc.fuyumi.xyz/docs/Advanced/Command/#char">char&lt;/a>指令的rotation参数，参数类型为 &lt;strong>x,y,z&lt;/strong> ，其中xyz为角度&lt;/p>
-&lt;/blockquote>
-&lt;blockquote class='book-hint tip'>
- &lt;h2 id="如果我想做双语剧本怎么办">
- &lt;strong>如果我想做双语剧本怎么办&lt;/strong>
- 
- &lt;a class="anchor" href="#%e5%a6%82%e6%9e%9c%e6%88%91%e6%83%b3%e5%81%9a%e5%8f%8c%e8%af%ad%e5%89%a7%e6%9c%ac%e6%80%8e%e4%b9%88%e5%8a%9e">#&lt;/a>
- 
-&lt;/h2>
-&lt;p>&lt;a href="http://manosabamoddoc.fuyumi.xyz/docs/Advanced/MoreNaniFile/">参考这里~&lt;/a>&lt;/p>
-&lt;/blockquote>
-&lt;blockquote class='book-hint warning'>
- &lt;h2 id="为什么不用官方的bepinex">
- &lt;strong>为什么不用官方的Bepinex？&lt;/strong>
- 
- &lt;a class="anchor" href="#%e4%b8%ba%e4%bb%80%e4%b9%88%e4%b8%8d%e7%94%a8%e5%ae%98%e6%96%b9%e7%9a%84bepinex">#&lt;/a>
- 
-&lt;/h2>
-&lt;p>截止开发插件完成，官方的Bepinex和游戏本体不兼容，存在GC处理异常的问题，所以这里单独上传修复后的版本&lt;/p>
-&lt;/blockquote></description></item></channel></rss>
+&lt;details >&lt;summary>如何实时预览指令效果？&lt;/summary>
+ &lt;div class="markdown-inner">
+&lt;p>打开 MOD 的调试模式，按下 &lt;code>Ctrl+T&lt;/code> 可以开启控制台，在控制台中输入剧本指令即可实时执行查看效果。&lt;/p>
+ &lt;/div>
+&lt;/details>
+&lt;details >&lt;summary>设置背景后人物不显示了？&lt;/summary>
+ &lt;div class="markdown-inner">
+&lt;p>请关注 &lt;a href="http://manosabamoddoc.fuyumi.xyz/docs/Advanced/Command/#back">@back&lt;/a> 和 &lt;a href="http://manosabamoddoc.fuyumi.xyz/docs/Advanced/Command/#char">@char&lt;/a> 指令的 &lt;code>SubId&lt;/code> 属性。如果背景层级在人物前面，就会遮挡人物。尽量保证在同一层级演出，不同层级用于场景过渡。&lt;/p>
+ &lt;/div>
+&lt;/details>
+&lt;details >&lt;summary>导入外部音频出现加速或过慢？&lt;/summary>
+ &lt;div class="markdown-inner">
+&lt;p>MOD 已支持任意采样率/声道的 WAV 和 OGG Vorbis 格式，正常情况下不应出现此问题。详见 &lt;a href="http://manosabamoddoc.fuyumi.xyz/docs/Advanced/LoadVoice/">加载外部音频资源&lt;/a>。&lt;/p>
+ &lt;/div>
+&lt;/details>
+&lt;details >&lt;summary>choice 指令只有第一个选项生效？&lt;/summary>
+ &lt;div class="markdown-inner">
+&lt;p>这种问题大概率是&lt;strong>缩进缺失&lt;/strong>。请检查缩进是否与官方剧本一致——一层缩进必须是 &lt;strong>4 个空格&lt;/strong>！&lt;/p>
+ &lt;/div>
+&lt;/details>
+&lt;details >&lt;summary>如何显示两个相同的角色？&lt;/summary>
+ &lt;div class="markdown-inner">
+&lt;p>使用不同的 &lt;code>SubId&lt;/code> 在不同图层显示角色即可。具体使用方法参考官方剧本。&lt;/p>
+ &lt;/div>
+&lt;/details>
+&lt;details >&lt;summary>如何旋转人物？&lt;/summary>
+ &lt;div class="markdown-inner">
+&lt;p>使用 &lt;a href="http://manosabamoddoc.fuyumi.xyz/docs/Advanced/Command/#char">@char&lt;/a> 指令的 &lt;code>rotation&lt;/code> 参数，参数类型为 &lt;code>x,y,z&lt;/code>，其中 x、y、z 为角度值。&lt;/p>
+ &lt;/div>
+&lt;/details>
+&lt;details >&lt;summary>如何制作双语剧本？&lt;/summary>
+ &lt;div class="markdown-inner">
+&lt;p>参见 &lt;a href="http://manosabamoddoc.fuyumi.xyz/docs/Advanced/MoreNaniFile/">本地化配置&lt;/a>。&lt;/p>
+ &lt;/div>
+&lt;/details>
+&lt;details >&lt;summary>为什么不用官方的 BepInEx？&lt;/summary>
+ &lt;div class="markdown-inner">
+&lt;p>截止开发插件完成时，官方的 BepInEx 与游戏本体不兼容，存在 GC 处理异常的问题，因此 MOD 安装包中附带了修复后的版本。&lt;/p>
+ &lt;/div>
+&lt;/details></description></item></channel></rss>
